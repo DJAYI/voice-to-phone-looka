@@ -1,0 +1,118 @@
+@import "./buttons.css";
+@import "./utilities.css";
+
+/* form style */
+.form-input,
+.hs-select input.form-input,
+.hs-select button.form-input {
+  @apply bg-theme-light text-text-default/80 focus:border-primary border border-transparent px-4 py-3.5 placeholder:opacity-80;
+  @apply focus:shadow-none! focus:ring-0!;
+
+  /* Preline */
+  [data-title] {
+    @apply text-text-default/80 opacity-80;
+  }
+}
+
+[type="text"]:focus,
+input:where(:not([type])):focus,
+[type="email"]:focus,
+[type="url"]:focus,
+[type="password"]:focus,
+[type="number"]:focus,
+[type="date"]:focus,
+[type="datetime-local"]:focus,
+[type="month"]:focus,
+[type="search"]:focus,
+[type="tel"]:focus,
+[type="time"]:focus,
+[type="week"]:focus,
+[multiple]:focus,
+textarea:focus,
+select:focus {
+  @apply border-primary;
+}
+
+.form-label {
+  @apply mb-2 block font-normal text-gray-700;
+}
+
+/* Form Checkbox & Radio */
+.form-check-wrapper {
+  @apply space-y-2;
+}
+.form-check {
+  @apply flex items-start gap-4;
+
+  .form-check-label {
+    @apply cursor-pointer leading-relaxed;
+  }
+
+  .form-radio,
+  .form-checkbox {
+    @apply shrink-0 cursor-pointer transition-colors duration-500;
+    @apply bg-primary/15 ring-primary mt-1 h-4 w-4 border-0 ring-0 outline-0;
+    @apply focus:ring-0 focus:ring-offset-0 focus:outline-0;
+    @apply checked:bg-primary checked:ring-primary/15 checked:mt-[9px] checked:ml-2 checked:h-2 checked:w-2 checked:bg-none checked:ring-[6px];
+  }
+
+  .form-radio {
+    @apply -ml-px h-[18px] w-[18px] checked:ms-[3.5px] checked:me-[4.5px] checked:h-[9px] checked:w-[9px] checked:ring-[4.8px];
+  }
+
+  .form-checkbox {
+    @apply me-px h-4 w-4 checked:ms-[4.4px] checked:me-1.5 checked:h-1.5 checked:w-[6.5008px] checked:ring-[5px];
+  }
+}
+
+/* Preline Dropdown */
+[data-hs-select-dropdown] {
+  @apply p-1;
+}
+
+/* Preline Dropdown Item */
+[data-hs-select-dropdown] > div[data-value] {
+  @apply text-text-default hover:bg-primary/5 hover:text-dark focus:bg-primary/5 px-3 py-1.5 text-sm focus:outline-none;
+}
+
+/* Preline "Search Input" Inside Dropdown */
+[data-hs-select-dropdown] > div:not([data-value]) {
+  @apply p-0 focus:shadow-none focus:ring-0 focus:outline-none;
+
+  input {
+    @apply px-3 py-2 placeholder:opacity-70;
+  }
+}
+
+/* Preline Dropdown "Search Not Found Text" */
+[data-hs-select-dropdown] > span {
+  @apply text-text-default py-3 opacity-60;
+}
+
+/* Change SVG color to match brand color */
+/* This is used to change the color of icons in svg files to match the brand color */
+/* It targets the fill and stroke properties, and replaces the hex code with the currentColor css variable */
+[data-icon]:not(.match-brand-color),
+.has-inherited-colors {
+  *[fill*="#"] {
+    @apply fill-[currentColor]!;
+  }
+
+  *[stroke*="#"] {
+    @apply stroke-[currentColor]!;
+  }
+}
+
+.match-brand-color {
+  *[fill*="#2562FF"] {
+    @apply fill-primary!;
+  }
+
+  *[stroke*="#2562FF"] {
+    @apply stroke-primary!;
+  }
+
+  *[stop-color="#2562FF"] {
+    stop-color: var(--color-primary) !important;
+  }
+}

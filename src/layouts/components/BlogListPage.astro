@@ -1,0 +1,57 @@
+---
+import Sidebar from "./widgets/Sidebar.astro";
+import ContentList from "./widgets/ContentList.astro";
+
+// Destructure Astro props with default values
+const {
+  layout = "classic",
+  columns = 2,
+  filterContent,
+  pagination = {
+    enable: true,
+    currentPage: 1,
+  },
+} = Astro.props;
+---
+
+<section>
+  <div
+    class="container grid grid-cols-1 gap-x-6 gap-y-16 lg:grid-cols-12 lg:items-start">
+    <div
+      class="has-video-modal lg:box-shadow-primary space-y-10 lg:order-1 lg:col-span-8 lg:bg-white lg:p-5">
+      <ContentList
+        filter={filterContent}
+        pagination={pagination}
+        options={{
+          columns,
+          layout: "grid",
+          content: "blog",
+          card: { layout },
+        }}
+      />
+    </div>
+
+    <Sidebar
+      content={{
+        boxShadow: true,
+        widgetsContent: {
+          search: {
+            blogCardLayout: layout,
+          },
+        },
+      }}
+    />
+  </div>
+</section>
+
+<script>
+  import { stickySidebar } from "@/plugins/sticky-sidebar.js";
+
+  const sidebar = document.querySelector(".sticky-sidebar");
+  if (sidebar) {
+    new stickySidebar(sidebar, {
+      offsetTop: 132,
+      offsetBottom: 20,
+    });
+  }
+</script>

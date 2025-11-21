@@ -1,0 +1,79 @@
+---
+import type { Section } from "@/types";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { getLocaleUrlCTM } from "@/lib/utils/i18nUtils.ts";
+import CustomButton from "../CustomButton.astro";
+
+// Type for this section data
+type sectionType = Section;
+type Props = {
+  content?: sectionType;
+  serviceImage?: string;
+};
+
+const { content, serviceImage } = Astro.props;
+
+// Fetching the default content using getEntry ((await getEntryCTM("sections", "our-values", Astro.currentLocale))?.data) for the this section (If applicable)
+let defaultContent = {} as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let { enable, image, title, description, button } =
+  actualContent as sectionType;
+
+// If no image is provided, use the default service image
+if (!image) {
+  image = serviceImage;
+}
+---
+
+{
+  enable && (
+    <section>
+      <div class="container">
+        <div class="relative pt-8 sm:pt-72 md:pt-80.25">
+          {image && (
+            <OptimizedImage
+              data-aos="fade-up-sm"
+              data-aos-delay="200"
+              src={image}
+              alt={title || "About Us"}
+              class="h-52! max-h-full w-full object-cover sm:absolute sm:top-0 sm:left-0 sm:-z-10 sm:h-144.25!"
+            />
+          )}
+          <div
+            data-aos-delay="300"
+            data-aos="fade-up-sm"
+            data-aos-offset="0"
+            class="box-shadow-primary bg-white px-5 py-7 sm:mx-16 sm:max-w-4xl md:px-10 md:py-14 lg:ml-24">
+            {title && (
+              <h2
+                class="text-h4 md:text-h3 text-primary mb-5"
+                set:html={markdownify(title)}
+              />
+            )}
+            {description && <p set:html={markdownify(description)} />}
+            {button && button.enable && (
+              <CustomButton
+                variant="text"
+                label={button.label}
+                url={getLocaleUrlCTM(button.url, Astro.currentLocale)}
+                class="text-base-sm mt-8 capitalize md:text-base"
+              />
+            )}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}

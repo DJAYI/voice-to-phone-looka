@@ -1,0 +1,161 @@
+---
+import dateFormat from "@/lib/utils/dateFormat";
+import { useTranslations } from "@/lib/utils/i18nUtils";
+import { markdownify } from "@/lib/utils/textConverter";
+import { render } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+import CustomButton from "./CustomButton.astro";
+import Social from "./social/Social.astro";
+
+interface Props {
+  content: CollectionEntry<"career">;
+  careerListPage: CollectionEntry<"career">;
+}
+
+const t = await useTranslations(Astro.currentLocale as string);
+
+const { content, careerListPage } = Astro.props;
+
+const { applyBlock, benefits, social } = careerListPage.data;
+const { title, description, categories, type, location, deadline, applyLink } =
+  content.data;
+
+const { Content } = await render(content);
+---
+
+<section
+  class="has-light-shape after:bg-theme-light relative after:absolute after:inset-x-0 after:bottom-0 after:-z-10 after:h-screen after:w-full">
+  <div class="container">
+    <div class="max-w-3xl pb-16 md:pb-32">
+      {
+        categories && categories.length > 0 && (
+          <ul class="flex gap-2">
+            {categories.map((category: string) => (
+              <li class="mb-2 inline-block" set:html={markdownify(category)} />
+            ))}
+          </ul>
+        )
+      }
+      {title && <h1 class="text-h3" set:html={markdownify(title)} />}
+      <div class="mt-6 flex flex-wrap gap-x-10 gap-y-5">
+        {
+          location && (
+            <div class="flex flex-col gap-y-4">
+              <p class="font-primary text-sm tracking-[.12em] opacity-60">
+                {t("career.location")}
+              </p>
+              <p class="text-sm" set:html={location} />
+            </div>
+          )
+        }
+        {
+          type && (
+            <div class="flex flex-col gap-y-4">
+              <p class="font-primary text-sm tracking-[.12em] opacity-60">
+                {t("career.jobType")}
+              </p>
+              <p class="text-sm" set:html={type} />
+            </div>
+          )
+        }
+        {
+          deadline && (
+            <div class="flex flex-col gap-y-4">
+              <p class="font-primary text-sm tracking-[.12em] opacity-60">
+                {t("career.deadline")}
+              </p>
+              <p class="text-sm" set:html={dateFormat(deadline)} />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="grid grid-cols-1 gap-10 lg:grid-cols-3 lg:place-items-start">
+      {
+        Content && (
+          <article class="prose-styles lg:col-span-2 lg:pe-16 xl:pe-32">
+            <Content />
+          </article>
+        )
+      }
+      <aside
+        class="sticky-sidebar flex flex-col gap-y-12 lg:sticky lg:top-32 lg:z-10 lg:-mt-56">
+        {
+          applyBlock && (
+            <div class="box-shadow-primary order-3 space-y-8 rounded-lg bg-white p-8 lg:order-0">
+              {applyBlock.title && (
+                <p set:html={markdownify(applyBlock.title)} />
+              )}
+              {applyBlock.button && (
+                <CustomButton {...applyBlock.button} url={applyLink} />
+              )}
+              {applyBlock.note && (
+                <p class="text-sm" set:html={markdownify(applyBlock.note)} />
+              )}
+            </div>
+          )
+        }
+        {
+          benefits && benefits.enable && (
+            <div class="prose-styles">
+              {benefits.title && (
+                <h3
+                  class="text-h5 mb-4 font-medium"
+                  set:html={markdownify(benefits.title)}
+                />
+              )}
+              {benefits.list && (
+                <ul class="space-y-2">
+                  {benefits.list.map((item: string) => (
+                    <li set:html={markdownify(item)} />
+                  ))}
+                </ul>
+              )}
+            </div>
+          )
+        }
+        {
+          social && social.enable && (
+            <div>
+              {social.title && (
+                <h3
+                  class="text-h5 mb-4 font-medium"
+                  set:html={markdownify(social.title)}
+                />
+              )}
+              {social.list && (
+                <Social
+                  class="gap-3"
+                  linkType="share"
+                  layout="modern"
+                  size="sm"
+                  title={title}
+                  description={description}
+                  slug={content.id}
+                  list={social.list}
+                />
+              )}
+            </div>
+          )
+        }
+      </aside>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { stickySidebar } from "@/plugins/sticky-sidebar.js";
+
+  const sidebar = document.querySelector(".sticky-sidebar");
+  if (sidebar) {
+    new stickySidebar(sidebar, {
+      offsetTop: 132,
+      offsetBottom: 20,
+    });
+  }
+</script>

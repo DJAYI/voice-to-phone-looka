@@ -1,0 +1,174 @@
+---
+import type { Section } from "@/types";
+import Icons from "@/helpers/Icons.astro";
+import CustomButton from "../CustomButton.astro";
+import ListCheck from "@/shortcodes/ListCheck.astro";
+import { type InferEntrySchema } from "astro:content";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import { markdownify, toSentenceCase } from "@/lib/utils/textConverter";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import AnimatedNumber from "@/layouts/components/widgets/AnimatedNumber.astro";
+
+// Type for this section data
+type sectionType = Section &
+  InferEntrySchema<"services">["impact"];
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content using getEntry ((await getEntryCTM("sections", "our-values", Astro.currentLocale))?.data) for the this section (If applicable)
+let defaultContent = {} as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  enable = true,
+  title,
+  description,
+  list,
+  button,
+  statsBlock,
+} = actualContent as sectionType;
+
+if (!enable) return;
+---
+
+<section>
+  <div class="relative">
+    <div
+      class="container grid gap-x-16 gap-y-10 overflow-hidden md:gap-y-20 lg:grid-cols-5 lg:items-center">
+      {
+        statsBlock && statsBlock.enable && (
+          <div
+            class="grid min-h-full grid-cols-2 gap-6 lg:col-span-2"
+            data-aos="fade-right-sm">
+            {statsBlock.lg?.map((item) => (
+              <div
+                class:list={[
+                  "bg-theme-light relative col-span-2 flex flex-col gap-y-4 overflow-hidden p-10",
+                  {
+                    "after:absolute after:inset-0 after:-z-[09] after:bg-white/85":
+                      item.background?.type === "image-overlay" &&
+                      item.background?.image,
+                  },
+                ]}>
+                <Icons
+                  class="text-primary absolute -right-8 -bottom-8 z-10 opacity-10 xl:opacity-100"
+                  icon="MoveUpLeft"
+                />
+                <div class="has-animated-number relative z-20">
+                  {item.title.value && (
+                    <AnimatedNumber
+                      class="text-primary font-secondary mb-4 inline-block text-6xl/none font-semibold md:text-7xl/none"
+                      content={item.title}
+                    />
+                  )}
+                  {item.description && (
+                    <p
+                      class="max-w-72"
+                      set:html={markdownify(item.description)}
+                    />
+                  )}
+                </div>
+              </div>
+            ))}
+            {statsBlock.sm && (
+              <div class="space-y-6">
+                {statsBlock.sm?.map((item) => (
+                  <div
+                    class:list={[
+                      "bg-theme-light has-animated-number relative col-span-2 flex flex-col gap-y-4 overflow-hidden p-5",
+                      {
+                        "after:absolute after:inset-0 after:-z-[09] after:bg-white/85":
+                          item.background?.type === "image-overlay" &&
+                          item.background?.image,
+                      },
+                    ]}>
+                    {item.title.value && (
+                      <AnimatedNumber
+                        class="text-primary font-secondary text-3xl/none font-semibold md:text-5xl/none"
+                        content={item.title}
+                      />
+                    )}
+                    {item.description && (
+                      <p
+                        class="max-w-72"
+                        set:html={markdownify(item.description)}
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            )}
+            {statsBlock.md &&
+              statsBlock.md.map((item) => (
+                <div class="has-animated-number relative flex flex-col justify-between gap-y-4 overflow-hidden p-5 after:absolute after:inset-0 after:-z-[09] after:bg-white/85">
+                  {item.title.value && (
+                    <span
+                      class="text-3xl/md:text-4xl/tight text-primary font-secondary font-semibold md:text-4xl/tight"
+                      set:html={item.title.value}
+                    />
+                  )}
+                  {item.description && (
+                    <p
+                      class="max-w-72"
+                      set:html={markdownify(item.description)}
+                    />
+                  )}
+                  {item.background?.type === "image-overlay" &&
+                    item.background?.image && (
+                      <OptimizedImage
+                        inlineSvg={true}
+                        class="absolute inset-0 -z-10 h-full! w-full object-cover"
+                        src={item.background?.image}
+                        alt={toSentenceCase("A image about " + item.title)}
+                      />
+                    )}
+                </div>
+              ))}
+          </div>
+        )
+      }
+      <div class="lg:col-span-3">
+        <div data-aos="fade-up-sm">
+          {
+            title && (
+              <h2 class="text-h3 text-inherit" set:html={markdownify(title)} />
+            )
+          }
+          {
+            description && (
+              <div class="mt-6" set:html={markdownify(description, true)} />
+            )
+          }
+        </div>
+        {
+          list && (
+            <ListCheck
+              twoColumn={true}
+              content={list}
+              class="mt-8"
+              data-aos="fade-up-sm"
+              data-aos-delay="200"
+            />
+          )
+        }
+        {
+          button && button.enable && (
+            <div class="mt-8" data-aos="fade-up-sm" data-aos-delay="300">
+              <CustomButton {...button} />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

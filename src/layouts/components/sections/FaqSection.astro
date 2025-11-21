@@ -1,0 +1,173 @@
+---
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import { markdownify } from "@/lib/utils/textConverter";
+import AccordionList from "@/layouts/components/widgets/AccordionList.astro";
+import type { FAQCategory, FAQItem, Section } from "@/types";
+import CustomButton from "../CustomButton.astro";
+
+// Type for this section data
+type sectionType = Section & {
+  list?: FAQCategory[];
+  sectionLayout?: "vertical" | "horizontal";
+  minimalFaqLayout?: boolean;
+  faqLayoutOnly?: boolean;
+  showCategories?: boolean;
+};
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the this section
+let defaultContent = (await getEntryCTM("faq", "-index", Astro.currentLocale))
+  ?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  enable = true,
+  title,
+  subtitle,
+  button,
+  list,
+  limit,
+  sectionLayout,
+  faqLayoutOnly,
+  minimalFaqLayout,
+  showCategories,
+} = actualContent as sectionType;
+
+// Featured Faqs
+let featuredFaqs = [] as FAQItem[];
+list &&
+  list.map((faq: FAQCategory, faqIndex: number) => {
+    const list = faq.list.filter(
+      (item) => item.featured && (faqIndex === 0 ? !item.active : true),
+    );
+    featuredFaqs.push(...list);
+  });
+
+// Sort featuredFaqs by active status
+featuredFaqs.sort(
+  (a: FAQItem, b: FAQItem) => Number(b.active) - Number(a.active),
+);
+
+// Limit the number of items to be displayed
+list = limit && list ? list.slice(0, limit as number) : list;
+
+// IF services group is not enabled then only show first category faqs
+if (!showCategories) {
+  list = list?.slice(0, 1);
+}
+---
+
+{
+  enable && (
+    <section>
+      <div class="container">
+        <div
+          class:list={[
+            "grid place-items-start gap-12 md:gap-16",
+            !faqLayoutOnly && sectionLayout === "horizontal"
+              ? "lg:grid-cols-2"
+              : "lg:grid-cols-1",
+          ]}>
+          {!faqLayoutOnly && (
+            <div
+              class:list={[
+                "lg:max-w-2xl",
+                sectionLayout === "vertical"
+                  ? "mx-auto text-center"
+                  : "lg:sticky lg:top-40",
+              ]}>
+              <div data-aos="fade-up-sm">
+                {subtitle && (
+                  <span
+                    set:html={markdownify(subtitle)}
+                    class="bg-primary/5 border-secondary text-primary mb-2.5 inline-block rounded-full border px-5 py-px"
+                  />
+                )}
+                {title && (
+                  <h2
+                    class="text-h3 text-inherit"
+                    set:html={markdownify(title)}
+                  />
+                )}
+              </div>
+
+              {button?.enable && (
+                <div data-aos="fade-up-sm" data-aos-delay="250">
+                  <CustomButton
+                    {...button}
+                    class="text-base-sm mt-8 capitalize md:text-base"
+                  />
+                </div>
+              )}
+            </div>
+          )}
+          {list && list.length > 0 && (
+            <div
+              data-aos="fade-up-sm"
+              data-aos-delay="300"
+              class:list={[
+                "w-full",
+                { "mx-auto w-full max-w-5xl": sectionLayout === "vertical" },
+              ]}>
+              {showCategories && (
+                <nav
+                  role="tablist"
+                  aria-label="Tabs"
+                  aria-orientation="horizontal"
+                  class:list={[
+                    showCategories &&
+                      "mb-8 flex flex-wrap gap-x-1 border-b pb-8",
+                  ]}>
+                  {list.map((button: FAQCategory, index: number) => (
+                    <button
+                      role="tab"
+                      type="button"
+                      set:html={button.label}
+                      id={"tab-item-" + (index + 1)}
+                      data-hs-tab={"#tab-" + (index + 1)}
+                      aria-controls={"tab-" + (index + 1)}
+                      aria-selected={index === 0 ? "true" : "false"}
+                      class:list={[
+                        "hs-tab-active:bg-white rounded-md px-6 py-3.5 text-lg/none",
+                        { active: index === 0 },
+                      ]}
+                    />
+                  ))}
+                </nav>
+              )}
+              {
+                <div
+                  class:list={[
+                    !minimalFaqLayout && "rounded-lg bg-white p-6",
+                  ]}>
+                  {list.map((tab: FAQCategory, index: number) => (
+                    <AccordionList
+                      role="tabpanel"
+                      content={tab.list}
+                      class={index === 0 ? "block" : "hidden"}
+                      id={"tab-" + (index + 1)}
+                      tabIndex={"group-" + (index + 1)}
+                      aria-labelledby={"tab-item-" + (index + 1)}
+                    />
+                  ))}
+                </div>
+              }
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}

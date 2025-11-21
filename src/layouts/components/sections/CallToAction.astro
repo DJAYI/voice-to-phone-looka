@@ -1,0 +1,195 @@
+---
+import CustomButton from "../CustomButton.astro";
+import type { Section, StatsBlock } from "@/types";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import AnimatedNumber from "@/layouts/components/widgets/AnimatedNumber.astro";
+import CreativeStatsBlock from "@/layouts/components/widgets/CreativeStatsBlock.astro";
+
+// Type for this section data
+type sectionType = Section & {
+  ctaShapeOne?: string;
+  ctaShapeTwo?: string;
+  statsBlock: StatsBlock;
+  rightContent: "image" | "stats";
+  imageBlock: {
+    enable: boolean;
+    default: boolean;
+    image: string;
+    experience: {
+      label: string;
+      value: string;
+    };
+  };
+};
+
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the this section
+let defaultContent = (
+  await getEntryCTM("sections", "call-to-action", Astro.currentLocale)
+)?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  enable = true,
+  title,
+  subtitle,
+  description,
+  button,
+  statsBlock,
+  imageBlock,
+  rightContent,
+  ctaShapeOne,
+  ctaShapeTwo,
+} = actualContent as sectionType;
+---
+
+{
+  enable && (
+    <section class="mt-auto overflow-hidden">
+      <div
+        class:list={[
+          "bg-theme-light relative",
+          { "py-12 md:py-20": rightContent === "stats" },
+        ]}>
+        {ctaShapeOne && (
+          <div class="pointer-events-none absolute top-0 right-0 z-10 h-40 w-28 opacity-30 md:opacity-100 lg:left-0">
+            <OptimizedImage
+              inlineSvg={true}
+              class="match-brand-color text-primary h-full w-full origin-bottom-right object-cover"
+              src={ctaShapeOne}
+              alt="pattern"
+            />
+          </div>
+        )}
+        {ctaShapeTwo && (
+          <div class="pointer-events-none absolute right-0 bottom-0 z-10 h-40 w-44 opacity-30 max-lg:hidden md:opacity-100">
+            <OptimizedImage
+              inlineSvg={true}
+              class="match-brand-color text-primary h-full w-full origin-bottom-right object-cover"
+              src={ctaShapeTwo}
+              alt="pattern"
+            />
+          </div>
+        )}
+        <div class="container grid gap-x-10 gap-y-10 md:gap-y-20 lg:grid-cols-2 lg:place-items-center">
+          <div
+            class:list={[
+              "lg:max-w-2xl",
+              { "pt-12 md:pt-20 lg:pt-0": rightContent === "image" },
+            ]}>
+            <div data-aos="fade-up-sm" data-aos-offset="0">
+              {subtitle && (
+                <span
+                  class="bg-primary/5 border-secondary text-primary mb-2.5 inline-block rounded-full border px-5 py-px"
+                  set:html={markdownify(subtitle)}
+                />
+              )}
+              {title && (
+                <h2
+                  class="text-h3 text-inherit"
+                  set:html={markdownify(title)}
+                />
+              )}
+            </div>
+            {description && (
+              <div
+                data-aos="fade-up-sm"
+                data-aos-offset="0"
+                data-aos-delay="200"
+                class="mt-6"
+                set:html={markdownify(description, true)}
+              />
+            )}
+            {button && button.enable && (
+              <div
+                class="mt-6 md:mt-8"
+                data-aos="fade-up-sm"
+                data-aos-offset="0"
+                data-aos-delay="300">
+                <CustomButton {...button} />
+              </div>
+            )}
+          </div>
+          {rightContent === "image" ? (
+            <div class="has-animated-number relative lg:pt-20">
+              <div class="relative z-10 mx-auto w-fit" data-aos="fade-up-sm">
+                <OptimizedImage
+                  class="max-w-full md:max-w-lg"
+                  src={imageBlock.image}
+                  alt={title || "About Us"}
+                />
+                {imageBlock.experience && (
+                  <div class="bg-primary absolute bottom-16 left-5 md:-left-20">
+                    {
+                      <div class="py-2 ps-5 text-white">
+                        <div class="relative flex items-stretch">
+                          {(() => {
+                            const isNumeric = !isNaN(Number(imageBlock.experience.value)) && imageBlock.experience.value !== "";
+                            if (isNumeric) {
+                              return (
+                          <AnimatedNumber
+                            class="text-h2 leading-tight font-bold text-inherit md:text-6xl"
+                            content={imageBlock.experience}
+                          />
+                              );
+                            } else {
+                              return (
+                                <div class="text-h2 leading-tight font-bold text-inherit md:text-6xl">
+                                  {imageBlock.experience.value}
+                                  {imageBlock.experience.appendValue && (
+                                    <small><small>{imageBlock.experience.appendValue}</small></small>
+                                  )}
+                                </div>
+                              );
+                            }
+                          })()}
+                          {imageBlock.experience.label && (
+                            <sup
+                              class="font-secondary top-0 -left-6 text-sm font-bold tracking-wider text-inherit"
+                              set:html={markdownify(
+                                imageBlock.experience.label,
+                              )}
+                            />
+                          )}
+                        </div>
+                        <OptimizedImage
+                          class="pointer-events-none absolute inset-0 h-full w-full"
+                          src={"/images/call-to-action/stats-block-bg.svg"}
+                          alt={title || "About Us"}
+                        />
+                      </div>
+                    }
+                  </div>
+                )}
+              </div>
+              {/* background shape */}
+              <div class="bg-primary pointer-events-none absolute top-[calc(50%-42px)] left-1/2 h-143.5 w-143.5 -translate-x-1/2 rounded-full opacity-80" />
+            </div>
+          ) : (
+            rightContent === "stats" && (
+              <CreativeStatsBlock
+                content={statsBlock}
+                data-aos="fade-down-sm"
+              />
+            )
+          )}
+        </div>
+      </div>
+    </section>
+  )
+}

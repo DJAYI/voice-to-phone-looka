@@ -1,0 +1,44 @@
+[
+  {
+    "name": "DM Sans",
+    "variants": [
+      {
+        "style": "normal",
+        "weight": "400"
+      },
+      {
+        "style": "normal",
+        "weight": "500"
+      },
+      {
+        "style": "normal",
+        "weight": "600"
+      },
+      {
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "preload": false,
+    "provider": "google",
+    "display": "swap",
+    "cssVariable": "--font-primary",
+    "subsets": ["latin"],
+    "fallback": "sans-serif"
+  },
+  {
+    "name": "Syne",
+    "variants": [
+      {
+        "style": "normal",
+        "weight": "700"
+      }
+    ],
+    "preload": false,
+    "display": "swap",
+    "cssVariable": "--font-secondary",
+    "subsets": ["latin"],
+    "provider": "google",
+    "fallback": "sans-serif"
+  }
+]

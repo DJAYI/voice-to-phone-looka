@@ -1,0 +1,96 @@
+---
+title: "组件示例"
+date: 2022-06-06
+draft: false
+---
+
+## 文字样式 [.text-h4]
+
+在 Markdown 中可以使用下列语法：
+
+- **粗体**：`**重点**`
+- _斜体_：`*强调*`
+- <u>底线</u>：`<u>底线</u>`
+- ~~删除线~~：`~~删除~~`
+
+---
+
+### 按钮 [.text-h5]
+
+```jsx
+<CustomButton hoverEffect="magnetic" showIcon="false" label="磁吸效果" url="/" />
+<CustomButton showIcon="false" variant="outline" hoverEffect="magnetic-text-flip" label="文字翻转" url="/" />
+<CustomButton showIcon="false" variant="outline" hoverEffect="creative-fill" label="渐层填充" url="/" />
+<CustomButton showIcon="true" label="附带图标" url="/" />
+```
+
+> 以上示例会渲染成多组按钮，可依需求调整 `variant`、`hoverEffect` 与 `showIcon`。
+
+---
+
+### 手风琴 [.text-h5]
+
+```jsx
+<Accordion label="常见问题 01" group="accordion-01" expanded="true">
+  我们提供品牌定位、营运优化与数位转型等顾问服务。
+</Accordion>
+```
+
+<Accordion label="常见问题 01" group="accordion-01" expanded="true">
+  我们提供品牌定位、营运优化与数位转型等顾问服务。
+</Accordion>
+<Accordion label="常见问题 02" group="accordion-01" expanded="false">
+  项目会依照阶段需求指派不同领域的顾问，保持弹性。
+</Accordion>
+
+---
+
+### 页签 [.text-h5]
+
+```jsx
+<Tabs>
+  <Tab name="概览">
+    **我们如何协助？** 依据你的目标提供客制化的顾问方案。
+  </Tab>
+</Tabs>
+```
+
+<Tabs>
+  <Tab name="概览">
+    **我们如何协助？**
+
+    透过策略冲刺、顾问陪跑与内部培训，协助团队取得可执行的下一步。
+
+    - 品牌定位
+    - 营运优化
+    - 数位转型
+    - 人才发展
+  </Tab>
+  <Tab name="顾问陪跑">
+    **陪你一起执行**
+
+    由跨领域顾问组成的团队，将计划转化为可追踪的冲刺里程碑。
+  </Tab>
+</Tabs>
+
+---
+
+### YouTube 视频 [.text-h5]
+
+```jsx
+<VideoInline
+  title="团队介绍"
+  videoId="rFVpSwgCkCo"
+  poster="/images/video-thumbnail.jpg"
+  provider="youtube"
+  class="mt-8"
+/>
+```
+
+<VideoInline
+  title="团队介绍"
+  videoId="rFVpSwgCkCo"
+  poster="/images/video-thumbnail.jpg"
+  provider="youtube"
+  class="mt-8"
+/>

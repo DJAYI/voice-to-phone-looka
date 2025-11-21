@@ -1,0 +1,85 @@
+---
+import type { Section } from "@/types";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { getCollectionCTM } from "@/lib/contentParser.astro";
+import CareerCard from "@/components/cards/CareerCard.astro";
+import CustomButton from "../CustomButton.astro";
+
+// Type for service section data
+export type sectionType = Section & {
+  limit?: number | boolean;
+};
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the service section
+let defaultContent = (
+  await getEntryCTM("sections", "career-openings", Astro.currentLocale)
+)?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = {
+  ...defaultContent,
+  ...Astro.props.content,
+} as sectionType;
+
+// Extracting required values from 'content' object
+let { limit, title, enable, button, subtitle } =
+  actualContent as sectionType;
+
+let career = await getCollectionCTM("career", Astro.currentLocale);
+
+// Limit the number of job post to be displayed
+career = limit ? career.slice(0, limit as number) : career;
+---
+
+{
+  enable && (
+    <section id="current-openings" class:list={["overflow-hidden"]}>
+      <div class="container">
+        <div class:list={["flex flex-col justify-start gap-12 md:gap-16"]}>
+          <div class="flex flex-col flex-wrap justify-between gap-8 lg:flex-row lg:items-center">
+            <div class="shrink-0 lg:lg:max-w-2xl" data-aos="fade-up-sm">
+              {subtitle && (
+                <span
+                  class:list={[
+                    "mb-2.5 inline-block rounded-full border px-5 py-px",
+                    "bg-primary/5 border-secondary text-primary",
+                  ]}
+                  set:html={markdownify(subtitle)}
+                />
+              )}
+              {title && (
+                <h2
+                  class:list={["text-h3 text-dark"]}
+                  set:html={markdownify(title)}
+                />
+              )}
+            </div>
+            {button?.enable && (
+              <div data-aos="fade-up-sm" data-aos-delay="200">
+                <CustomButton {...button} />
+              </div>
+            )}
+          </div>
+        </div>
+        {career && (
+          <div class="relative mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+            {career.map((item, index) => (
+              <CareerCard
+                content={{ ...item.data, ...item }}
+                data-aos="fade-up-sm"
+                data-aos-delay={((index % 3) + 1) * 100}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}

@@ -1,0 +1,135 @@
+---
+import Marquee from "@/components/widgets/Marquee.astro";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import type { Section } from "@/types";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { TypeOf } from "astro:schema";
+import type { marqueeConfig } from "@/content.config";
+
+// Type for this section data
+export type sectionType = Section & {
+  marquee?: TypeOf<typeof marqueeConfig>;
+  list?: Array<string | { src: string; size: "large" | "small" }>;
+};
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the this section
+let defaultContent = (
+  await getEntryCTM("sections", "about-banner", Astro.currentLocale)
+)?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  enable = true,
+  title,
+  description,
+  list,
+  limit,
+  marquee,
+} = actualContent as sectionType;
+
+// Limit the number of items to be displayed
+list = limit && list ? list.slice(0, limit as number) : list;
+
+// Dynamically add text-highlight svg image to the title
+const rawSvgs = import.meta.glob("/src/assets/images/**/*.svg", {
+  query: "raw",
+  import: "default",
+});
+const svgImage = await rawSvgs["/src/assets/images/text-highlight.svg"]();
+const markdownTitle = await markdownify(title || "");
+const formattedTitle = markdownTitle.replace(
+  "<strong>",
+  `<strong class='match-brand-color'>${svgImage}`,
+);
+---
+
+{
+  enable && (
+    <section class="overflow-hidden">
+      <div class="container">
+        <div class="flex flex-wrap items-center justify-between gap-6 lg:flex-nowrap">
+          <div class="max-w-xl" data-aos="fade-up-sm">
+            {title && (
+              <h2
+                class="text-h3 has-text-highlight text-inherit"
+                set:html={formattedTitle}
+              />
+            )}
+          </div>
+          {description && (
+            <p
+              data-aos="fade-up-sm"
+              data-aos-delay="200"
+              set:html={markdownify(description)}
+              class="max-w-md opacity-80 xl:max-w-xl"
+            />
+          )}
+        </div>
+      </div>
+      {list && marquee && (
+        <div
+          class="relative mt-16 flex justify-center overflow-x-hidden md:mt-32"
+          data-aos="fade-up-sm"
+          data-aos-delay="300">
+          <Marquee marqueeElements={list.length} {...marquee}>
+            {list.map((item, index) => {
+              const imageItem = typeof item === "string" ? { src: item, size: index % 2 === 0 ? "large" : "small" } : item;
+              const isLarge = imageItem.size === "large";
+              return (
+                <div
+                  class:list={[
+                    "flex-shrink-0 px-4",
+                    isLarge ? "w-64 lg:w-80" : "w-64 lg:w-64",
+                  ]}>
+                  <OptimizedImage
+                    class:list={[
+                      "w-full object-cover",
+                      isLarge ? "h-80 lg:h-96" : "h-64 lg:h-64",
+                    ]}
+                    src={imageItem.src}
+                    alt="Image"
+                  />
+                </div>
+              );
+            })}
+            {list.map((item, index) => {
+              const imageItem = typeof item === "string" ? { src: item, size: index % 2 === 0 ? "large" : "small" } : item;
+              const isLarge = imageItem.size === "large";
+              return (
+                <div
+                  class:list={[
+                    "flex-shrink-0 px-4",
+                    isLarge ? "w-64 lg:w-80" : "w-64 lg:w-64",
+                  ]}
+                  aria-hidden="true">
+                  <OptimizedImage
+                    class:list={[
+                      "w-full object-cover",
+                      isLarge ? "h-80 lg:h-96" : "h-64 lg:h-64",
+                    ]}
+                    src={imageItem.src}
+                    alt="Image"
+                  />
+                </div>
+              );
+            })}
+          </Marquee>
+        </div>
+      )}
+    </section>
+  )
+}

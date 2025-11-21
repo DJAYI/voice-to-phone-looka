@@ -1,0 +1,42 @@
+{
+  "common": {
+    "readMore": "Read More",
+    "readMoreAbout": "Read more about",
+    "learnMoreAbout": "Learn more about",
+    "viewMoreDetails": "View more details",
+    "emailPlaceholder": "Email Address",
+    "monthlyPlan": "Monthly",
+    "paginationNext": "Next",
+    "paginationPrevious": "Previous"
+  },
+  "widgets": {
+    "postSearchTitle": "Search Post",
+    "postSearchFormPlaceholder": "Search For ...",
+    "categoriesTitle": "Category",
+    "recentPostsTitle": "Recent Posts"
+  },
+  "career": {
+    "location": "Location",
+    "deadline": "Application Deadline",
+    "jobType": "Job Type"
+  },
+  "blog": {
+    "writtenBy": "Written By",
+    "publishedOn": "Published On",
+    "category": "Category"
+  },
+  "navigation": {
+    "buttonLabel": "Get Started"
+  },
+  "subscription": {
+    "label": "Subscribe to our newsletter for the latest updates"
+  },
+  "footer": {
+    "quickLinks": "Quick Links",
+    "legal": "Legal",
+    "resources": "Resources",
+    "description": "MMC FP is a San Francisco-based design and technology company founded in 2016. Their mission is to democratize design by making professional branding tools accessible to everyone.",
+    "copyright": "Copyright {{ year }} / All Rights Reserved By MMC FP / Built with love using [Astro Themes](https://getastrothemes.com/)",
+    "_comment": "We kindly appreciate it if you retain the theme copyright. Thank you for supporting Getastrothemes!"
+  }
+}

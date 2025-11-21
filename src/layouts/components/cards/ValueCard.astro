@@ -1,0 +1,27 @@
+---
+import Icons from "@/helpers/Icons.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+
+interface Props {
+  content: {
+    icon: string;
+    title: string;
+    description: string;
+  };
+}
+
+const { content, ...rest } = Astro.props;
+const { icon, title, description } = content;
+---
+
+<div class:list={["border px-6 py-8"]} {...rest}>
+  {
+    icon && (
+      <div class="bg-primary/5 mb-8 flex h-16 w-16 items-center justify-center rounded-full">
+        <Icons icon={icon as any} class="h-8 w-8 text-primary stroke-1" />
+      </div>
+    )
+  }
+  {title && <h3 class="text-h5 mb-3" set:html={markdownify(title)} />}
+  {description && <p set:html={markdownify(description)} />}
+</div>

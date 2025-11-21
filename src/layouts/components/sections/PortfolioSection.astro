@@ -1,0 +1,200 @@
+---
+import CustomButton from "../CustomButton.astro";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { getTaxonomy } from "@/lib/taxonomyParser.astro";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import { recursiveCloneObject } from "@/lib/utils/objectFunctions";
+import ContentList from "@/layouts/components/widgets/ContentList.astro";
+import config from ".astro/config.generated.json" assert { type: "json" };
+import type { CollectionEntry } from "astro:content";
+import type { Section } from "@/types";
+
+const { portfolioFolder } = config.settings;
+
+// Type for this section data
+type sectionType = Section &
+  CollectionEntry<"case-studies">["data"]["indexPortfolioSection"];
+
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the this section
+let defaultContent = (
+  await getEntryCTM("sections", "portfolio-section", Astro.currentLocale)
+)?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  enable = true,
+  headType = "heading",
+  uniqueId,
+  filter,
+  body,
+  head: { title, subtitle, button },
+} = actualContent as sectionType;
+
+let categories = await getTaxonomy(
+  portfolioFolder as "case-studies",
+  "categories",
+  Astro.currentLocale as string,
+);
+---
+
+{
+  enable && (
+    <section>
+      <div class="relative container overflow-hidden">
+        {headType === "heading" ? (
+          <div class="flex flex-wrap items-center justify-between gap-6 overflow-x-hidden lg:flex-nowrap">
+            <div class="lg:max-w-2xl" data-aos="fade-right-sm">
+              {subtitle && (
+                <span
+                  class="bg-primary/5 border-secondary text-primary mb-2.5 inline-block rounded-full border px-5 py-px"
+                  set:html={markdownify(subtitle)}
+                />
+              )}
+              {title && (
+                <h2
+                  class="text-h3 text-inherit"
+                  set:html={markdownify(title)}
+                />
+              )}
+            </div>
+            {button && button.enable && (
+              <div data-aos="fade-right-sm" data-aos-delay="200">
+                <CustomButton {...button} />
+              </div>
+            )}
+          </div>
+        ) : headType === "filter" ? (
+          // Tab Buttons
+          categories &&
+          categories.length > 0 && (
+            <nav
+              data-aos="fade-up-sm"
+              data-aos-delay="300"
+              class:list={[
+                "tab-buttons",
+                {
+                  "border-b": filter.layout === "classic",
+                  "flex flex-wrap gap-y-2": filter.layout === "modern",
+                },
+              ]}
+              role="tablist"
+              aria-label="Tabs"
+              aria-orientation="horizontal">
+              <button
+                role="tab"
+                type="button"
+                set:html={"All"}
+                data-hs-tab={"#" + uniqueId + "-" + "tab-" + 0}
+                aria-selected="true"
+                class:list={[
+                  "active text-start text-lg/tight",
+                  {
+                    "hs-tab-active:border-primary -mb-px border-b px-6 py-5":
+                      filter.layout === "classic",
+                    "hs-tab-active:bg-primary/5 hs-tab-active:text-primary px-4 py-3":
+                      filter.layout === "boxed",
+                    "hs-tab-active:border-transparent border-primary hs-tab-active:bg-primary hs-tab-active:text-white rounded-full border px-8 py-2.5":
+                      filter.layout === "modern",
+                    "after:bg-primary relative me-2 after:absolute after:top-[calc(50%-0.25rem)] after:-right-2.5 after:h-3 after:w-3 after:rounded-full after:content-[''] last:after:hidden":
+                      filter.layout === "modern",
+                  },
+                ]}
+              />
+              {categories.map((button, index: number) => (
+                <button
+                  role="tab"
+                  type="button"
+                  set:html={button.name}
+                  data-hs-tab={"#" + uniqueId + "-" + "tab-" + (index + 1)}
+                  aria-selected={"false"}
+                  class:list={[
+                    "text-start text-lg/tight",
+                    {
+                      "hs-tab-active:border-primary -mb-px border-b px-6 py-5":
+                        filter.layout === "classic",
+                      "hs-tab-active:bg-primary/5 hs-tab-active:text-primary px-5 py-3":
+                        filter.layout === "boxed",
+                      "hs-tab-active:border-transparent border-primary hs-tab-active:bg-primary hs-tab-active:text-white rounded-full border px-8 py-2.5":
+                        filter.layout === "modern",
+                      "after:bg-primary relative me-2 after:absolute after:top-[calc(50%-0.25rem)] after:-right-2.5 after:h-3 after:w-3 after:rounded-full after:content-[''] last:after:hidden":
+                        filter.layout === "modern",
+                    },
+                  ]}
+                />
+              ))}
+            </nav>
+          )
+        ) : null}
+
+        {/* Tab Contents */}
+        {categories && categories.length > 0 && (
+          <div
+            data-aos="fade-left-sm"
+            data-aos-delay={categories && categories.length > 0 ? "400" : "300"}
+            class="mt-8 md:mt-12">
+            <ContentList
+              role="tabpanel"
+              options={recursiveCloneObject(body)}
+              id={uniqueId + "-" + "tab-" + 0}
+            />
+            {categories.map((category: any, index: number) => (
+              <ContentList
+                role="tabpanel"
+                class="hidden"
+                options={recursiveCloneObject(body)}
+                filter={category}
+                id={uniqueId + "-" + "tab-" + (index + 1)}
+              />
+            ))}
+          </div>
+        )}
+      </div>
+    </section>
+  )
+}
+
+<script>
+  // @ts-expect-error
+  import AOS from "aos";
+
+  const parent = document.querySelector(".tab-buttons") as HTMLElement;
+
+  if (parent) {
+    const observer = new MutationObserver((mutations) => {
+      if (mutations.some((mutation) => mutation.type === "attributes")) {
+        AOS.refresh(); // Only refresh once for all relevant mutations
+      }
+    });
+
+    // Observe changes to `aria-selected` on child buttons
+    const observeButtons = () => {
+      parent.querySelectorAll("button").forEach((button) => {
+        observer.observe(button, {
+          attributes: true,
+          attributeFilter: ["aria-selected"],
+        });
+      });
+    };
+
+    observeButtons();
+
+    // Optionally, observe parent for dynamically added buttons
+    new MutationObserver(() => {
+      observeButtons(); // Re-observe in case new buttons are added
+    }).observe(parent, { childList: true });
+  }
+</script>

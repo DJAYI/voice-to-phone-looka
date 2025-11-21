@@ -1,0 +1,115 @@
+---
+import type { Section } from "@/types";
+import type { TypeOf } from "astro:schema";
+import type { marqueeConfig } from "@/content.config";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import Marquee from "@/components/widgets/Marquee.astro";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+
+// Type for each item in the marquee list
+export type MarqueeListItem = {
+  src: string;
+  alt: string;
+};
+
+// Type for this section data
+type sectionType = Section & {
+  list: MarqueeListItem[];
+  marquee: TypeOf<typeof marqueeConfig>;
+};
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the this section
+let defaultContent = (
+  await getEntryCTM("sections", "customers", Astro.currentLocale)
+)?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  enable = true,
+  description,
+  marquee,
+  list,
+} = actualContent as sectionType;
+
+if (!enable) return;
+---
+
+<section class="pt-16">
+  <div
+    class="container flex flex-col gap-6 overflow-x-hidden md:flex-row md:gap-12 lg:items-center lg:gap-24">
+    {
+      description && (
+        <p
+          data-aos="fade-left-sm"
+          class="shrink-0 opacity-80 md:w-80"
+          set:html={markdownify(description)}
+        />
+      )
+    }
+    <div
+      data-aos="fade-left-sm"
+      data-aos-delay="200"
+      class="relative flex items-center overflow-hidden before:absolute before:top-0 before:left-0 before:z-10 before:h-full before:w-20 before:bg-linear-to-r before:from-white before:to-transparent after:absolute after:top-0 after:right-0 after:h-full after:w-20 after:bg-linear-to-l after:from-white after:to-transparent before:md:w-32 after:md:w-32">
+      <Marquee marqueeElements={list.length} {...marquee}>
+        {
+          list.map((item) => (
+            <div
+              class:list={[
+                "px-4 md:px-6",
+                {
+                  "min-w-(--marquee-element-width-responsive) md:min-w-(--marquee-element-width)":
+                    !marquee.marqueeElementWidthAuto,
+                },
+                {
+                  "min-w-fit": marquee.marqueeElementWidthAuto,
+                },
+              ]}>
+              <OptimizedImage
+                src={item.src}
+                alt={item.alt}
+                height={46}
+                class:list={["h-7 min-h-8 min-w-fit"]}
+              />
+            </div>
+          ))
+        }
+        {
+          list.map((item) => (
+            <div
+              class:list={[
+                "px-4 md:px-6",
+                {
+                  "min-w-(--marquee-element-width-responsive) md:min-w-(--marquee-element-width)":
+                    !marquee.marqueeElementWidthAuto,
+                },
+                {
+                  "min-w-fit": marquee.marqueeElementWidthAuto,
+                },
+              ]}>
+              <OptimizedImage
+                src={item.src}
+                alt={item.alt}
+                height={46}
+                class="h-7 min-h-8 min-w-fit"
+              />
+            </div>
+          ))
+        }
+      </Marquee>
+    </div>
+  </div>
+</section>

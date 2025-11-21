@@ -1,0 +1,202 @@
+---
+/**
+ * Example Usage
+
+  // Default button (anchor tag)
+  <CustomButton label="Visit Home" url="/" />
+
+  // Outline variant linking externally
+  <CustomButton variant="outline" label="Astro Docs" url="https://astro.build" />
+
+  // Text variant with hover effect
+  <CustomButton variant="text" hoverEffect="text-flip" label="Learn More" url="/learn" />
+ */
+
+import type { TypeOf } from "astro:schema";
+import { getLocaleUrlCTM } from "@/lib/utils/i18nUtils";
+import CustomButtonContent from "./CustomButtonContent.astro";
+import type { sharedButton, sharedButtonTag } from "@/content.config";
+import Icons from "@/helpers/Icons.astro";
+
+type Props = TypeOf<typeof sharedButton | typeof sharedButtonTag>;
+
+let {
+  enable = true,
+  tag = "a",
+  title,
+  label,
+  url = "#",
+  rel,
+  size,
+  target,
+  showIcon = "false",
+  hoverEffect = "text-flip",
+  variant = "fill",
+  ...rest
+} = Astro.props as Props;
+
+if (!enable) return;
+
+const isCreativeHoverEffect = hoverEffect === "creative-fill";
+const isTextFlipHoverEffect = hoverEffect === "text-flip";
+const isMagneticHoverEffect = hoverEffect === "magnetic";
+const isMagneticTextFlipHoverEffect = hoverEffect === "magnetic-text-flip";
+
+const resolvedRel = url.startsWith("http")
+  ? rel || "noopener noreferrer"
+  : rel || undefined;
+const resolvedTarget = url.startsWith("http")
+  ? target || "_blank"
+  : target || undefined;
+
+const buttonClasses = [
+  "btn",
+  {
+    "creative-hover-anim": isCreativeHoverEffect,
+    "btn-md": size === "md",
+    "btn-outline": variant === "outline",
+    "btn-outline-white": variant === "outline-white",
+    "btn-primary": variant === "fill",
+    "btn-text has-icon-moving-animation no-underline": variant === "text",
+    "btn-text-white has-icon-moving-animation no-underline":
+      variant === "text-white",
+  },
+
+  (isTextFlipHoverEffect || isMagneticTextFlipHoverEffect) &&
+    "text-flip-hover-anim",
+  (isMagneticHoverEffect || isMagneticTextFlipHoverEffect) &&
+    "magnetic-hover-anim",
+];
+
+const isIconVisible = showIcon === "true";
+---
+
+{
+  tag === "a" ? (
+    <a
+      rel={resolvedRel}
+      target={resolvedTarget}
+      href={getLocaleUrlCTM(url, Astro.currentLocale)}
+      class:list={[
+        "btn-wrapper",
+        {
+          "has-icon-moving-animation": showIcon,
+        },
+        Astro.props.class,
+      ]}
+      {...rest}>
+      <div class:list={buttonClasses}>
+        <CustomButtonContent
+          {...{
+            label,
+            title,
+            variant,
+            isCreativeHoverEffect,
+            isTextFlipHoverEffect,
+            isMagneticTextFlipHoverEffect,
+          }}
+        />
+      </div>
+      {!variant.includes("text") && isIconVisible && (
+        <span class="icons-wrapper min-h-full">
+          <span class="icon icon-before flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="ArrowUpRight"
+              class="text-inherit">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </span>
+          <span class="icon icon-after flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="ArrowUpRight"
+              class="text-inherit">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </span>
+        </span>
+      )}
+    </a>
+  ) : (
+    <button
+      {...rest}
+      class:list={[
+        "btn-wrapper",
+        {
+          "has-icon-moving-animation": showIcon,
+        },
+        Astro.props.class,
+      ]}
+      {...rest}>
+      <div class:list={buttonClasses}>
+        <CustomButtonContent
+          {...{
+            label,
+            title,
+            variant,
+            isCreativeHoverEffect,
+            isTextFlipHoverEffect,
+            isMagneticTextFlipHoverEffect,
+          }}
+        />
+      </div>
+      {!variant.includes("text") && isIconVisible && (
+        <span class="icons-wrapper min-h-full">
+          <span class="icon icon-before flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="ArrowUpRight"
+              class="text-inherit">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </span>
+          <span class="icon icon-after flex items-center justify-center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              data-lucide="ArrowUpRight"
+              class="text-inherit">
+              <path d="M7 7h10v10" />
+              <path d="M7 17 17 7" />
+            </svg>
+          </span>
+        </span>
+      )}
+    </button>
+  )
+}

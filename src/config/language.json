@@ -1,0 +1,14 @@
+[
+  {
+    "languageName": "En",
+    "languageCode": "en",
+    "contentDir": "english",
+    "weight": 1
+  },
+  {
+    "languageName": "中文",
+    "languageCode": "zh",
+    "contentDir": "chinese",
+    "weight": 2
+  }
+]

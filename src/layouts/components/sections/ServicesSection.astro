@@ -1,0 +1,271 @@
+---
+import type { Section } from "@/types";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import ServiceCard from "@/layouts/components/cards/ServiceCard.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import config from ".astro/config.generated.json" assert { type: "json" };
+import { getCollectionCTM } from "@/lib/contentParser.astro";
+import CustomButton from "../CustomButton.astro";
+import overrideObjects from "@/lib/utils/overrideObjects";
+import Icons from "@/helpers/Icons.astro";
+
+// Type for service section data
+export type sectionType = Section & {
+  limit?: number | boolean;
+  cta?: "link" | "slider-nav";
+  colorScheme?: "light" | "dark";
+  showServicesAs?: "slider" | "static";
+  creativeShape?: { enable: boolean; position: "top" | "bottom" };
+};
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the service section
+let defaultContent = (
+  await getEntryCTM("sections", "services-section", Astro.currentLocale)
+)?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  cta,
+  limit,
+  title,
+  enable,
+  button,
+  subtitle,
+  colorScheme,
+  creativeShape,
+  showServicesAs,
+} = actualContent as sectionType;
+
+if (!enable) return;
+
+let services = await getCollectionCTM(
+  config.settings.servicesFolder as "services",
+  Astro.currentLocale,
+);
+
+// Limit the number of services to be displayed
+services =
+  limit && showServicesAs !== "slider"
+    ? services.slice(0, limit as number)
+    : services;
+---
+
+<section
+  class:list={[
+    {
+      "overflow-hidden":
+        creativeShape?.enable && creativeShape?.position !== "top",
+    },
+  ]}>
+  <div
+    class:list={[
+      "flex flex-col justify-start gap-12 md:gap-16",
+      { "bg-theme-dark py-16 md:py-28": colorScheme === "dark" },
+    ]}>
+    <div class="container">
+      <div
+        class="flex flex-col flex-wrap justify-between gap-8 lg:flex-row lg:items-center">
+        <div class="shrink-0 lg:lg:max-w-2xl" data-aos="fade-up-sm">
+          {
+            subtitle && (
+              <span
+                class:list={[
+                  "mb-2.5 inline-block rounded-full border px-5 py-px",
+                  colorScheme === "dark"
+                    ? "border-white/5 bg-white/5 text-white"
+                    : "bg-primary/5 border-secondary text-primary",
+                ]}
+                set:html={markdownify(subtitle)}
+              />
+            )
+          }
+          {
+            title && (
+              <h2
+                class:list={[
+                  "text-h3",
+                  colorScheme === "dark" ? "text-white" : "text-dark",
+                ]}
+                set:html={markdownify(title)}
+              />
+            )
+          }
+        </div>
+
+        {
+          button?.enable && cta === "link" ? (
+            // CTA button
+            <div data-aos="fade-up-sm" data-aos-delay="200">
+              <CustomButton {...button} />
+            </div>
+          ) : showServicesAs === "slider" && cta === "slider-nav" ? (
+            // Slider Controls
+            <div class="flex gap-8" data-aos="fade-up-sm" data-aos-delay="200">
+              <button class="services-slider-btn-prev bg-secondary hover:bg-primary group/slider-control relative flex h-14 w-14 items-center justify-center rounded-full transition duration-300">
+                <Icons
+                  icon="ChevronLeft"
+                  class="text-primary group-hover/slider-control:text-secondary h-7 w-7 transition duration-300 group-hover/slider-control:-translate-x-1"
+                />
+              </button>
+              <button class="services-slider-btn-next bg-secondary hover:bg-primary group/slider-control relative flex h-14 w-14 rotate-180 items-center justify-center rounded-full transition duration-300">
+                <Icons
+                  icon="ChevronLeft"
+                  class="text-primary group-hover/slider-control:text-secondary h-7 w-7 transition duration-300 group-hover/slider-control:-translate-x-1"
+                />
+              </button>
+            </div>
+          ) : null
+        }
+      </div>
+    </div>
+    {
+      creativeShape?.enable ? (
+        <div
+          class:list={[
+            "has-light-shape relative after:absolute after:inset-x-0 after:h-screen after:w-full",
+            {
+              "pb-4": showServicesAs === "slider",
+            },
+            {
+              "after:top-68.25 after:bg-stone-50 after:md:top-72":
+                creativeShape?.position === "bottom",
+            },
+            {
+              "after:bg-theme-light after:bottom-[calc(100%-18rem)] after:-z-20":
+                creativeShape?.position === "top",
+            },
+          ]}>
+          <div class="relative z-10 container">
+            {services && showServicesAs === "static" ? (
+              <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                {services.map((item, index) => (
+                  <ServiceCard
+                    data-aos="fade-up-sm"
+                    data-aos-delay={((index % 3) + 1) * 100}
+                    class:list={{
+                      "box-shadow-primary": colorScheme === "light",
+                    }}
+                    content={item}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div class="swiper services-swiper w-full">
+                <div class="swiper-wrapper">
+                  {services &&
+                    services.map((item, index) => (
+                      <div
+                        class:list={[
+                          "swiper-slide h-auto!",
+                          { "p-2": colorScheme === "light" },
+                        ]}>
+                        <ServiceCard
+                          class:list={[
+                            "min-h-full",
+                            {
+                              "box-shadow-primary": colorScheme === "light",
+                            },
+                          ]}
+                          content={item}
+                          data-aos="fade-up-sm"
+                          data-aos-delay={((index % 3) + 1) * 100}
+                        />
+                      </div>
+                    ))}
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ) : (
+        <div class="container">
+          {services && showServicesAs === "static" ? (
+            <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {services.map((item, index) => (
+                <ServiceCard
+                  data-aos="fade-up-sm"
+                  data-aos-delay={((index % 3) + 1) * 100}
+                  class:list={{
+                    "box-shadow-primary": colorScheme === "light",
+                  }}
+                  content={item}
+                />
+              ))}
+            </div>
+          ) : (
+            <div class="swiper services-swiper w-full">
+              <div class="swiper-wrapper">
+                {services &&
+                  services.map((item, index) => (
+                    <div
+                      class:list={[
+                        "swiper-slide h-auto!",
+                        { "p-2": colorScheme === "light" },
+                      ]}>
+                      <ServiceCard
+                        data-aos="fade-up-sm"
+                        data-aos-delay={((index % 3) + 1) * 100}
+                        class:list={[
+                          "min-h-full",
+                          {
+                            "box-shadow-primary": colorScheme === "light",
+                          },
+                        ]}
+                        content={item}
+                      />
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+        </div>
+      )
+    }
+  </div>
+  <script>
+    window.addEventListener("load", async function () {
+      const { Swiper } = await import("swiper");
+      const { EffectFade, Navigation, Controller, Autoplay } = await import(
+        "swiper/modules"
+      );
+
+      // Initialize content Swiper with navigation
+      new Swiper(".services-swiper", {
+        modules: [EffectFade, Navigation, Controller, Autoplay],
+        speed: 1000,
+        spaceBetween: 20,
+        breakpoints: {
+          540: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        },
+        loop: true,
+        autoplay: {
+          delay: 3000,
+        },
+        navigation: {
+          nextEl: ".services-slider-btn-next",
+          prevEl: ".services-slider-btn-prev",
+        },
+      });
+    });
+  </script>
+</section>

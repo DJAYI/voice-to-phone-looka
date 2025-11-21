@@ -1,0 +1,59 @@
+---
+import Icons from "@/helpers/Icons.astro";
+import config from ".astro/config.generated.json" assert { type: "json" };
+import { getCollectionCTM } from "@/lib/contentParser.astro";
+import { getLocaleUrlCTM } from "@/lib/utils/i18nUtils.ts";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  currentPortfolio: CollectionEntry<"case-studies">;
+  class?: string;
+}
+
+const portfolios = await getCollectionCTM(
+  config.settings.portfolioFolder as "case-studies",
+  Astro.currentLocale,
+);
+
+const { currentPortfolio } = Astro.props;
+
+const currentPortfolioSlug = getLocaleUrlCTM(
+  currentPortfolio.id,
+  Astro.currentLocale,
+  currentPortfolio.collection,
+);
+
+if (portfolios.length === 0) return;
+---
+
+<div class="space-y-4">
+  <h2 class="text-h5 border-border-light/50 mb-4 border-b pb-4">
+    Other Case Studies
+  </h2>
+  <div class="space-y-2">
+    {
+      portfolios.map((item) => {
+        const slug = getLocaleUrlCTM(
+          item.data?.customSlug || item.id,
+          Astro.currentLocale,
+          portfolios[0].collection,
+        );
+
+        return (
+          <a
+            href={slug}
+            class:list={[
+              "hover:bg-primary text-text-default flex items-center justify-between gap-4 border px-5 py-2.5 transition duration-300 hover:text-white",
+              {
+                "bg-primary text-white":
+                  currentPortfolio && slug === currentPortfolioSlug,
+              },
+            ]}>
+            <span class="truncate">{item.data.title}</span>
+            <Icons icon="ChevronRight" class="text-xl" />
+          </a>
+        );
+      })
+    }
+  </div>
+</div>

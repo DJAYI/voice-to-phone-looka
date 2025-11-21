@@ -1,0 +1,94 @@
+---
+import Icons from "@/helpers/Icons.astro";
+
+const {
+  label,
+  variant,
+  title,
+  isTextFlipHoverEffect,
+  isMagneticTextFlipHoverEffect,
+} = Astro.props;
+
+// Applcable only if button have the text-flip hover animation
+let dataContent;
+if (isTextFlipHoverEffect || isMagneticTextFlipHoverEffect) {
+  dataContent = !variant.includes("text") ? label : undefined;
+}
+
+// Check if the label contain "learn more" "read more" type of text that need to add support for accessibility
+let addAriaLabel = false;
+if (
+  label?.toLowerCase().includes("learn more") ||
+  label?.toLowerCase().includes("read more")
+) {
+  addAriaLabel = true;
+}
+---
+
+{
+  (isTextFlipHoverEffect || isMagneticTextFlipHoverEffect) &&
+  !variant.includes("text") ? (
+    <>
+      <span
+        class="text-flip-inner"
+        set:html={label}
+        data-content={dataContent}
+      />
+      {addAriaLabel && <span class="sr-only" set:html={title || "Details"} />}
+    </>
+  ) : (
+    <>
+      <Fragment set:html={label} />
+      {addAriaLabel && <span class="sr-only" set:html={title || "Details"} />}
+    </>
+  )
+}
+
+{
+  variant.includes("text") ? (
+    <span class="icons-wrapper ms-2 -mb-px inline-flex min-h-[.9em] min-w-[1em] items-center justify-center">
+      <span class="icon icon-before flex items-center justify-center">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          data-icon
+          class="text-inherit">
+          <>
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </>
+        </svg>
+      </span>
+      <span
+        class="icon icon-after flex items-center justify-center"
+        aria-hidden="true">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          data-icon
+          class="text-inherit">
+          <>
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </>
+        </svg>
+      </span>
+    </span>
+  ) : (
+    <span class="hover-bg" />
+  )
+}

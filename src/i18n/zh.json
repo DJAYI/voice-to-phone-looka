@@ -1,0 +1,42 @@
+{
+  "common": {
+    "readMore": "了解更多",
+    "readMoreAbout": "进一步了解",
+    "learnMoreAbout": "探索更多",
+    "viewMoreDetails": "查看详细信息",
+    "emailPlaceholder": "电子邮箱地址",
+    "monthlyPlan": "月付方案",
+    "paginationNext": "下一页",
+    "paginationPrevious": "上一页"
+  },
+  "widgets": {
+    "postSearchTitle": "搜索文章",
+    "postSearchFormPlaceholder": "输入关键词…",
+    "categoriesTitle": "分类",
+    "recentPostsTitle": "最新文章"
+  },
+  "career": {
+    "location": "工作地点",
+    "deadline": "申请截止",
+    "jobType": "职位类型"
+  },
+  "blog": {
+    "writtenBy": "作者",
+    "publishedOn": "发布于",
+    "category": "文章分类"
+  },
+  "navigation": {
+    "buttonLabel": "立即开始"
+  },
+  "subscription": {
+    "label": "订阅我们的简讯，第一时间获取最新动态"
+  },
+  "quickLinks": "快速链接",
+  "footer": {
+    "quickLinks": "快速链接",
+    "legal": "法律信息",
+    "resources": "资源中心",
+    "description": "<strong class=\"text-accent\">MMC FP Sdn Bhd</strong><br />199701019804 (0435301-X)<br />59.20, Exchange 106,<br />Tun Razak Exchange (TRX),<br />55188 Kuala Lumpur<br />CMSL: eCMSL/A0224/2008",
+    "copyright": "版权所有 {{ year }} / MMC FP Sdn Bhd 保留所有权利"
+  }
+}

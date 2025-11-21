@@ -1,0 +1,184 @@
+---
+import type { Section } from "@/types";
+import Marquee from "@/components/widgets/Marquee.astro";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import type { InferEntrySchema } from "astro:content";
+import { markdownify, toSentenceCase } from "@/lib/utils/textConverter";
+import config from ".astro/config.generated.json" assert { type: "json" };
+import { getLocaleUrlCTM, useTranslations } from "@/lib/utils/i18nUtils.ts";
+import Icons from "@/helpers/Icons.astro";
+
+const t = await useTranslations(Astro.currentLocale as string);
+
+const { servicesFolder } = config.settings;
+
+// Type for this section data
+type sectionType = Section & InferEntrySchema<"services">["details"];
+
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content using getEntry for the this section (If applicable)
+let defaultContent = {} as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let { enable = true, title, description, list } = actualContent as sectionType;
+
+const { serviceDetailsMarquee: marquee } = (
+  await getEntryCTM(servicesFolder as "services", "-index", Astro.currentLocale)
+)?.data;
+---
+
+{
+  enable && (
+    <section class="overflow-hidden">
+      <div class="container">
+        <div class="flex flex-wrap items-center justify-between gap-6 overflow-x-hidden lg:flex-nowrap">
+          <div class="lg:max-w-lg" data-aos="fade-right-sm">
+            {title && (
+              <h2
+                class="text-h3 has-text-highlight text-inherit"
+                set:html={markdownify(title)}
+              />
+            )}
+          </div>
+          {description && (
+            <p
+              data-aos="fade-right-sm"
+              data-aos-delay="200"
+              class="opacity-80 lg:max-w-md xl:max-w-3xl"
+              set:html={markdownify(description)}
+            />
+          )}
+        </div>
+      </div>
+      {marquee && (
+        <div
+          data-aos-delay="300"
+          data-aos="fade-up-sm"
+          class="relative mt-12 flex justify-center overflow-x-hidden md:mt-16">
+          <Marquee
+            class="items-stretch"
+            marqueeElements={list?.length}
+            {...marquee}>
+            {list?.map((item) => (
+              <div class="min-w-(--marquee-element-width-responsive) px-3 md:min-w-(--marquee-element-width)">
+                <article class="bg-theme-light group hover:bg-primary min-h-full px-5 py-5 transition duration-300">
+                  <div class="after:from-primary after:via-primary/40 relative flex items-center justify-center overflow-hidden via-20% to-transparent after:pointer-events-none after:absolute after:inset-0 after:z-10 after:bg-linear-to-t after:transition-opacity after:duration-300 after:md:opacity-0 group-hover:md:after:opacity-100">
+                    {item.button?.enable && (
+                      <span class="font-secondary bg-primary pointer-events-none absolute z-20 flex size-20 flex-col items-center justify-center rounded-full text-lg whitespace-nowrap text-white transition duration-500 md:size-24 md:gap-2 md:text-2xl/none md:opacity-0 group-hover:md:opacity-100">
+                        <span class="text-sm md:text-2xl">
+                          <Icons
+                            icon="ArrowUpRight"
+                            class="h-10 w-10 text-white"
+                          />
+                        </span>
+                        {item.button?.label}
+                      </span>
+                    )}
+                    <OptimizedImage
+                      src={item.image}
+                      alt={toSentenceCase("Image about " + item.title)}
+                      class="h-72 w-full object-cover transition duration-500 md:h-80"
+                    />
+                    {item.button?.enable && (
+                      <a
+                        class="absolute inset-0 z-30"
+                        href={getLocaleUrlCTM(
+                          item.button?.url,
+                          Astro.currentLocale,
+                        )}
+                        title={toSentenceCase(
+                          t("common.learnMoreAbout") + " " + item.title,
+                        )}
+                      />
+                    )}
+                  </div>
+                  <div class="space-y-2.5 pt-6">
+                    {item.title && (
+                      <h2
+                        class="text-h5 mt-2 mb-4 group-hover:text-white"
+                        set:html={markdownify(item.title)}
+                      />
+                    )}
+                    {item.description && (
+                      <p
+                        class="opacity-70 group-hover:text-white group-hover:opacity-100"
+                        set:html={markdownify(item.description)}
+                      />
+                    )}
+                  </div>
+                </article>
+              </div>
+            ))}
+            {list?.map((item) => (
+              <div
+                class="min-w-(--marquee-element-width-responsive) px-3 md:min-w-(--marquee-element-width)"
+                aria-hidden="true">
+                <article class="bg-theme-light group hover:bg-primary min-h-full px-5 py-5 transition duration-300">
+                  <div class="after:from-primary after:via-primary/40 relative flex items-center justify-center overflow-hidden via-20% to-transparent after:pointer-events-none after:absolute after:inset-0 after:z-10 after:bg-linear-to-t after:transition-opacity after:duration-300 after:md:opacity-0 group-hover:md:after:opacity-100">
+                    {item.button?.enable && (
+                      <span class="font-secondary bg-primary pointer-events-none absolute z-20 flex size-20 flex-col items-center justify-center rounded-full text-lg whitespace-nowrap text-white transition duration-500 md:size-24 md:gap-2 md:text-2xl/none md:opacity-0 group-hover:md:opacity-100">
+                        <span class="text-sm md:text-2xl">
+                          <Icons
+                            icon="ArrowUpRight"
+                            class="h-10 w-10 text-white"
+                          />
+                        </span>
+                        {item.button?.label}
+                      </span>
+                    )}
+                    <OptimizedImage
+                      src={item.image}
+                      alt={toSentenceCase("Image related to " + item.title)}
+                      class="h-72 w-full object-cover transition duration-500 md:h-80"
+                    />
+                    {item.button?.enable && (
+                      <a
+                        tabindex="-1"
+                        class="absolute inset-0 z-30"
+                        href={getLocaleUrlCTM(
+                          item.button?.url,
+                          Astro.currentLocale,
+                        )}
+                        title={toSentenceCase(
+                          t("common.learnMoreAbout") + " " + item.title,
+                        )}
+                      />
+                    )}
+                  </div>
+                  <div class="space-y-2.5 pt-6">
+                    {item.title && (
+                      <h2
+                        class="text-h5 mt-2 mb-4 group-hover:text-white"
+                        set:html={markdownify(item.title)}
+                      />
+                    )}
+                    {item.description && (
+                      <p
+                        class="opacity-70 group-hover:text-white group-hover:opacity-100"
+                        set:html={markdownify(item.description)}
+                      />
+                    )}
+                  </div>
+                </article>
+              </div>
+            ))}
+          </Marquee>
+        </div>
+      )}
+    </section>
+  )
+}

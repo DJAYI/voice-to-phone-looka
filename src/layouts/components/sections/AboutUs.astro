@@ -1,0 +1,122 @@
+---
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import VideoModal from "@/components/widgets/VideoModal.astro";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { Achievements, Banner, Section } from "@/types";
+import AnimatedNumber from "@/layouts/components/widgets/AnimatedNumber.astro";
+import Icons from "@/helpers/Icons.astro";
+import CustomButton from "../CustomButton.astro";
+
+// Type for this section data
+type sectionType = Section & {
+  achievements: Achievements;
+  banner: Banner;
+};
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the this section
+let defaultContent = (
+  await getEntryCTM("sections", "about-us", Astro.currentLocale)
+)?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  enable = true,
+  title,
+  button,
+  achievements,
+  banner,
+} = actualContent as sectionType;
+---
+
+{
+  enable && (
+    <section>
+      <div class="container flex flex-col justify-start gap-12 md:gap-16">
+        {title && (
+          <div class="flex flex-wrap items-center justify-between gap-6 overflow-x-hidden md:flex-nowrap">
+            <h2
+              data-aos="fade-right-sm"
+              class="text-h3 max-w-xl"
+              set:html={markdownify(title)}
+            />
+            <div data-aos="fade-right-sm" data-aos-delay="200">
+              {button && (
+                <CustomButton
+                  class="text-base-sm capitalize md:text-base"
+                  {...button}
+                />
+              )}
+            </div>
+          </div>
+        )}
+        {achievements && achievements.enable && (
+          <div class="has-animated-number grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {achievements.list.map((item, index) => (
+              <div
+                data-aos="fade-up-sm"
+                data-aos-delay={index * 200}
+                class="to-primary/5 space-y-4 bg-linear-to-b from-white px-8 py-10">
+                {item.value && (
+                  <h3 class="relative">
+                    <AnimatedNumber
+                      class="text-h2 md:text-h1 from-primary bg-linear-to-b via-white via-80% to-transparent bg-clip-text text-transparent"
+                      childClass="has-gradients-text"
+                      content={item}
+                    />
+                  </h3>
+                )}
+                {item.description && <p set:html={item.description} />}
+              </div>
+            ))}
+          </div>
+        )}
+        {banner && banner.enable && banner.image && banner.image.src && (
+          <div
+            data-aos="fade-up-sm"
+            data-aos-delay="300"
+            class="flex items-center justify-center">
+            {banner.video && banner.video.id && (
+              <button
+                type="button"
+                title="Play Video"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls={"#" + banner.video.id}
+                data-hs-overlay={"#" + banner.video.id}
+                data-hs-overlay-options={`{"emulateScrollbarSpace" : true}`}
+                class="video-modal-toggle has-animated-waves absolute flex h-20 w-20 items-center justify-center rounded-full transition-transform duration-300 hover:scale-110 lg:h-20 lg:w-20">
+                <div class="icon relative z-10 flex h-20 w-20 items-center justify-center rounded-full">
+                  <Icons
+                    icon="Play"
+                    class="fill-primary text-primary me-1 ml-2 h-6 w-6 outline-0 lg:h-8 lg:w-8"
+                  />
+                </div>
+              </button>
+            )}
+            <OptimizedImage
+              height={500}
+              src={banner.image.src}
+              alt={banner.image.alt}
+              class="h-[300px]! w-full origin-center object-cover md:h-[500px]!"
+            />
+          </div>
+        )}
+      </div>
+      {banner?.video && <VideoModal video={banner.video} />}
+    </section>
+  )
+}

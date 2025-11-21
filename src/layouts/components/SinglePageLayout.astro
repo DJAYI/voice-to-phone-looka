@@ -1,0 +1,135 @@
+---
+import { render } from "astro:content";
+import ContentMeta from "./widgets/ContentMeta.astro";
+import { useTranslations } from "@/lib/utils/i18nUtils";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import TableOfContents from "./widgets/TableOfContents.astro";
+import OptimizedImage from "./utilities/OptimizedImage.astro";
+import { markdownify, slugifyyy } from "@/lib/utils/textConverter";
+import config from ".astro/config.generated.json" assert { type: "json" };
+import dateFormat from "@/lib/utils/dateFormat";
+
+const { content, layout = "modern" } = Astro.props;
+const { title, date, image, author, excerpt, categories, masonryImage } =
+  content.data || {};
+
+const translations = await useTranslations(Astro.currentLocale as string);
+const { tableOfContents } = config.settings.markup;
+
+const { Content, headings } = await render(content);
+
+// Get Author Details
+let authorEntry = [];
+if (author) {
+  const slug = slugifyyy(author);
+  const entry = await getEntryCTM("author", slug, Astro.currentLocale);
+  authorEntry = entry?.data || [];
+}
+
+// Check if table of contents is enable
+const tocEnabled = tableOfContents?.enable && headings?.length > 0;
+---
+
+<section>
+  <div class="container">
+    <div class="grid grid-cols-1 justify-items-center space-y-12">
+      <!-- Post/Portfolio Meta -->
+      {
+        layout === "modern" ? (
+          <div class="max-w-full space-y-8 text-center lg:max-w-3xl">
+            <div>
+              {categories && categories.length > 0 && (
+                <ul class="mb-2 flex items-center justify-center gap-2">
+                  {categories.map((category: string) => (
+                    <li
+                      class="inline-block text-sm font-medium tracking-wider"
+                      set:html={markdownify(category)}
+                    />
+                  ))}
+                  <li>·</li>
+                  <li>
+                    {date && (
+                      <p
+                        class="text-sm font-medium"
+                        set:html={dateFormat(date)}
+                      />
+                    )}
+                  </li>
+                </ul>
+              )}
+
+              {title && <h1 class="text-h3 md:text-h2" set:html={title} />}
+            </div>
+            {excerpt && <p set:html={markdownify(excerpt)} />}
+            <div class="flex justify-center gap-4">
+              {authorEntry && authorEntry.title && (
+                <div class="flex flex-wrap justify-center gap-4">
+                  {authorEntry.image && (
+                    <OptimizedImage
+                      width={64}
+                      height={64}
+                      src={authorEntry.image}
+                      alt={authorEntry.title || "author image"}
+                      class="border-border-light/75 h-16 w-16 rounded-full border-4"
+                    />
+                  )}
+                  <div class="text-start">
+                    {authorEntry.title && (
+                      <p
+                        class="font-medium"
+                        set:html={markdownify(authorEntry.title)}
+                      />
+                    )}
+                    {authorEntry.role && (
+                      <p set:html={markdownify(authorEntry.role)} />
+                    )}
+                  </div>
+                </div>
+              )}
+            </div>
+          </div>
+        ) : (
+          <div class="w-full max-w-full space-y-8 lg:max-w-4xl">
+            {title && <h1 class="text-h3 md:text-h2" set:html={title} />}
+            {excerpt && <p set:html={markdownify(excerpt)} />}
+
+            <ContentMeta
+              content={{
+                author: authorEntry,
+                date,
+                categories,
+                translations,
+              }}
+            />
+          </div>
+        )
+      }
+
+      <!-- Post/Portfolio Image -->
+      {
+        (masonryImage || image) && (
+          <OptimizedImage
+            src={(masonryImage || image) as string}
+            width={896}
+            height={384}
+            alt={title}
+            class="h-96 w-full object-cover lg:max-w-4xl"
+          />
+        )
+      }
+      <div class="w-full max-w-full space-y-8 lg:max-w-4xl">
+        <!-- Table of Contents -->
+        {tocEnabled && <TableOfContents toc={headings} marker={false} />}
+
+        <!-- Main Content -->
+        {
+          Content && (
+            <div class="prose-styles content has-video-modal">
+              <Content />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>

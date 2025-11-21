@@ -1,0 +1,395 @@
+{
+  "main": [
+    {
+      "enable": true,
+      "name": "大型选单",
+      "hasMegaMenu": true,
+      "testimonial": {
+        "enable": true,
+        "image": "/images/customer-image.png",
+        "content": "MMC FP 的战略规划帮助我们精简营运并开拓新的市场机会，过去一年营收成长了 25%。"
+      },
+      "services": {
+        "enable": true,
+        "name": "服务项目"
+      },
+      "menus": [
+        {
+          "name": "标准页面",
+          "enable": true,
+          "children": [
+            {
+              "name": "",
+              "enable": true,
+              "children": [
+                {
+                  "enable": true,
+                  "name": "服务",
+                  "url": "/services/"
+                },
+                {
+                  "enable": true,
+                  "name": "单项服务",
+                  "url": "/services/service-01/"
+                },
+                {
+                  "enable": true,
+                  "name": "案例单页",
+                  "url": "/case-studies/case-studies-01/"
+                },
+                {
+                  "enable": true,
+                  "name": "招募",
+                  "url": "/career/"
+                },
+                {
+                  "enable": true,
+                  "name": "职位资讯",
+                  "url": "/career/job-01/"
+                }
+              ]
+            },
+            {
+              "name": "",
+              "enable": true,
+              "children": [
+                {
+                  "enable": true,
+                  "name": "关于我们",
+                  "url": "/about/"
+                },
+                {
+                  "enable": true,
+                  "name": "常见问题",
+                  "url": "/faq"
+                },
+                {
+                  "enable": true,
+                  "name": "团队",
+                  "url": "/team"
+                },
+                {
+                  "enable": true,
+                  "name": "定价",
+                  "url": "/pricing/",
+                  "badge": {
+                    "enable": true,
+                    "label": "全新",
+                    "color": "primary",
+                    "_color_comment": "color expected value - primary, info, success, danger",
+                    "type": "text"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "博客",
+          "enable": true,
+          "children": [
+            {
+              "name": "列表",
+              "enable": true,
+              "children": [
+                {
+                  "enable": true,
+                  "name": "经典",
+                  "url": "/blog/"
+                },
+                {
+                  "enable": true,
+                  "name": "现代",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "name": "单篇文章",
+              "enable": true,
+              "children": [
+                {
+                  "enable": true,
+                  "name": "极简",
+                  "url": ""
+                },
+                {
+                  "enable": true,
+                  "name": "现代",
+                  "url": "/blog/post-1/"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "作品集",
+          "enable": true,
+          "children": [
+            {
+              "name": "列表",
+              "enable": true,
+              "children": [
+                {
+                  "enable": true,
+                  "name": "经典与瀑布",
+                  "url": ""
+                },
+                {
+                  "enable": true,
+                  "name": "叠加与瀑布",
+                  "url": ""
+                }
+              ]
+            },
+            {
+              "name": "单个项目",
+              "enable": true,
+              "children": [
+                {
+                  "enable": true,
+                  "name": "现代",
+                  "url": ""
+                },
+                {
+                  "enable": true,
+                  "name": "现代含侧栏",
+                  "url": "/case-studies/case-studies-01/"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "页面",
+      "enable": true,
+      "hasChildren": true,
+      "children": [
+        {
+          "enable": true,
+          "name": "首页",
+          "url": "/"
+        },
+        {
+          "enable": true,
+          "name": "关于我们",
+          "url": "/about/"
+        },
+        {
+          "enable": true,
+          "name": "服务",
+          "hasChildren": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "服务",
+              "url": "/services/"
+            },
+            {
+              "enable": true,
+              "name": "单项服务",
+              "url": "/services/service-01/"
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "name": "案例研究",
+          "hasChildren": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "经典",
+              "url": "/case-studies/classic/"
+            },
+            {
+              "enable": true,
+              "name": "经典瀑布",
+              "url": "/case-studies/classic-masonry/"
+            },
+            {
+              "enable": true,
+              "name": "叠加",
+              "url": "/case-studies/overlay/"
+            },
+            {
+              "enable": true,
+              "name": "叠加瀑布",
+              "url": "/case-studies/"
+            },
+            {
+              "enable": true,
+              "name": "单独",
+              "url": "/case-studies/case-studies-01/"
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "name": "招募",
+          "hasChildren": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "招募",
+              "url": "/career/"
+            },
+            {
+              "enable": true,
+              "name": "职位资讯",
+              "url": "/career/job-01/"
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "name": "博客",
+          "hasChildren": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "经典",
+              "url": "/blog/"
+            },
+            {
+              "enable": true,
+              "name": "现代",
+              "url": "/blog/modern/"
+            },
+            {
+              "enable": true,
+              "name": "极简文章",
+              "url": "/blog/single-minimal/"
+            },
+            {
+              "enable": true,
+              "name": "现代文章",
+              "url": "/blog/post-1/"
+            }
+          ]
+        },
+        {
+          "enable": true,
+          "name": "团队",
+          "url": "/team"
+        },
+        {
+          "enable": true,
+          "name": "定价",
+          "url": "/pricing/",
+          "badge": {
+            "enable": true,
+            "label": "全新",
+            "color": "primary",
+            "colorComment": "color expected value - primary, info, success, danger",
+            "type": "text"
+          }
+        },
+        {
+          "enable": true,
+          "name": "常见问题",
+          "url": "/faq"
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "组件",
+      "url": "/elements/",
+      "badge": {
+        "enable": true,
+        "label": "全新",
+        "color": "primary",
+        "_color_comment": "color expected value - primary, info, success, danger",
+        "type": "text"
+      }
+    },
+    {
+      "enable": true,
+      "name": "联系",
+      "url": "/contact/",
+      "badge": {
+        "enable": true,
+        "label": "全新",
+        "color": "danger",
+        "_color_comment": "color expected value - primary, info, success, danger",
+        "type": "dot"
+      }
+    }
+  ],
+  "footerMenu": [
+    {
+      "enable": true,
+      "name": "条款与条件",
+      "url": "/terms-conditions/"
+    },
+    {
+      "enable": true,
+      "name": "隐私与政策",
+      "url": "/privacy-policy/"
+    }
+  ],
+  "footerMenuQuickLink": [
+    {
+      "enable": true,
+      "name": "关于我们",
+      "url": "/about/"
+    },
+    {
+      "enable": true,
+      "name": "联系我们",
+      "url": "/contact/"
+    },
+    {
+      "enable": true,
+      "name": "定价",
+      "url": "/pricing/"
+    },
+    {
+      "enable": true,
+      "name": "客户见证",
+      "url": "/"
+    },
+    {
+      "enable": true,
+      "name": "团队成员",
+      "url": "/team/"
+    },
+    {
+      "enable": true,
+      "name": "我们的服务",
+      "url": "/services/"
+    }
+  ],
+  "footerMenuResources": [
+    {
+      "enable": true,
+      "name": "博客",
+      "url": "/blog/"
+    },
+    {
+      "enable": true,
+      "name": "常见问题",
+      "url": "/faq/"
+    },
+    {
+      "enable": true,
+      "name": "案例研究",
+      "url": "/case-studies/"
+    }
+  ],
+  "footerMenuLegal": [
+    {
+      "enable": true,
+      "name": "条款与条件",
+      "url": "/terms-conditions/"
+    },
+    {
+      "enable": true,
+      "name": "隐私政策",
+      "url": "/privacy-policy/"
+    }
+  ]
+}

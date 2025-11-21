@@ -1,0 +1,92 @@
+---
+import { render } from "astro:content";
+import Sidebar from "./widgets/Sidebar.astro";
+import buildToc from "@/lib/utils/buildToc";
+import ListIcon from "./widgets/ListIcon.astro";
+import TOC from "./widgets/TableOfContents.astro";
+import type { CollectionEntry } from "astro:content";
+import OptimizedImage from "./utilities/OptimizedImage.astro";
+import config from ".astro/config.generated.json" assert { type: "json" };
+
+interface Props {
+  content: CollectionEntry<"case-studies">;
+}
+
+const { content } = Astro.props;
+const { tableOfContents } = config.settings.markup;
+const { title, image, masonryImage, information } = content.data;
+
+let tocHeadings;
+const { Content, headings } = await render(content);
+
+// Generate table of contents
+if (headings) {
+  tocHeadings = buildToc(headings);
+}
+
+// Check if table of contents is enable
+const tocEnabled =
+  tableOfContents?.enable && tocHeadings && tocHeadings.length > 0;
+---
+
+<section>
+  <div
+    class="container grid grid-cols-1 gap-x-6 gap-y-16 lg:grid-cols-12 lg:items-start">
+    <Sidebar
+      content={{
+        widgets: ["RelatedPortfolios", "CtaBlock"],
+        sticky: true,
+        position: "left",
+        widgetsContent: {
+          relatedPortfolios: { currentPortfolio: content },
+        },
+      }}
+    />
+
+    <div
+      class="has-video-modal order-1 space-y-10 lg:order-2 lg:col-span-8 lg:bg-white lg:p-5">
+      {
+        (masonryImage || image) && (
+          <OptimizedImage
+            src={(masonryImage || image) as string}
+            width={896}
+            height={384}
+            alt={title}
+            class="h-96 w-full object-cover"
+          />
+        )
+      }
+
+      <div class="max-w-full space-y-8">
+        <!-- List With Styled Icon -->
+        {information && <ListIcon content={information} />}
+
+        {title && <h1 class="text-h3" set:html={title} />}
+
+        <!-- Table of Contents -->
+        {tocEnabled && tocHeadings && <TOC toc={tocHeadings} marker={false} />}
+
+        <!-- Main Content -->
+        {
+          Content && (
+            <div class="prose-styles content has-video-modal">
+              <Content />
+            </div>
+          )
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  import { stickySidebar } from "@/plugins/sticky-sidebar.js";
+
+  const sidebar = document.querySelector(".sticky-sidebar");
+  if (sidebar) {
+    new stickySidebar(sidebar, {
+      offsetTop: 132,
+      offsetBottom: 20,
+    });
+  }
+</script>

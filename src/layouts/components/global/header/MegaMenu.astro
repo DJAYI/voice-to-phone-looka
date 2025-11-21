@@ -1,0 +1,173 @@
+---
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import { getCollectionCTM } from "@/lib/contentParser.astro";
+import type { NavigationLink } from "@/types";
+import config from ".astro/config.generated.json" assert { type: "json" };
+import {
+  getLocaleUrlCTM,
+  useTranslations,
+} from "@/lib/utils/i18nUtils.ts";
+import { toSentenceCase } from "@/lib/utils/textConverter";
+import Icons from "@/helpers/Icons.astro";
+
+const menu = Astro.props.menu as NavigationLink;
+
+const t = await useTranslations(Astro.currentLocale as string);
+let services = await getCollectionCTM(
+  config.settings.servicesFolder as "services",
+  Astro.currentLocale,
+);
+
+const hasEnableMenu = menu.menus?.filter((menu) => menu.enable) || [];
+---
+
+<div
+  class="hs-dropdown-menu mega-menu hs-dropdown-open:pointer-events-auto hs-dropdown-open:opacity-100 hs-dropdown-open:mt-2! lg:translate-x-centered! pointer-events-none top-0 mt-4 hidden max-h-[90vh] overflow-auto overflow-x-hidden border bg-white opacity-0 transition-[opacity,margin] max-lg:static! max-lg:transform-none! lg:absolute lg:h-fit lg:w-full">
+  <div
+    class="thin-scrollbar container flex flex-col gap-10 py-4 md:grid md:grid-cols-2 lg:grid-cols-3 lg:py-0">
+    {
+      menu.menus && hasEnableMenu.length > 0 && (
+        <div class="flex flex-col gap-10 text-sm lg:me-5 lg:py-8">
+          {menu.menus.map(
+            (menuOne) =>
+              menuOne.enable && (
+                <div class="flex flex-col gap-5">
+                  {menuOne.name && (
+                    <legend
+                      class="border-border-light/40 border-b pb-3 tracking-wider opacity-80"
+                      set:html={menuOne.name}
+                    />
+                  )}
+                  {menuOne.children && menuOne.children.length > 0 && (
+                    <div class="flex gap-5 max-md:flex-wrap">
+                      {menuOne.children.map(
+                        (menuTwo) =>
+                          menuTwo.enable && (
+                            <div class="flex flex-1 flex-col gap-4 max-md:w-full max-md:min-w-32">
+                              {menuTwo.name && (
+                                <legend
+                                  class="tracking-wider opacity-40"
+                                  set:html={menuTwo.name}
+                                />
+                              )}
+                              <ul class="text-text-default tracking-wider opacity-90 [&>li:not(:first-child)>a]:pt-4">
+                                {menuTwo.children?.map((child) => (
+                                  <li role="menuitem">
+                                    <a
+                                      {...{
+                                        // Set `rel` attribute for external links or use provided value
+                                        rel: child.url?.startsWith("http")
+                                          ? child.rel || "noopener noreferrer"
+                                          : child.rel || undefined,
+
+                                        // Set `target` to "_blank" for external links unless otherwise specified
+                                        target: child.url?.startsWith("http")
+                                          ? child.target || "_blank"
+                                          : child.target || undefined,
+                                      }}
+                                      target={
+                                        child.url?.startsWith("http")
+                                          ? "_blank"
+                                          : undefined
+                                      }
+                                      href={getLocaleUrlCTM(
+                                        child.url || Astro.url.origin,
+                                        Astro.currentLocale,
+                                      )}
+                                      class="block text-inherit transition-opacity duration-300 hover:opacity-60">
+                                      {child.name}
+                                    </a>
+                                  </li>
+                                ))}
+                              </ul>
+                            </div>
+                          ),
+                      )}
+                    </div>
+                  )}
+                </div>
+              ),
+          )}
+        </div>
+      )
+    }
+    {
+      menu.services && menu.services.enable && (
+        <div class="flex flex-col gap-10 text-sm lg:me-5 lg:py-8">
+          <div class="flex flex-col gap-5">
+            {menu.services.name && (
+              <legend
+                class="border-border-light/40 border-b pb-3 tracking-wider opacity-80"
+                set:html={menu.services.name}
+              />
+            )}
+            <div class="flex flex-1 flex-col gap-4">
+              <div class="space-y-4 tracking-wider">
+                {services.map((service) => (
+                  <div class="group/item after:bg-primary/5 after:translate-centered relative flex items-center justify-start gap-4 py-1.5 after:pointer-events-none after:absolute after:inset-0 after:h-[105%] after:w-[105%] after:rounded-md after:opacity-0 after:transition after:duration-300 hover:after:opacity-100">
+                    {service.data.icon && (
+                      <div class="group-hover/item:bg-primary bg-primary/5 flex h-12 w-12 shrink-0 items-center justify-center rounded-lg transition duration-300">
+                        <Icons
+                          icon={service.data.icon as any}
+                          class="has-inherited-colors text-primary h-7 w-7 transition group-hover/item:text-white group-hover/item:duration-300"
+                        />
+                      </div>
+                    )}
+                    <div class="flex w-[calc(100%-4rem)] shrink-0 flex-col gap-1">
+                      {service.data.title && (
+                        <div set:html={service.data.title} />
+                      )}
+                      {service.data.description && (
+                        <p class="truncate opacity-60">
+                          {service.data.description}
+                        </p>
+                      )}
+                    </div>
+                    {(service.data?.customSlug || service.id) && (
+                      <a
+                        class="absolute inset-0 z-10 h-full w-full opacity-0"
+                        href={getLocaleUrlCTM(
+                          service.id,
+                          Astro.currentLocale,
+                          service.collection,
+                        )}
+                        title={toSentenceCase(
+                          t("common.readMoreAbout") + " " + service.data.title,
+                        )}
+                        set:html={toSentenceCase(
+                          t("common.readMoreAbout") + " " + service.data.title,
+                        )}
+                      />
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      )
+    }
+    {
+      menu.testimonial && menu.testimonial.enable && (
+        <div class="bg-primary/5 after:bg-primary/5 relative hidden px-10 pt-20 pb-8 after:absolute after:top-0 after:left-full after:size-full after:w-screen lg:block">
+          {menu.testimonial.content && (
+            <p class="opacity-80" set:html={menu.testimonial.content} />
+          )}
+          <OptimizedImage
+            inlineSvg={true}
+            src="/images/quote.svg"
+            class="match-brand-color mt-5 h-10 w-10"
+            alt="quote icon"
+          />
+          <div class="has-clip-path after:to-primary/50 relative overflow-hidden after:absolute after:inset-0 after:bg-linear-to-b after:from-transparent after:from-40%">
+            <OptimizedImage
+              class="mx-auto block w-[80%]"
+              src={menu.testimonial.image}
+              alt="customer"
+            />
+          </div>
+        </div>
+      )
+    }
+  </div>
+</div>

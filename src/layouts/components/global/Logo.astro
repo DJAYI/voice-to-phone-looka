@@ -1,0 +1,72 @@
+---
+import { getLocaleUrlCTM } from "@/lib/utils/i18nUtils";
+import { getImage, type ImageMetadata } from "astro:assets";
+import { toSentenceCase } from "@/lib/utils/textConverter";
+
+import config from ".astro/config.generated.json" with { type: "json" };
+import defaultLogoImage from "@/assets/images/MMCLOGO.webp";
+
+type Props = {
+  image?: ImageMetadata;
+  class?: string;
+};
+
+let { image, class: className }: Props = Astro.props;
+
+let { title } = config.site;
+
+// Original image dimensions: 3553x1488 (aspect ratio ~2.39:1)
+// Set logo height to fill navigation bar (py-4 = 16px top + 16px bottom = 32px padding)
+// Navigation bar total height ~64px, logo should fill the available space (around 60px)
+const logoHeight = 60; // Height in pixels - large enough to fill navigation bar without gaps
+const logoWidth = Math.round((3553 / 1488) * logoHeight); // Calculate width to maintain aspect ratio (~143px)
+
+// Use higher resolution (2x or 3x) for retina displays to ensure sharpness
+// Calculate higher resolution versions for better clarity on high-DPI screens
+const retinaWidth = logoWidth * 2; // 2x resolution for retina displays
+const retinaHeight = logoHeight * 2;
+
+// Get optimized image with high quality settings and higher resolution
+const optimizedLogo = await getImage({
+  src: image || defaultLogoImage,
+  width: retinaWidth, // Use 2x resolution for sharper rendering
+  height: retinaHeight,
+  format: "webp",
+  quality: 100, // Maximum quality to prevent compression artifacts
+});
+---
+
+<a
+  href={getLocaleUrlCTM("/", Astro.currentLocale)}
+  class:list={["logo-wrapper", className]}
+  style="margin: 0; padding: 0;">
+  <img
+    src={optimizedLogo.src}
+    srcset={optimizedLogo.srcset?.srcset || `${optimizedLogo.src} 2x`}
+    width={logoWidth}
+    height={logoHeight}
+    alt={toSentenceCase("Brand logo of " + title)}
+    class="logo"
+    loading="eager"
+    decoding="sync"
+    style={{
+      height: logoHeight + "px",
+      width: logoWidth + "px",
+      maxHeight: "100%",
+      maxWidth: "none",
+      objectFit: "contain",
+      display: "block",
+      margin: "0",
+      padding: "0",
+      // Use smooth rendering but ensure high quality
+      imageRendering: "auto", // Use browser's best rendering algorithm
+      WebkitFontSmoothing: "antialiased",
+      MozOsxFontSmoothing: "grayscale",
+      transform: "translateZ(0)",
+      backfaceVisibility: "hidden",
+      WebkitBackfaceVisibility: "hidden",
+      willChange: "transform", // Optimize for rendering
+      WebkitImageRendering: "auto",
+    }}
+  />
+</a>

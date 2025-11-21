@@ -1,0 +1,317 @@
+---
+import "swiper/css/bundle";
+import VideoModal from "@/components/widgets/VideoModal.astro";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import { markdownify } from "@/lib/utils/textConverter";
+import type { Section, VideoConfig } from "@/types";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import CustomButton from "../CustomButton.astro";
+import type { TypeOf } from "astro:schema";
+import type { sharedButtonTag } from "@/content.config";
+import Icons from "@/helpers/Icons.astro";
+
+// Type for the about section in the banner
+type BannerAbout = {
+  enable: boolean;
+  content: string;
+  video?: VideoConfig;
+};
+
+// Type for each item in the slider
+type SliderItem = {
+  title: string;
+  description: string;
+  backgroundImage: string;
+  button: TypeOf<typeof sharedButtonTag>;
+};
+
+// Type for this section data
+type homeBannerSectionType = Section & {
+  infoBlock: BannerAbout;
+  mainBlock: {
+    disableSlider: boolean;
+    slides: SliderItem[];
+  };
+};
+
+type Props = {
+  content?: homeBannerSectionType;
+};
+
+// Fetching the default content for the this section
+let defaultContent = (
+  await getEntryCTM("sections", "home-banner", Astro.currentLocale)
+)?.data as homeBannerSectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as homeBannerSectionType;
+
+// Extracting required values from 'content' object
+let { infoBlock, mainBlock } = actualContent as homeBannerSectionType;
+
+let slides = mainBlock.slides;
+
+// If slider is disabled then show only first slide
+if (mainBlock.disableSlider) slides = [slides[0]];
+---
+
+<section class="banner before:z-10 after:z-10">
+  <div
+    class="swiper swiper-banner-image absolute! bottom-0 left-0 -z-10 h-full w-screen max-w-full">
+    <div class="swiper-wrapper">
+      {
+        slides?.map((item) => (
+          <div class="swiper-slide">
+            <OptimizedImage
+              src={item.backgroundImage}
+              alt="Banner Image"
+              class="kenburns kenburns-top h-full! min-w-full! object-cover"
+              sizes="(max-width: 640px) 200vw, (min-width: 1320px) 1320w, 100vw"
+              data-content={item.backgroundImage}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <div class="container">
+    <!-- Main Banner Content -->
+    <div class="relative z-30 pt-32 pb-16 md:pt-64 md:pb-36 lg:pb-72">
+      <div id="swiper-banner-content" class="swiper">
+        <div class="swiper-wrapper relative">
+          {
+            slides?.map((item) => (
+              <div class="swiper-slide overflow-y-visible!">
+                <div class="flex max-w-3xl flex-col items-start justify-center text-white">
+                  {item.title && (
+                    <h1
+                      class="anim anim-fade-up text-h2 mb-6 text-inherit capitalize [--duration:900ms] md:text-5xl/tight"
+                      set:html={markdownify(item.title)}
+                    />
+                  )}
+                  {item.description && (
+                    <div class="anim anim-fade-up overflow-hidden [--delay:200ms] [--duration:900ms]">
+                      <div
+                        class="border-l pl-5 opacity-90 space-y-2"
+                        set:html={markdownify(item.description, true)}
+                      />
+                    </div>
+                  )}
+                  {item.button && item.button.enable && (
+                    <div class="anim anim-fade-up mt-10 flex gap-5 [--delay:300ms] [--duration:900ms]">
+                      <CustomButton size="md" {...item.button} />
+                    </div>
+                  )}
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Slider Controls -->
+      {
+        !mainBlock.disableSlider && (
+          <div
+            data-aos-offset="0"
+            data-aos="fade-down-sm"
+            data-aos-duration="900"
+            data-aos-delay="600"
+            class="flex gap-16 pt-16 pb-6 lg:absolute lg:bottom-0 lg:z-40 lg:pt-20 lg:pb-12">
+            <button
+              title="Previous Slide"
+              class="banner-slider-btn-prev group/slider-control bg-secondary hover:bg-primary relative flex h-14 w-14 items-center justify-center rounded-full transition duration-300">
+              <svg
+                data-icon
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-primary group-hover/slider-control:text-secondary absolute left-1/3 h-16 w-16 stroke-1 transition duration-300 group-hover/slider-control:-translate-x-1">
+                <>
+                  <path d="M6 8L2 12L6 16" />
+                  <path d="M2 12H22" />
+                </>
+              </svg>
+            </button>
+            <button
+              title="Next Slide"
+              class="banner-slider-btn-next group/slider-control bg-secondary hover:bg-primary relative flex h-14 w-14 rotate-180 items-center justify-center rounded-full transition duration-300">
+              <svg
+                data-icon
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                class="text-primary group-hover/slider-control:text-secondary absolute left-1/3 h-16 w-16 stroke-1 transition duration-300 group-hover/slider-control:-translate-x-1">
+                <>
+                  <path d="M6 8L2 12L6 16" />
+                  <path d="M2 12H22" />
+                </>
+              </svg>
+            </button>
+          </div>
+        )
+      }
+    </div>
+
+    <!-- Short Information -->
+    {
+      infoBlock && infoBlock.enable && (
+        <div
+          data-aos="fade-up-sm"
+          data-aos-offset="0"
+          data-aos-delay="800"
+          data-aos-duration="600"
+          class="relative z-30 backdrop-blur-sm lg:absolute lg:right-0 lg:bottom-0">
+          <div class="flex flex-col gap-8 bg-white/10 p-6 text-white max-lg:mt-10 lg:max-w-lg lg:p-12">
+            {infoBlock.video && infoBlock.video.id && (
+              <button
+                type="button"
+                title="Play Video"
+                aria-haspopup="dialog"
+                aria-expanded="false"
+                aria-controls={"#" + infoBlock.video.id}
+                data-hs-overlay={"#" + infoBlock.video.id}
+                data-hs-overlay-options={`{"emulateScrollbarSpace" : true}`}
+                class="video-modal-toggle flex h-16 w-16 items-center justify-center rounded-full bg-white/10 pl-2 lg:h-20 lg:w-20">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  data-icon
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="me-1 h-6 w-6 fill-white lg:h-8 lg:w-8">
+                  <path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z" />
+                </svg>
+              </button>
+            )}
+            <p class="opacity-90" set:html={infoBlock.content} />
+          </div>
+        </div>
+      )
+    }
+  </div>
+  {infoBlock?.video && <VideoModal video={infoBlock.video} />}
+</section>
+
+<script>
+  import { Swiper } from "swiper";
+  import { EffectFade, Navigation, Controller, Autoplay } from "swiper/modules";
+
+  window.addEventListener("load", async function () {
+    // Initialize banner Swiper (background)
+    const bannerImage = document.querySelector(
+      ".swiper-banner-image",
+    ) as HTMLElement;
+    const bannerContent = document.querySelector(
+      "#swiper-banner-content",
+    ) as HTMLElement;
+
+    if (bannerImage && bannerContent) {
+      const bannerImageSwiper = new Swiper(bannerImage, {
+        modules: [EffectFade, Controller],
+        speed: 800,
+        spaceBetween: 100,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        loop: true,
+      });
+
+      // Initialize content Swiper with navigation
+      const bannerContentSwiper = new Swiper(bannerContent, {
+        modules: [EffectFade, Navigation, Controller, Autoplay],
+        speed: 800,
+        spaceBetween: 100,
+        effect: "fade",
+        fadeEffect: {
+          crossFade: true,
+        },
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: true,
+        },
+        loop: true,
+      });
+
+      const bannerSliderPrev = document.querySelector(
+        ".banner-slider-btn-prev",
+      ) as HTMLElement;
+      const bannerSliderNext = document.querySelector(
+        ".banner-slider-btn-next",
+      ) as HTMLElement;
+
+      bannerSliderPrev.addEventListener("click", () => {
+        // If the last slide is active, go to the first slide
+        if (bannerContentSwiper.realIndex === 0) {
+          bannerContentSwiper.slideToLoop(
+            bannerContentSwiper.slides.length - 1,
+          );
+        } else {
+          const targetIndex = bannerContentSwiper.realIndex - 1;
+
+          // Cancel any ongoing transition instantly
+          bannerContentSwiper.setTranslate(bannerContentSwiper.getTranslate());
+
+          // Slide with normal speed
+          bannerContentSwiper.slideToLoop(
+            targetIndex,
+            bannerContentSwiper.params.speed,
+            true,
+          );
+        }
+      });
+
+      bannerSliderNext.addEventListener("click", () => {
+        // If the last slide is active, go to the first slide
+        if (
+          bannerContentSwiper.realIndex ===
+          bannerContentSwiper.slides.length - 1
+        ) {
+          bannerContentSwiper.slideToLoop(0);
+        } else {
+          // Slide to the next slide
+          const targetIndex = bannerContentSwiper.realIndex + 1;
+
+          // Cancel any ongoing transition instantly
+          bannerContentSwiper.setTranslate(bannerContentSwiper.getTranslate());
+
+          // Slide with normal speed
+          bannerContentSwiper.slideToLoop(
+            targetIndex,
+            bannerContentSwiper.params.speed,
+            true,
+          );
+        }
+      });
+
+      bannerContentSwiper.controller.control = bannerImageSwiper;
+      bannerImageSwiper.controller.control = bannerContentSwiper;
+    }
+  });
+</script>

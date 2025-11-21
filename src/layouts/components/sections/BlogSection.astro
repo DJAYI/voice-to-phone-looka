@@ -1,0 +1,99 @@
+---
+import type { Section } from "@/types";
+import BlogCard from "@/layouts/components/cards/BlogCard.astro";
+import overrideObjects from "@/lib/utils/overrideObjects.ts";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { getCollectionCTM } from "@/lib/contentParser.astro";
+import config from ".astro/config.generated.json" assert { type: "json" };
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import { sortByDate } from "@/lib/utils/sortFunctions";
+import CustomButton from "../CustomButton.astro";
+
+const { blogFolder } = config.settings;
+
+// Type for this section data
+type sectionType = Section;
+type Props = {
+  content?: sectionType;
+};
+
+// Fetching the default content for the this section
+let defaultContent = (
+  await getEntryCTM("sections", "blog-section", Astro.currentLocale)
+)?.data as sectionType;
+
+// Enables content customization (e.g., title, description) with a fallback to 'defaultContent' if not provided.
+// The 'content' prop should match the structure of 'defaultContent'.
+// Allows using this section with different content across multiple pages.
+// If 'content' is missing, 'defaultContent' will be used.
+let actualContent = overrideObjects(
+  { ...defaultContent },
+  Astro.props.content,
+) as sectionType;
+
+// Extracting required values from 'content' object
+let {
+  enable = true,
+  title,
+  subtitle,
+  limit,
+  button,
+  bgPatternImage,
+} = actualContent as sectionType;
+
+let posts = await getCollectionCTM(blogFolder as "blog", Astro.currentLocale);
+
+// Sort posts by date
+posts = sortByDate(posts);
+
+// Limit the number of items to be displayed
+posts = limit && posts ? posts.slice(0, limit as number) : posts;
+---
+
+{
+  enable && (
+    <section class="relative overflow-hidden">
+      {bgPatternImage && (
+        <div class="pointer-events-none absolute top-0 left-0 -z-10 h-188 w-full">
+          <OptimizedImage
+            class="h-full w-full object-cover md:object-top-left"
+            src={bgPatternImage}
+            alt="pattern"
+          />
+        </div>
+      )}
+      <div class="container">
+        <div class="flex flex-wrap items-center justify-between gap-6 overflow-x-hidden lg:flex-nowrap">
+          <div class="bg-white lg:max-w-2xl" data-aos="fade-left-sm">
+            {subtitle && (
+              <span
+                class="bg-primary/5 border-secondary text-primary mb-2.5 inline-block rounded-full border px-5 py-px"
+                set:html={markdownify(subtitle)}
+              />
+            )}
+            {title && (
+              <h2 class="text-h3 text-inherit" set:html={markdownify(title)} />
+            )}
+          </div>
+          {button && button.enable && (
+            <div data-aos="fade-left-sm" data-aos-delay="200">
+              <CustomButton {...button} />
+            </div>
+          )}
+        </div>
+        <div class="mt-12 grid gap-x-6 gap-y-10 md:mt-16 md:grid-cols-2 lg:grid-cols-3">
+          {posts &&
+            posts.map((post, index) => (
+              <BlogCard
+                content={post}
+                data-aos="fade-up-sm"
+                data-aos-offset="200"
+                data-aos-delay={((index % 3) + 1) * 100}
+              />
+            ))}
+        </div>
+      </div>
+    </section>
+  )
+}
