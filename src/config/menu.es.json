@@ -60,22 +60,22 @@
             {
               "enable": true,
               "name": "Llamadas Automáticas",
-              "url": "/llamadas-automaticas-marcaciones-automaticas/es"
+              "url": "/software/telemarketing-automatic-calls/es"
             },
             {
               "enable": true,
               "name": "Marcador Predictivo",
-              "url": "/marcador-predictivo/es"
+              "url": "/software/telemarketing-predictive-marker/es"
             },
             {
               "enable": true,
               "name": "Marcador Progresivo",
-              "url": "/marcador-progresivo/es"
+              "url": "/software/telemarketing-progresive-marker/es"
             },
             {
               "enable": true,
               "name": "Marcador Preview",
-              "url": "/marcador-preview/es"
+              "url": "/software/telemarketing-preview-marker/es"
             }
           ]
         }
