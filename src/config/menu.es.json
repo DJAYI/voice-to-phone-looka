@@ -18,27 +18,27 @@
         {
           "enable": true,
           "name": "Troncal SIP",
-          "url": "/services/troncal-sip/es"
+          "url": "/services/sip-trunks/es"
         },
         {
           "enable": true,
           "name": "Número Virtual",
-          "url": "/services/numero-virtual/es"
+          "url": "/services/virtual-numbers/es"
         },
         {
           "enable": true,
           "name": "VoIP Empresas",
-          "url": "/services/voip-empresas/es"
+          "url": "/services/voip-for-business/es"
         },
         {
           "enable": true,
           "name": "Mensajes de Texto Masivos",
-          "url": "/services/mensajes-de-texto-masivos/es"
+          "url": "/services/sms-mass-messaging/es"
         },
         {
           "enable": true,
           "name": "WhatsApp Multiagente",
-          "url": "/services/whatsapp-multiagente/es"
+          "url": "/services/whatsapp-multi-agent/es"
         }
       ]
     },
@@ -179,27 +179,27 @@
     {
       "enable": true,
       "name": "PBX Virtual",
-      "url": "/pbx-virtual/es"
+      "url": "/services/pbx-virtual/es"
     },
     {
       "enable": true,
       "name": "Troncal SIP",
-      "url": "/troncal-sip/es"
+      "url": "/services/sip-trunks/es"
     },
     {
       "enable": true,
       "name": "Números Virtuales",
-      "url": "/numero-virtual/es"
+      "url": "/services/virtual-numbers/es"
     },
     {
       "enable": true,
       "name": "VoIP Empresas",
-      "url": "/que-es-voip-como-funciona/es"
+      "url": "/services/voip-for-business/es"
     },
     {
       "enable": true,
       "name": "Mensajes de Texto Masivos",
-      "url": "/mensajes-de-texto-masivos/es"
+      "url": "/services/sms-mass-messaging/es"
     }
   ],
 
