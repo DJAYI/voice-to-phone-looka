@@ -1,14 +1,15 @@
 ---
-title: "Software para Call Center"
-description: "Solución de Call Center 100% en la nube: marcadores predictivos, IVR, monitoreo en vivo, integración CRM, grabación y analíticas para optimizar la atención y productividad."
-image: "/images/software/call-center.jpg"
-icon: "Cpu"
+title: "Llamadas Automáticas (Blaster)"
+description: "Difusión masiva de mensajes de voz y notificaciones automatizadas para alcanzar a miles de clientes en segundos."
+
+image: "/images/software/automatic-calls-main.jpg"
+icon: "Megaphone"
 
 intro:
   enable: true
   image: ""
-  title: "Software de Call Center centrado en el cliente"
-  description: "Una plataforma en la nube que centraliza comunicaciones, automatiza procesos y proporciona herramientas para mejorar la productividad de agentes y la experiencia del cliente."
+  title: "Comunicación masiva y efectiva"
+  description: "Envíe recordatorios, encuestas de satisfacción o campañas de cobranza de forma automatizada sin intervención humana directa."
   button:
     enable: true
     label: "Solicitar demo"
@@ -21,89 +22,55 @@ intro:
 
 details:
   enable: true
-  title: "Principales funcionalidades"
-  description: "Marcador automático, colas de llamadas, IVR, monitoreo en vivo, integración CRM, identificador de llamadas, grabación y estadísticas en tiempo real."
+  title: "Potencia de difusión masiva"
+  description: "Gestione campañas de gran escala con herramientas de automatización de voz."
   list:
     - enable: true
-      image: "/images/services/service-details/llamadas-automaticas.jpg"
-      title: "Marcador Automático"
-      description: "Lanzamiento automático de llamadas desde listas predefinidas para maximizar el tiempo productivo de los agentes."
-      button:
-        enable: true
-        label: "Ver más"
-        url: "/contact"
-        rel: ""
-        target: ""
-        showIcon: "true"
-        variant: "outline"
-        hoverEffect: "text-flip"
-
-    - enable: true
-      image: "/images/services/service-details/colas.jpg"
-      title: "Colas de Llamadas"
-      description: "Enrutamiento automatizado y priorización de llamadas hacia el agente más adecuado."
-      button:
-        enable: true
-        label: "Ver más"
-        url: "/contact"
-        rel: ""
-        target: ""
-        showIcon: "true"
-        variant: "outline"
-        hoverEffect: "text-flip"
-
-    - enable: true
       image: "/images/services/service-details/ivr.jpg"
-      title: "IVR"
+      title: "IVR Interactivo"
       description: "Respuesta de voz interactiva para direccionar llamadas y ofrecer opciones automatizadas al cliente."
       button:
         enable: true
-        label: "Ver más"
+        label: "Saber más"
         url: "/contact"
-        rel: ""
-        target: ""
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/monitoreo.jpg"
-      title: "Monitoreo en Vivo"
-      description: "Escucha y supervisa llamadas en tiempo real para control de calidad y coaching de agentes."
+      image: "/images/services/service-details/voicebots.jpg"
+      title: "IA Conversacional"
+      description: "Voicebots capaces de realizar tareas repetitivas y garantizar atención 24/7."
       button:
         enable: true
-        label: "Ver más"
+        label: "Ver IA"
         url: "/contact"
-        rel: ""
-        target: ""
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/crm.jpg"
-      title: "Integración CRM"
-      description: "Unifica la información del cliente entre canales para atención personalizada y flujo de trabajo más eficiente."
+      image: "/images/services/service-details/estadisticas.jpg"
+      title: "Analíticas de Campaña"
+      description: "Métricas en tiempo real para mejorar el rendimiento y registro de datos detallado."
       button:
         enable: true
-        label: "Ver más"
+        label: "Ver reportes"
         url: "/contact"
-        rel: ""
-        target: ""
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
 
 impact:
   enable: true
-  title: "Beneficios del software para Call Center"
-  description: "Mejora la eficiencia operativa, personaliza la atención, automatiza procesos y proporciona análisis en tiempo real para tomar decisiones informadas."
+  title: "Optimización de procesos"
+  description: "Reduzca costos operativos automatizando las interacciones de bajo valor."
   list:
-    - "Atención personalizada"
-    - "Automatización y enrutamiento inteligente"
-    - "Gestión omnicanal"
-    - "Registro de datos y análisis"
-    - "Flexibilidad y escalabilidad"
+    - "Atención 24/7 con Voicebots"
+    - "Automatización de notificaciones"
+    - "Reducción de costes operativos"
+    - "Implementación rápida y segura"
+    - "Escalabilidad sin límites"
 
   statsBlock:
     enable: true
@@ -115,7 +82,7 @@ impact:
           prependValue: ""
           value: "99.999"
           appendValue: "%"
-        description: "Tiempo de actividad"
+        description: "Uptime del servicio"
     md:
       - background:
           type: "image-overlay"
@@ -124,7 +91,7 @@ impact:
           prependValue: ""
           value: "24/7"
           appendValue: ""
-        description: "Soporte y disponibilidad"
+        description: "Disponibilidad de atención"
     sm:
       - background:
           type: "light-color"
@@ -133,7 +100,7 @@ impact:
           prependValue: ""
           value: "0"
           appendValue: ""
-        description: "Cláusulas de permanencia"
+        description: "Permanencia obligatoria"
       - background:
           type: "light-color"
           image: ""
@@ -141,11 +108,11 @@ impact:
           prependValue: ""
           value: "∞"
           appendValue: ""
-        description: "Escalable"
+        description: "Capacidad de envíos"
 
   button:
     enable: true
-    label: "Hablar con un experto"
+    label: "Configurar Blaster"
     url: "/contact"
     rel: ""
     target: ""
@@ -153,56 +120,3 @@ impact:
     variant: "outline"
     hoverEffect: "text-flip"
 ---
-
-## Software para Call Center
-
-El software de centro de llamadas integrado que necesitas para gestionar tu Servicio de Atención al Cliente. Nuestra solución en la nube es ideal para ventas, soporte, cobranzas y campañas de marketing.
-
-## ¿Qué es un software para Call Center?
-
-Un software de Call Center es una solución integral que permite realizar y recibir llamadas, gestionar colas de espera, enrutar las llamadas de manera inteligente, grabar interacciones y generar informes detallados para mejorar la operación.
-
-## Principales Beneficios del Software para Call Center
-
-- Atención personalizada: acceso instantáneo a la ficha del cliente para un servicio más efectivo.
-- Automatización y enrutamiento inteligente: reduce tareas repetitivas y conecta al cliente con el agente correcto.
-- Gestión omnicanal: llamadas, chat y redes en un solo lugar.
-- Registro de datos y análisis: métricas en tiempo real para mejorar rendimiento.
-- Flexibilidad y escalabilidad: crece con tu negocio sin grandes inversiones.
-
-## Descubre la solución centrada en el cliente
-
-Nuestra plataforma permite crear campañas, gestionar colas, monitorear agentes en vivo y centralizar la información para ofrecer una experiencia de atención superior.
-
-## Principales funcionalidades
-
-- Marcador automático de llamadas
-- Colas de llamadas
-- IVR (Respuesta de voz interactiva)
-- Monitoreo en vivo
-- Integración CRM
-- Identificador de llamadas
-- Información instantánea del cliente
-- Grabación de llamadas
-- Estadísticas de llamadas
-
-## Gestiona las campañas de tu Call Center
-
-Crear campañas es sencillo: encuestas de satisfacción, cobranzas, ventas telefónicas, soporte técnico, recordatorios y más.
-
-## Mejora la experiencia con IA conversacional (Voicebots)
-
-La IA en voz automatiza interacciones de bajo valor, mejora la productividad y garantiza atención 24/7 con vozbots capaces de realizar tareas repetitivas.
-
-## Por qué elegir nuestra solución
-
-- 99.999% de uptime
-- Implementación rápida
-- Reducción de costes
-- Movilidad y trabajo remoto
-- Funcionalidades avanzadas
-- Escalable y segura
-
-## Comience ahora
-
-[Habla con un experto](/contact)
