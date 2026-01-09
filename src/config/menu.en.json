@@ -30,7 +30,7 @@
                 {
                   "enable": true,
                   "name": "Services Single",
-                  "url": "/services/service-01/"
+                  "url": "/services/voip-for-business/"
                 },
                 {
                   "enable": true,
@@ -190,7 +190,7 @@
             {
               "enable": true,
               "name": "Services Single",
-              "url": "/services/service-01/"
+              "url": "/services/voip-for-business/"
             }
           ]
         },
