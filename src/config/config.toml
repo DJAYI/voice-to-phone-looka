@@ -60,11 +60,11 @@
   blogFolder      = "blog"
   servicesFolder  = "services"
   portfolioFolder = "case-studies"
+  softwareFolder  = "software"
 
-  pagination     = 4
-  stickyHeader   = true
-  brandName      = "VoiceToPhone"
-  softwareFolder = "software"
+  pagination   = 4
+  stickyHeader = true
+  brandName    = "VoiceToPhone"
 
   contactFormAction   = "https://formsubmit.co/contacto@voicetophone.com"
   contactFormProvider = "formsubmit.co"

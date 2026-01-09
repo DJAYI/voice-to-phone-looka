@@ -1,0 +1,31 @@
+---
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+import Base from "@/layouts/Base.astro";
+import { getEntryCTM } from "@/lib/contentParser.astro";
+import { generatePaths } from "@/lib/utils/i18nUtils";
+import { Image } from "astro:assets";
+import { render } from "astro:content";
+
+export function getStaticPaths() {
+  return generatePaths();
+}
+
+const entry = await getEntryCTM("ip-telephony", "-index", Astro.currentLocale);
+
+const { Content } = await render(entry);
+---
+
+<Base {...entry.data}>
+  <OptimizedImage
+    src={entry.data.image as string}
+    alt={entry.data.title || "IP Telephony"}
+    class="h-64 w-full object-cover md:h-96"
+  />
+  {
+    entry.body && entry.rendered && (
+      <article class="prose prose-lg mx-auto my-12 max-w-4xl">
+        <Content />
+      </article>
+    )
+  }
+</Base>

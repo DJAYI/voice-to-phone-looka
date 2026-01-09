@@ -285,9 +285,9 @@ export const collections = {
   blog: blogCollection,
   services: serviceCollection,
   "case-studies": portfolioCollection,
-
   software: serviceCollection,
   pages: pagesCollection,
+  "ip-telephony": defineCollection({}),
   sections: defineCollection({}),
   about: defineCollection({}),
   contact: defineCollection({}),
