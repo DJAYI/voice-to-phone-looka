@@ -5,6 +5,7 @@ date: 2026-01-09
 ---
 
 import RatesSearch from "@/components/rates/RatesSearch.astro";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
 
 ## Llamadas VoIP — Tarifas y planes
 
@@ -28,11 +29,29 @@ VoiceToPhone ofrece tarifas por minuto y planes a medida para llamadas locales e
   />
 </StatsWrapper>
 
+<figure class="my-8">
+  <OptimizedImage
+    src="/images/gallery/1.jpg"
+    alt="Oficina con auriculares"
+    class="w-full rounded-lg"
+  />
+</figure>
+
 ---
 
 ## Nuestros destinos de llamadas más populares
 
-## <RatesSearch dataUrl="/data/calls-voip.json" />
+<RatesSearch dataUrl="/data/calls-voip.json" />
+
+<figure class="my-8 xl:my-12">
+  <OptimizedImage
+    src="/images/gallery/2.jpg"
+    alt="Mapa de destinos"
+    class="w-full rounded-lg"
+  />
+</figure>
+
+---
 
 ## Cómo obtener una cotización exacta
 
@@ -41,6 +60,15 @@ VoiceToPhone ofrece tarifas por minuto y planes a medida para llamadas locales e
 - Para empresas, ofrecemos acuerdos con condiciones personalizadas (SLA, facturación a 30/60 días, integración con CRM).
 
 <CustomButton label="Solicitar Cotización" url="/contact/es" />
+
+<figure class="my-8">
+  <OptimizedImage
+    src="/images/shapes/review-pattern.svg"
+    alt="Decoración"
+    class="w-full rounded-lg"
+    inlineSvg
+  />
+</figure>
 
 ---
 

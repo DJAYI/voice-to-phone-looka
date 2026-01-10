@@ -23,25 +23,26 @@ export default function init({ rootId, dataUrl }) {
 
   function createArticle(item) {
     const article = document.createElement("article");
-    article.className = "p-4 rounded-lg border bg-slate-800 text-white";
+    article.className =
+      "p-4 rounded-lg border bg-blue-100 text-black justify-between flex flex-col h-full";
     const operatorText = item.operator ? "Operador: " + item.operator : "";
     const typeText = item.type
       ? (item.operator ? " | " : "") + "Tipo: " + item.type
       : "";
     article.innerHTML =
-      '<h4 class="font-semibold text-white">' +
+      '<h4 class="font-semibold text-black">' +
       item.title +
       "</h4>" +
-      '<div class="mt-2 text-lg font-bold text-white">' +
+      '<div class="mt-2 text-lg font-bold text-black">' +
       item.price +
       "</div>" +
       (operatorText || typeText
-        ? '<p class="mt-2 text-sm text-slate-200">' +
+        ? '<p class="mt-2 text-sm text-black">' +
           operatorText +
           typeText +
           "</p>"
         : "") +
-      '<div class="mt-4"><a class="btn text-primary decoration-white" href="/contact/es">Lo quiero!</a></div>';
+      '<div class="mt-4"><a class="btn text-white hover:scale-105 transition text-center w-full bg-primary" href="/contact/">Lo quiero!</a></div>';
     return article;
   }
 
