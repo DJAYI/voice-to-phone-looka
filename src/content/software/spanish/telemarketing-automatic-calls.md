@@ -11,7 +11,7 @@ pricingSection:
   button:
     enable: true
     label: "Ver Planes"
-    url: "/pricing"
+    url: ""
     variant: "outline"
 
 intro:

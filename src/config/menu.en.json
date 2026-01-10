@@ -71,7 +71,7 @@
                 {
                   "enable": true,
                   "name": "Pricing",
-                  "url": "/pricing/",
+                  "url": "/rates/",
                   "badge": {
                     "enable": true,
                     "label": "NEW",
@@ -279,7 +279,7 @@
         {
           "enable": true,
           "name": "Pricing",
-          "url": "/pricing/",
+          "url": "/rates/",
           "badge": {
             "enable": true,
             "label": "NEW",
@@ -346,7 +346,7 @@
     {
       "enable": true,
       "name": "Pricing",
-      "url": "/pricing/"
+      "url": "/rates/"
     },
     {
       "enable": true,

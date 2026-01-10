@@ -5,8 +5,10 @@ import ServiceDetailsSection from "@/components/sections/ServiceDetailsSection.a
 import ServiceImpact from "@/components/sections/ServiceImpact.astro";
 import ServiceSingleIntro from "@/components/sections/PageIntroSection.astro";
 import ServicesSection from "@/components/sections/ServicesSection.astro";
-import PricingSection from "@/layouts/components/sections/PricingSection.astro";
 import PageHeader from "@/components/widgets/PageHeader.astro";
+import { markdownify } from "@/lib/utils/textConverter";
+import { getLocaleUrlCTM } from "@/lib/utils/i18nUtils.ts";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
 import Base from "@/layouts/Base.astro";
 import { getCollectionCTM } from "@/lib/contentParser.astro";
 import { getEntryCTM } from "@/lib/contentParser.astro";
@@ -61,6 +63,8 @@ export async function getStaticPaths() {
 }
 
 const { service, serviceIndex: entry } = Astro.props;
+const rateIndex = await getEntryCTM("rates", "-index", Astro.currentLocale);
+const ratesData = rateIndex?.data;
 ---
 
 <Base {...service.data}>
@@ -71,7 +75,45 @@ const { service, serviceIndex: entry } = Astro.props;
   />
   <ServiceDetailsSection content={service.data.details} />
   <ServiceImpact content={service.data.impact} />
-  <PricingSection content={service.data.pricingSection} />
+
+  {
+    ratesData && (
+      <section class="my-12">
+        <div class="container">
+          <div class="grid gap-8 lg:grid-cols-2 lg:items-center">
+            <div>
+              {ratesData.title && (
+                <h2
+                  class="text-h4 mb-4"
+                  set:html={markdownify(ratesData.title)}
+                />
+              )}
+              {ratesData.description && (
+                <p class="mb-6" set:html={markdownify(ratesData.description)} />
+              )}
+              <div>
+                <a
+                  class="btn btn-outline"
+                  href={getLocaleUrlCTM("", Astro.currentLocale)}>
+                  Ver Precios
+                </a>
+              </div>
+            </div>
+            {ratesData.image && (
+              <div>
+                <OptimizedImage
+                  src={ratesData.image}
+                  alt={ratesData.title}
+                  class="h-56 w-full rounded-lg object-cover lg:h-72"
+                />
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   <ServicesSection content={entry?.data.servicesSection} />
   <FaqSection content={entry?.data.faqSection} />
   <CallToAction />

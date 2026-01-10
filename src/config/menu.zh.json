@@ -71,7 +71,7 @@
                 {
                   "enable": true,
                   "name": "定价",
-                  "url": "/pricing/",
+                  "url": "/rates/",
                   "badge": {
                     "enable": true,
                     "label": "全新",
@@ -278,7 +278,7 @@
         {
           "enable": true,
           "name": "定价",
-          "url": "/pricing/",
+          "url": "/rates/",
           "badge": {
             "enable": true,
             "label": "全新",
@@ -345,7 +345,7 @@
     {
       "enable": true,
       "name": "定价",
-      "url": "/pricing/"
+      "url": "/rates/"
     },
     {
       "enable": true,

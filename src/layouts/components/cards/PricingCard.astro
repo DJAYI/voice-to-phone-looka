@@ -20,14 +20,12 @@ const isNumericValue = (value: string | number | undefined) => {
   return false;
 };
 
-const {
-  class: className,
-  pricingIndex,
-  content: { enable, name, description, price, features, button },
-  ...rest
-} = Astro.props;
+const { class: className, pricingIndex, content, ...rest } = Astro.props;
 
-if (!enable) return;
+// Guard: ensure content exists and is enabled
+if (!content || !content.enable) return;
+
+const { enable, name, description, price, features, button } = content;
 ---
 
 <div

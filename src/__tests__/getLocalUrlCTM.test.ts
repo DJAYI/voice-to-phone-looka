@@ -5,9 +5,9 @@ const paths = [
   "http://localhost:4321",
   "http://localhost:4321/en",
   "http://localhost:4321/zh",
-  "http://localhost:4321/pricing",
-  "http://localhost:4321/en/pricing",
-  "http://localhost:4321/zh/pricing",
+  "http://localhost:4321/rates",
+  "http://localhost:4321/en/rates",
+  "http://localhost:4321/zh/rates",
   "http://localhost:4321/frog",
   "http://localhost:4321/zh/frog",
   "http://localhost:4321/en/engineer",
@@ -15,19 +15,19 @@ const paths = [
   "",
   "/en",
   "/zh",
-  "/en/pricing",
-  "/zh/pricing",
+  "/en/rates",
+  "/zh/rates",
   "/zh/frog",
   "/en/engineer",
   "/engineer",
   "/frog",
-  "/pricing",
+  "/rates",
 
   "http://localhost:4321/",
   "http://localhost:4321/en/",
   "http://localhost:4321/zh/",
-  "http://localhost:4321/en/pricing/",
-  "http://localhost:4321/zh/pricing/",
+  "http://localhost:4321/en/rates/",
+  "http://localhost:4321/zh/rates/",
   "http://localhost:4321/zh/frog/",
   "http://localhost:4321/en/engineer/",
   "http://localhost:4321/frog/",
@@ -36,8 +36,8 @@ const paths = [
   "/",
   "/en/",
   "/zh/",
-  "/en/pricing/",
-  "/zh/pricing/",
+  "/en/rates/",
+  "/zh/rates/",
   "/zh/frog/",
   "/en/engineer/",
   "/frog/",
@@ -79,10 +79,10 @@ describe("getLocaleUrlCTM", () => {
   });
 
   test("Handles absolute URLs and preserves anchors", () => {
-    const url = "http://localhost:4321/en/pricing/#example-anchor";
+    const url = "http://localhost:4321/en/rates/#example-anchor";
     const result = getLocaleUrlCTM(url, "en", prependValue);
     expect(result).toBe(
-      "http://localhost:4321/case-studies/pricing/#example-anchor",
+      "http://localhost:4321/case-studies/rates/#example-anchor",
     );
   });
 
@@ -107,9 +107,9 @@ describe("getLocaleUrlCTM", () => {
   });
 
   test("Prepends optional value correctly", () => {
-    const url = "/pricing";
+    const url = "/rates";
     const result = getLocaleUrlCTM(url, "es", prependValue);
-    expect(result).toBe("/es/case-studies/pricing/");
+    expect(result).toBe("/es/case-studies/rates/");
   });
 
   test("Handles root URL with default language", () => {

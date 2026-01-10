@@ -10,7 +10,7 @@ pricingSection:
   button:
     enable: true
     label: "Ver Planes"
-    url: "/pricing"
+    url: "/rates/software-call-center/"
     variant: "outline"
 
 intro:
