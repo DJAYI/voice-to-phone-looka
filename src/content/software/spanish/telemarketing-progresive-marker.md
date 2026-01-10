@@ -2,12 +2,21 @@
 title: "Marcador Progresivo"
 description: "Optimice el flujo de trabajo de sus agentes con un sistema que automatiza la marcación solo cuando el agente está disponible."
 
-image: "/images/software/progresivo-main.jpg"
+image: "/images/pexels/computer/computer-2.jpg"
 icon: "Zap"
+
+pricingSection:
+  enable: true
+  coverImage: "/images/pexels/computer/computer-2.jpg"
+  button:
+    enable: true
+    label: "Ver Planes"
+    url: "/pricing"
+    variant: "outline"
 
 intro:
   enable: true
-  image: ""
+  image: "/images/pexels/computer/computer-5.jpg"
   title: "Productividad constante sin tiempos muertos"
   description: "El marcador progresivo garantiza que sus agentes pasen más tiempo hablando y menos marcando, eliminando la fatiga de la marcación manual y errores de digitación."
   button:

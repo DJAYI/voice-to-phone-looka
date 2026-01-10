@@ -1,7 +1,7 @@
 ---
 title: Software para call center
-source_url: 'https://www.voicetophone.com/help/6/es'
-date_scraped: '2026-01-10T21:27:21.810Z'
+source_url: "https://www.voicetophone.com/help/6/es"
+date_scraped: "2026-01-10T21:27:21.810Z"
 route: /help/software-para-call-center/es/
 draft: false
 description: Que es un software de centro de llamadas basado en la nube?
@@ -18,6 +18,9 @@ qids:
   - >-
     software-para-call-center-q-6-que-requisitos-tecnicos-necesito-para-usar-el-software-de-ca
 ---
+
+![Software](/images/pexels/call-center/call-center-1.jpg)
+
 <details id="software-para-call-center-q-0-que-es-un-software-de-centro-de-llamadas-basado-en-la-nube" open>
 <summary>Que es un software de centro de llamadas basado en la nube?</summary>
 

@@ -2,7 +2,7 @@
 title: "PBX Virtual — Centralita Virtual IP"
 description: "Gestione llamadas, extensiones y sucursales desde una única plataforma en la nube."
 
-image: "/images/services/2.jpg"
+image: "/assets/images/tabler-illustrations/light/mobile-computer.png"
 icon: "PhoneCall"
 
 intro:
@@ -26,7 +26,7 @@ details:
   description: "Configure, administre y escale su central telefónica de forma simple e intuitiva."
   list:
     - enable: true
-      image: "/images/services/service-details/1.jpg"
+      image: "/assets/images/tabler-illustrations/light/building.png"
       title: "Extensiones y sucursales"
       description: "Cree extensiones y gestione múltiples sedes fácilmente."
       button:
@@ -38,7 +38,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/2.jpg"
+      image: "/assets/images/tabler-illustrations/light/dart.png"
       title: "Desvíos inteligentes"
       description: "Configure reglas por horarios, usuarios o disponibilidad."
       button:
@@ -50,7 +50,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/3.jpg"
+      image: "/assets/images/tabler-illustrations/light/podcast.png"
       title: "Grabación y monitoreo"
       description: "Mejore la calidad y control de las llamadas."
       button:

@@ -77,6 +77,8 @@ faqSection:
     hoverEffect: "text-flip"
 ---
 
+![Software](/images/pexels/computer/computer-1.jpg)
+
 ## Potencie sus ventas y atención al cliente
 
 Transforme la operación de su Contact Center con nuestra suite de software en la nube. VoiceToPhone le ofrece herramientas avanzadas diseñadas para reducir los tiempos de espera, aumentar la tasa de contacto y facilitar la supervisión de sus equipos, ya sea que trabajen en la oficina o de forma remota.

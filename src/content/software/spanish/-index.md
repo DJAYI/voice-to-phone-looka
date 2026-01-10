@@ -3,78 +3,91 @@ title: "Software de Call Center y Telemarketing"
 metaDescription: "Maximice la productividad de sus agentes con nuestros Marcadores Predictivos, Software de Telemarketing y herramientas de supervisión en la nube."
 draft: false
 hasCustomLineAnimationBg: true
+---
+
+![Software](/images/pexels/computer/computer-2.jpg)
 
 # Override "Services Section" data located in services list page
+
 indexServicesSection:
-  enable: true
-  creativeShape:
-    enable: true
-    position: "top"
+enable: true
+creativeShape:
+enable: true
+position: "top"
 
-  limit: false
+limit: false
 
-  button:
-    enable: true
-    label: "Solicitar Demo del Software"
-    url: "/contacto"
-    rel: ""
-    target: ""
-    showIcon: "true"
-    variant: "fill"
-    hoverEffect: "text-flip"
+button:
+enable: true
+label: "Solicitar Demo del Software"
+url: "/contacto"
+rel: ""
+target: ""
+showIcon: "true"
+variant: "fill"
+hoverEffect: "text-flip"
 
 # ----------------------------------------------------------------------------------------------------------------
+
 # DATA FOR SERVICE SINGLE PAGES
+
 # ----------------------------------------------------------------------------------------------------------------
 
 # "Service Details" Section located in Services Single Page (Image Moving Animation Settings)
+
 serviceDetailsMarquee:
-  marqueeElementWidth: "26.5rem"
-  marqueeElementWidthResponsive: "18.75rem"
-  marqueeElementWidthAuto: false
-  marqueePauseOnHover: true
-  marqueeReverse: ""
-  marqueeDuration: "35s"
+marqueeElementWidth: "26.5rem"
+marqueeElementWidthResponsive: "18.75rem"
+marqueeElementWidthAuto: false
+marqueePauseOnHover: true
+marqueeReverse: ""
+marqueeDuration: "35s"
 
 # "Services" Section located in Services Single Page
+
 servicesSection:
-  enable: true
-  title: "Complemente su software con telefonía IP"
-  # subtitle: "Infraestructura robusta"
+enable: true
+title: "Complemente su software con telefonía IP"
 
-  creativeShape:
-    enable: false
-    position: "bottom"
+# subtitle: "Infraestructura robusta"
 
-  button:
-    enable: true
-    label: "Ver Planes de Telefonía"
-    url: "/servicios/telefonia-ip"
-    rel: ""
-    target: ""
-    showIcon: "true"
-    variant: "outline"
-    hoverEffect: "text-flip"
+creativeShape:
+enable: false
+position: "bottom"
+
+button:
+enable: true
+label: "Ver Planes de Telefonía"
+url: "/servicios/telefonia-ip"
+rel: ""
+target: ""
+showIcon: "true"
+variant: "outline"
+hoverEffect: "text-flip"
 
 # "FAQ" Section located in Services Single Page
-faqSection:
-  enable: true
-  title: "Preguntas frecuentes sobre el Software"
-  # subtitle: "Resolvemos sus dudas técnicas"
-  sectionLayout: "horizontal"
-  minimalFaqLayout: true
-  faqLayoutOnly: false
-  showCategories: false
 
-  button:
-    enable: true
-    label: "Hablar con Soporte"
-    url: "/contacto"
-    rel: ""
-    target: ""
-    showIcon: "true"
-    variant: "outline"
-    hoverEffect: "text-flip"
+faqSection:
+enable: true
+title: "Preguntas frecuentes sobre el Software"
+
+# subtitle: "Resolvemos sus dudas técnicas"
+
+sectionLayout: "horizontal"
+minimalFaqLayout: true
+faqLayoutOnly: false
+showCategories: false
+
+button:
+enable: true
+label: "Hablar con Soporte"
+url: "/contacto"
+rel: ""
+target: ""
+showIcon: "true"
+variant: "outline"
+hoverEffect: "text-flip"
+
 ---
 
 ## Potencie sus ventas y atención al cliente

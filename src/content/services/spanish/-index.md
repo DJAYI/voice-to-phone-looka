@@ -60,8 +60,8 @@ servicesSection:
 faqSection:
   enable: true
   title: "¿Tiene dudas sobre la telefonía en la nube?"
-  # subtitle: ""
-  sectionLayout: "horizontal"
+  subtitle: "Soluciona todas tus inquietudes accediendo al siguiente enlace."
+  sectionLayout: "vertical"
   minimalFaqLayout: true
   faqLayoutOnly: false
   showCategories: false
@@ -69,7 +69,7 @@ faqSection:
   button:
     enable: true
     label: "Ver todas las preguntas frecuentes"
-    url: "/faq"
+    url: "/help/"
     rel: ""
     target: ""
     showIcon: "true"

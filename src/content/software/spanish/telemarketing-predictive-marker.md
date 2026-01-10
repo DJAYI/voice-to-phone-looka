@@ -2,12 +2,21 @@
 title: "Marcador Predictivo"
 description: "Potencie su Call Center con algoritmos que predicen la disponibilidad de agentes para conectar solo llamadas exitosas."
 
-image: "/images/software/predictivo-main.jpg"
+image: "/images/pexels/computer/computer-1.jpg"
 icon: "Activity"
+
+pricingSection:
+  enable: true
+  coverImage: "/images/pexels/computer/computer-3.jpg"
+  button:
+    enable: true
+    label: "Ver Planes"
+    url: "/pricing"
+    variant: "outline"
 
 intro:
   enable: true
-  image: ""
+  image: "/images/pexels/computer/computer-4.jpg"
   title: "Ventas masivas con tecnología inteligente"
   description: "Nuestra solución predice cuándo un agente estará libre y lanza llamadas simultáneas, filtrando buzones y tonos de ocupado automáticamente."
   button:

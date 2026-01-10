@@ -2,12 +2,21 @@
 title: "Llamadas Automáticas (Blaster)"
 description: "Difusión masiva de mensajes de voz y notificaciones automatizadas para alcanzar a miles de clientes en segundos."
 
-image: "/images/software/automatic-calls-main.jpg"
+image: "/images/pexels/computer/computer-4.jpg"
 icon: "Megaphone"
+
+pricingSection:
+  enable: true
+  coverImage: "/images/pexels/computer/computer-5.jpg"
+  button:
+    enable: true
+    label: "Ver Planes"
+    url: "/pricing"
+    variant: "outline"
 
 intro:
   enable: true
-  image: ""
+  image: "/images/pexels/computer/computer-1.jpg"
   title: "Comunicación masiva y efectiva"
   description: "Envíe recordatorios, encuestas de satisfacción o campañas de cobranza de forma automatizada sin intervención humana directa."
   button:

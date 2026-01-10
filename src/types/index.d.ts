@@ -37,6 +37,7 @@ export type PricingTier = {
   enable: boolean; // Whether the pricing tier is enabled
   name: string; // Name of the pricing tier
   description: string; // Description of the pricing tier
+  image?: string; // Optional image for the pricing tier
   price: Price[]; // Array of prices for the plans
   features: Feature[]; // List of features included in the pricing tier
   button: Button; // Call-to-action button details
@@ -111,38 +112,38 @@ interface Source {
   preload?: boolean;
   css?: Record<string, string>;
   style:
-    | "normal"
-    | "italic"
-    | "oblique"
-    | `oblique ${number}deg`
-    | GlobalValues
-    | (string & {});
+  | "normal"
+  | "italic"
+  | "oblique"
+  | `oblique ${number}deg`
+  | GlobalValues
+  | (string & {});
   weight?:
-    | "normal"
-    | "bold"
-    | "lighter"
-    | "bolder"
-    | GlobalValues
-    | 100
-    | 200
-    | 300
-    | 400
-    | 500
-    | 600
-    | 700
-    | 800
-    | 900
-    | "100"
-    | "200"
-    | "300"
-    | "400"
-    | "500"
-    | "600"
-    | "700"
-    | "800"
-    | "900"
-    | (string & {})
-    | (number & {});
+  | "normal"
+  | "bold"
+  | "lighter"
+  | "bolder"
+  | GlobalValues
+  | 100
+  | 200
+  | 300
+  | 400
+  | 500
+  | 600
+  | 700
+  | 800
+  | 900
+  | "100"
+  | "200"
+  | "300"
+  | "400"
+  | "500"
+  | "600"
+  | "700"
+  | "800"
+  | "900"
+  | (string & {})
+  | (number & {});
 }
 interface FontConfig {
   name: string;

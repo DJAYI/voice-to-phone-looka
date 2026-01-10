@@ -14,7 +14,7 @@ mainBlock:
         增长≠盈利，失控的成本和现金流正在吃掉你的利润。
 
         你需要的不只是努力，而是一套以利润为目标的经营系统。
-      backgroundImage: "/images/banner/1.jpg"
+      backgroundImage: "/images/pexels/call-center/call-center-1.jpg"
       button:
         enable: true
         label: "解锁利润增长"
@@ -26,7 +26,7 @@ mainBlock:
         hoverEffect: "text-flip" # "text-flip", "creative-fill", "magnetic", "magnetic-text-flip"
     - title: "团队大了，却没人关心利润？"
       description: "问题不在员工，而在机制。利润预算系统，让团队'自动盯利润'。"
-      backgroundImage: "/images/banner/2.jpg"
+      backgroundImage: "/images/pexels/computer/computer-1.jpg"
       button:
         enable: true
         label: "打造积极团队"
@@ -41,7 +41,7 @@ mainBlock:
         混乱的架构会让扩张变成灾难。利润预算系统不仅是财务系统，
 
         更是增长型组织设计图，让每个人在正确的位置，为利润目标发力。
-      backgroundImage: "/images/banner/3.jpg"
+      backgroundImage: "/images/pexels/call-center/call-center-2.jpg"
       button:
         enable: true
         label: "重构增长架构"

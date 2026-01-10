@@ -14,7 +14,7 @@ mainBlock:
         Growth ≠ Profit. Out-of-control costs and cash flow are eating away at your profits.
 
         What you need is not just effort, but a profit-oriented management system.
-      backgroundImage: "/images/banner/1.jpg"
+      backgroundImage: "/images/pexels/call-center/call-center-1.jpg"
       button:
         enable: true
         label: "Unlock Profit Growth"
@@ -26,7 +26,7 @@ mainBlock:
         hoverEffect: "text-flip" # "text-flip", "creative-fill", "magnetic", "magnetic-text-flip"
     - title: "The team is bigger, but no one cares about profit?"
       description: "The problem is not the employees, but the mechanism. The profit budgeting system makes the team 'automatically focus on profit'."
-      backgroundImage: "/images/banner/2.jpg"
+      backgroundImage: "/images/pexels/computer/computer-1.jpg"
       button:
         enable: true
         label: "Build an Active Team"
@@ -41,7 +41,7 @@ mainBlock:
         Chaotic structure will turn expansion into a disaster. The profit budgeting system is not just a financial system,
 
         but also a growth-oriented organizational design blueprint that puts everyone in the right position to drive profit goals.
-      backgroundImage: "/images/banner/3.jpg"
+      backgroundImage: "/images/pexels/call-center/call-center-2.jpg"
       button:
         enable: true
         label: "Restructure Growth Architecture"

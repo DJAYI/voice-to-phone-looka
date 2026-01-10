@@ -2,7 +2,7 @@
 title: "Troncales SIP"
 description: "Conecte su central telefónica IP actual a la red pública con la máxima calidad de voz y menores costos."
 
-image: "/images/services/sip-trunk-main.jpg"
+image: "/assets/images/tabler-illustrations/light/icons-production.png"
 icon: "Server"
 
 intro:
@@ -26,7 +26,7 @@ details:
   description: "Olvídese de las líneas análogas limitadas. Aumente canales de voz según la demanda de su negocio."
   list:
     - enable: true
-      image: "/images/services/service-details/sip-1.jpg"
+      image: "/assets/images/tabler-illustrations/light/shield.png"
       title: "Alta Disponibilidad"
       description: "Rutas de voz premium para garantizar estabilidad y claridad en cada conversación."
       button:
@@ -38,7 +38,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/sip-2.jpg"
+      image: "/assets/images/tabler-illustrations/light/mobile-computer.png"
       title: "Compatible con su PBX"
       description: "Funciona con cualquier centralita IP, Softswitch o Gateway del mercado."
       button:
@@ -50,7 +50,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/sip-3.jpg"
+      image: "/assets/images/tabler-illustrations/light/discount.png"
       title: "Ahorro de Costos"
       description: "Reduzca significativamente su factura telefónica en llamadas nacionales e internacionales."
       button:

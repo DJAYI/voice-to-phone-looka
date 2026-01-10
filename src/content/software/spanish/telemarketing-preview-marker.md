@@ -2,12 +2,21 @@
 title: "Marcador Preview"
 description: "Empodere a sus agentes permitiéndoles revisar la información del cliente antes de iniciar cada llamada."
 
-image: "/images/software/preview-main.jpg"
+image: "/images/pexels/computer/computer-3.jpg"
 icon: "UserCheck"
+
+pricingSection:
+  enable: true
+  coverImage: "/images/pexels/computer/computer-6.jpg"
+  button:
+    enable: true
+    label: "Ver Planes"
+    url: "/pricing"
+    variant: "outline"
 
 intro:
   enable: true
-  image: ""
+  image: "/images/pexels/computer/computer-6.jpg"
   title: "Calidad sobre cantidad en cada contacto"
   description: "Ideal para ventas consultivas o soporte técnico donde el agente necesita conocer el historial del cliente para cerrar el trato."
   button:

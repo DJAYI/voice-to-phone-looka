@@ -14,7 +14,7 @@ mainBlock:
         Los sistemas tradicionales generan altos costos, poca flexibilidad y problemas de escalabilidad.
 
         Con la telefonía en la nube de VoiceToPhone, su empresa puede crecer sin límites, comunicarse desde cualquier lugar y optimizar sus costos operativos.
-      backgroundImage: "/images/banner/1.jpg"
+      backgroundImage: "/images/pexels/call-center/call-center-1.jpg"
       button:
         enable: true
         label: "Descubrir la solución cloud"
@@ -30,7 +30,7 @@ mainBlock:
         El trabajo moderno exige comunicación rápida, fluida y sin interrupciones.
 
         VoiceToPhone conecta a su equipo desde cualquier lugar y dispositivo con una plataforma unificada de llamadas, SMS y contactos.
-      backgroundImage: "/images/banner/2.jpg"
+      backgroundImage: "/images/pexels/computer/computer-1.jpg"
       button:
         enable: true
         label: "Conectar a mi equipo"
@@ -46,7 +46,7 @@ mainBlock:
         Agregue troncales SIP, números, extensiones, sucursales y funcionalidades avanzadas en minutos.
 
         La telefonía cloud de VoiceToPhone se adapta a su presente y a su crecimiento futuro, sin contratos de permanencia.
-      backgroundImage: "/images/banner/3.jpg"
+      backgroundImage: "/images/pexels/call-center/call-center-2.jpg"
       button:
         enable: true
         label: "Escalar sin límites"

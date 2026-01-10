@@ -88,8 +88,8 @@
 
   [settings.navigationButton]
     enable   = true
-    label    = "Solicitar demo"
-    url      = "/contact/"
+    label    = "Acceder"
+    url      = "https://go.voicetophone.com/VUP/login"
     showIcon = "true"
 
   [settings.markup.tableOfContents]

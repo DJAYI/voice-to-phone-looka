@@ -1,0 +1,54 @@
+{
+  "call-center": [
+    {
+      "filename": "call-center-1.jpg",
+      "path": "/images/pexels/call-center/call-center-1.jpg"
+    },
+    {
+      "filename": "call-center-2.jpg",
+      "path": "/images/pexels/call-center/call-center-2.jpg"
+    },
+    {
+      "filename": "call-center-3.jpg",
+      "path": "/images/pexels/call-center/call-center-3.jpg"
+    },
+    {
+      "filename": "call-center-4.jpg",
+      "path": "/images/pexels/call-center/call-center-4.jpg"
+    },
+    {
+      "filename": "call-center-5.jpg",
+      "path": "/images/pexels/call-center/call-center-5.jpg"
+    },
+    {
+      "filename": "call-center-6.jpg",
+      "path": "/images/pexels/call-center/call-center-6.jpg"
+    }
+  ],
+  "computer": [
+    {
+      "filename": "computer-1.jpg",
+      "path": "/images/pexels/computer/computer-1.jpg"
+    },
+    {
+      "filename": "computer-2.jpg",
+      "path": "/images/pexels/computer/computer-2.jpg"
+    },
+    {
+      "filename": "computer-3.jpg",
+      "path": "/images/pexels/computer/computer-3.jpg"
+    },
+    {
+      "filename": "computer-4.jpg",
+      "path": "/images/pexels/computer/computer-4.jpg"
+    },
+    {
+      "filename": "computer-5.jpg",
+      "path": "/images/pexels/computer/computer-5.jpg"
+    },
+    {
+      "filename": "computer-6.jpg",
+      "path": "/images/pexels/computer/computer-6.jpg"
+    }
+  ]
+}

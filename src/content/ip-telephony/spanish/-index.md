@@ -4,7 +4,7 @@ description: "Sabias que la telefonía Ip ofrece mayor flexibilidad y comodidad 
 Conoce la mejor solución de telefonía IP para tu empresa, fácil de instalar y usar,"
 draft: false
 
-image: "images/about-us-banner.jpg"
+image: "/images/pexels/call-center/call-center-5.jpg"
 ---
 
 # Telefonía IP: Guía Completa sobre su Funcionamiento y Beneficios para Empresas

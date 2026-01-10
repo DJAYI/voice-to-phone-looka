@@ -2,7 +2,7 @@
 title: "WhatsApp Multiagente"
 description: "Centralice sus chats: Un solo número de WhatsApp para todo su equipo de atención al cliente."
 
-image: "/images/services/whatsapp-main.jpg"
+image: "/assets/images/tabler-illustrations/light/chatbot.png"
 icon: "MessageCircle"
 
 intro:
@@ -26,7 +26,7 @@ details:
   description: "Herramientas diseñadas para que ningún mensaje de cliente quede sin respuesta."
   list:
     - enable: true
-      image: "/images/services/service-details/wa-1.jpg"
+      image: "/assets/images/tabler-illustrations/light/conversation.png"
       title: "Asignación de Chats"
       description: "Derive conversaciones automáticamente al departamento correcto (Ventas, Soporte, Pagos)."
       button:
@@ -38,7 +38,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/wa-2.jpg"
+      image: "/assets/images/tabler-illustrations/light/chatbot.png"
       title: "Chatbots y Respuestas Rápidas"
       description: "Automatice la bienvenida y las preguntas frecuentes para atender 24/7."
       button:
@@ -50,7 +50,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/wa-3.jpg"
+      image: "/assets/images/tabler-illustrations/light/chart-circle.png"
       title: "Supervisión y Reportes"
       description: "Audite las conversaciones y mida los tiempos de respuesta de su equipo."
       button:

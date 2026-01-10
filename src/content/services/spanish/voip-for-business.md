@@ -2,12 +2,12 @@
 title: "VoIP para Empresas — Telefonía en la Nube"
 description: "Centralice y administre las comunicaciones de su empresa con una solución cloud flexible, segura y escalable."
 
-image: "/images/services/voip-companies.jpg"
+image: "/assets/images/tabler-illustrations/light/hybrid-work.png"
 icon: "Cloud"
 
 intro:
   enable: true
-  image: "/images/services/voip-companies.jpg"
+  image: "/assets/images/tabler-illustrations/light/hybrid-work.png"
   title: "Comunicación empresarial sin límites ni infraestructura"
   description: "La telefonía en la nube de VoiceToPhone le permite comunicarse desde cualquier lugar, reducir costos operativos y escalar su sistema telefónico al ritmo de su negocio."
   button:
@@ -26,7 +26,7 @@ details:
   description: "Ofrecemos una solución de telefonía empresarial que elimina las limitaciones de los sistemas tradicionales y se adapta a equipos modernos y distribuidos."
   list:
     - enable: true
-      image: "/images/services/voip-companies.jpg"
+      image: "/assets/images/tabler-illustrations/light/mobile-computer.png"
       title: "Acceso desde cualquier lugar"
       description: "Utilice su sistema telefónico desde móvil, tablet o computador con conexión a internet."
       button:
@@ -40,7 +40,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/voip-companies.jpg"
+      image: "/assets/images/tabler-illustrations/light/discount.png"
       title: "Ahorro en costos"
       description: "Reduzca gastos en infraestructura, mantenimiento y reparaciones."
       button:
@@ -54,7 +54,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/voip-companies.jpg"
+      image: "/assets/images/tabler-illustrations/light/project.png"
       title: "Escalabilidad inmediata"
       description: "Agregue usuarios, números o funcionalidades en minutos."
       button:

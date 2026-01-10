@@ -339,11 +339,11 @@ export const rateVirtualNumberByCountryCollection = defineCollection({
 
 // Export collections
 export const collections = {
-  blog: blogCollection,
+  // blog: blogCollection,
   services: serviceCollection,
-  "case-studies": portfolioCollection,
+  // "case-studies": portfolioCollection,
   software: serviceCollection,
-  pages: pagesCollection,
+  // pages: pagesCollection,
   rates: ratesCollection,
   "rate-page": ratePageCollection,
   "rate-virtual-number-by-country": rateVirtualNumberByCountryCollection,
@@ -352,12 +352,12 @@ export const collections = {
   sections: defineCollection({}),
   about: defineCollection({}),
   contact: defineCollection({}),
-  faq: defineCollection({}),
-  team: defineCollection({}),
-  pricing: defineCollection({}),
+  // faq: defineCollection({}),
+  // team: defineCollection({}),
+  // pricing: defineCollection({}),
   homepage: defineCollection({}),
-  author: defineCollection({}),
-  career: defineCollection({}),
+  // author: defineCollection({}),
+  // career: defineCollection({}),
   widgets: defineCollection({}),
   help: defineCollection({}),
 };

@@ -2,7 +2,7 @@
 title: "Números Virtuales Internacionales"
 description: "Tenga presencia local en más de 60 países sin abrir oficinas físicas. Reciba llamadas donde quiera."
 
-image: "/images/services/virtual-numbers-main.jpg"
+image: "/assets/images/tabler-illustrations/light/map-destination.png"
 icon: "Globe"
 
 intro:
@@ -26,7 +26,7 @@ details:
   description: "Genere confianza en sus clientes internacionales ofreciéndoles un número local al que llamar."
   list:
     - enable: true
-      image: "/images/services/service-details/did-1.jpg"
+      image: "/assets/images/tabler-illustrations/light/map-destination.png"
       title: "Presencia Global"
       description: "Cobertura en Norteamérica, Europa, Latinoamérica y Asia."
       button:
@@ -38,7 +38,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/did-2.jpg"
+      image: "/assets/images/tabler-illustrations/light/mobile-computer.png"
       title: "Movilidad Total"
       description: "Las llamadas se desvían por IP a su App, Teléfono IP o PC en cualquier parte del mundo."
       button:
@@ -50,7 +50,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/did-3.jpg"
+      image: "/assets/images/tabler-illustrations/light/version-control.png"
       title: "Portabilidad Numérica"
       description: "¿Ya tiene un número? Tráigalo a VoiceToPhone y disfrute de los beneficios de la nube."
       button:

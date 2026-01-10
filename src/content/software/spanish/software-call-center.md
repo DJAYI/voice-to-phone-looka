@@ -1,12 +1,21 @@
 ---
 title: "Software para Call Center"
 description: "Solución de Call Center 100% en la nube: marcadores predictivos, IVR, monitoreo en vivo, integración CRM, grabación y analíticas para optimizar la atención y productividad."
-image: "/images/software/call-center.jpg"
+image: "/images/pexels/call-center/call-center-1.jpg"
 icon: "Cpu"
+
+pricingSection:
+  enable: true
+  coverImage: "/images/pexels/call-center/call-center-5.jpg"
+  button:
+    enable: true
+    label: "Ver Planes"
+    url: "/pricing"
+    variant: "outline"
 
 intro:
   enable: true
-  image: ""
+  image: "/images/pexels/call-center/call-center-2.jpg"
   title: "Software de Call Center centrado en el cliente"
   description: "Una plataforma en la nube que centraliza comunicaciones, automatiza procesos y proporciona herramientas para mejorar la productividad de agentes y la experiencia del cliente."
   button:

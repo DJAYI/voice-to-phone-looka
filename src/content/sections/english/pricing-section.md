@@ -2,6 +2,7 @@
 enable: true # Control the visibility of this section across all pages where it is used
 title: "Choose the Pricing Plan That Fuels Your Business Goals"
 subtitle: "Pricing"
+coverImage: "/images/pexels/computer/computer-2.jpg"
 
 plans:
   # List of available plans. Ensure that these names are used consistently in other places where applicable.
@@ -13,6 +14,7 @@ list:
   - enable: true
     name: "Essentials" # Name of the pricing tier.
     description: "Businesses with a basic understanding of their target audience and market."
+    image: "/images/pexels/computer/computer-2.jpg"
 
     price:
       # Pricing details for each plan type.
@@ -45,6 +47,7 @@ list:
   - enable: true
     name: "Growth" # Name of the pricing tier.
     description: "Refine brand and gain a deeper understanding of the market and customer base."
+    image: "/images/pexels/computer/computer-3.jpg"
 
     price:
       # Pricing details for each plan type.
@@ -77,6 +80,7 @@ list:
   - enable: true
     name: "Enterprise" # Name of the pricing tier.
     description: "Get a comprehensive market research, and in-depth customer insights."
+    image: "/images/pexels/computer/computer-1.jpg"
 
     price:
       # Pricing details for each plan type.

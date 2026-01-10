@@ -5,6 +5,7 @@ import overrideObjects from "@/lib/utils/overrideObjects.ts";
 import { useTranslations } from "@/lib/utils/i18nUtils.ts";
 import { markdownify, toLowerCase } from "@/lib/utils/textConverter";
 import PricingCard from "@/layouts/components/cards/PricingCard.astro";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
 
 // Type for this section data
 type PlanType = "Yearly" | "Monthly";
@@ -41,6 +42,7 @@ let {
   subtitle,
   plans,
   list,
+  coverImage,
 } = actualContent as pricingSectionType;
 ---
 
@@ -49,6 +51,18 @@ let {
     <section class="relative">
       <div class="container">
         <div class="flex flex-wrap items-center justify-between gap-6 overflow-x-hidden lg:flex-nowrap">
+          {coverImage && (
+            <div
+              data-aos="fade-left-sm"
+              class="mb-6 w-full lg:mb-0 lg:block lg:w-1/3 lg:pe-6">
+              <OptimizedImage
+                src={coverImage}
+                alt="Pricing image"
+                class="h-56 w-full rounded-lg object-cover lg:h-72"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+            </div>
+          )}
           <div class="lg:max-w-2xl">
             <div data-aos="fade-right-sm">
               {subtitle && (

@@ -2,7 +2,7 @@
 title: "SMS y Mensajes de Voz Masivos"
 description: "Comuníquese con miles de clientes al instante. Campañas de marketing y notificaciones efectivas."
 
-image: "/images/services/sms-main.jpg"
+image: "/assets/images/tabler-illustrations/light/message.png"
 icon: "Send"
 
 intro:
@@ -26,7 +26,7 @@ details:
   description: "Ideal para cobranzas, recordatorios de citas, códigos OTP y promociones flash."
   list:
     - enable: true
-      image: "/images/services/service-details/sms-1.jpg"
+      image: "/assets/images/tabler-illustrations/light/podcast.png"
       title: "Mensajes de Voz (Blaster)"
       description: "Envíe un audio pregrabado a miles de teléfonos fijos o móviles simultáneamente."
       button:
@@ -38,7 +38,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/sms-2.jpg"
+      image: "/assets/images/tabler-illustrations/light/message.png"
       title: "SMS Marketing"
       description: "Mensajes de texto cortos, directos y con enlaces rastreables para medir conversión."
       button:
@@ -50,7 +50,7 @@ details:
         hoverEffect: "text-flip"
 
     - enable: true
-      image: "/images/services/service-details/sms-3.jpg"
+      image: "/assets/images/tabler-illustrations/light/reading.png"
       title: "Personalización"
       description: "Use variables para personalizar cada mensaje con el nombre o saldo del cliente."
       button:

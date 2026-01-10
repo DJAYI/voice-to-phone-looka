@@ -3,6 +3,7 @@ import type { PricingTier } from "@/types";
 import CustomButton from "../CustomButton.astro";
 import { markdownify, toLowerCase } from "@/lib/utils/textConverter";
 import AnimatedNumber from "@/components/widgets/AnimatedNumber.astro";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
 
 type Props = {
   content: PricingTier;
@@ -37,6 +38,17 @@ if (!enable) return;
   ]}
   {...rest}>
   <div class="flex flex-col gap-5">
+    {
+      content.image && (
+        <div class="mb-4 w-full overflow-hidden rounded-md">
+          <OptimizedImage
+            src={content.image}
+            alt={name}
+            class="h-40 w-full object-cover"
+          />
+        </div>
+      )
+    }
     {name && <h3 class="text-h5 text-inherit" set:html={markdownify(name)} />}
     <div class="space-y-4">
       <div>

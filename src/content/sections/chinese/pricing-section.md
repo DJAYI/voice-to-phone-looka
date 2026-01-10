@@ -2,6 +2,7 @@
 enable: true # 控制区块显示
 title: "量身定制，匹配您当前的发展阶段"
 subtitle: "服务模式 Service Models"
+coverImage: "/images/pexels/computer/computer-2.jpg"
 
 plans: []
 
@@ -10,6 +11,7 @@ list:
   - enable: true
     name: "实战课程培训"
     description: "适合需要提升领导团队认知、学习增长方法论，建立内部（SOP）的企业团队。"
+    image: "/images/pexels/computer/computer-1.jpg"
 
     price:
       - type: "人数报价"
@@ -37,6 +39,7 @@ list:
   - enable: true
     name: "深度咨询落地"
     description: "适合面临具体增长瓶颈、转型困难，需要专家团队介入诊断并提供完整解决方案的企业。"
+    image: "/images/pexels/computer/computer-2.jpg"
 
     price:
       - type: "按项目报价"
