@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Venezuela — Móvil",
+    "price": "USD $0.017 / minuto",
+    "operator": "Movil",
+    "type": "Standard"
+  },
+  {
+    "title": "Venezuela — Fijo",
+    "price": "USD $0.028 / minuto",
+    "operator": "Fijo",
+    "type": "Premium"
+  },
+  {
+    "title": "Venezuela — MovilNet",
+    "price": "USD $0.028 / minuto",
+    "operator": "MovilNet",
+    "type": ""
+  },
+  {
+    "title": "Ejemplo — País X",
+    "price": "USD $0.052 / minuto",
+    "operator": "",
+    "type": ""
+  },
+  {
+    "title": "Ejemplo — País X2",
+    "price": "USD $0.052 / minuto",
+    "operator": "",
+    "type": ""
+  },
+  {
+    "title": "Ejemplo — País X3",
+    "price": "USD $0.052 / minuto",
+    "operator": "",
+    "type": ""
+  }
+]
