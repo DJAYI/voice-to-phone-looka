@@ -1,12 +1,13 @@
 ---
 title: Como es la calidad de las llamadas?
 parent: inquietudes-basicas
-source_url: 'https://www.voicetophone.com/help/3/es'
-date_scraped: '2026-01-10T21:27:05.017Z'
+source_url: "https://www.voicetophone.com/help/3/es"
+date_scraped: "2026-01-10T21:27:05.017Z"
 route: /help/inquietudes-basicas/como-es-la-calidad-de-las-llamadas/
 id: inquietudes-basicas-q-8-como-es-la-calidad-de-las-llamadas
 draft: false
 ---
+
 # Como es la calidad de las llamadas?
 
 Como es la calidad de las llamadas?

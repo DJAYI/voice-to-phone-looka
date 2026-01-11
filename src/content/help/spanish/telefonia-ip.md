@@ -1,7 +1,7 @@
 ---
 title: Telefonía IP
-source_url: 'https://www.voicetophone.com/help/10/es'
-date_scraped: '2026-01-10T21:27:38.258Z'
+source_url: "https://www.voicetophone.com/help/10/es"
+date_scraped: "2026-01-10T21:27:38.258Z"
 route: /help/telefonia-ip/es/
 draft: false
 description: Como debería ser un sistema de telefonía IP ideal?
@@ -18,12 +18,14 @@ qids:
   - telefonia-ip-q-7-que-medios-de-pago-aceptan
   - telefonia-ip-q-8-cuanto-tiempo-demora-la-instalacion-del-servicio
 ---
+
 <details id="telefonia-ip-q-0-como-deberia-ser-un-sistema-de-telefonia-ip-ideal" open>
 <summary>Como debería ser un sistema de telefonía IP ideal?</summary>
 
 Como debería ser un sistema de telefonía IP ideal?
 
 Un sistema de telefonía IP ideal debería contar con los siguientes puntos clave
+
 1. Que tenga una interfaz intuitiva y sea de fácil configuración.
 2. Que sea adaptable a las necesidades cambiantes de la empresa.
 3. Que sea seguro.

@@ -1,12 +1,13 @@
 ---
 title: Donde ver el historial de las llamadas realizadas?
 parent: inquietudes-basicas
-source_url: 'https://www.voicetophone.com/help/3/es'
-date_scraped: '2026-01-10T21:27:04.040Z'
+source_url: "https://www.voicetophone.com/help/3/es"
+date_scraped: "2026-01-10T21:27:04.040Z"
 route: /help/inquietudes-basicas/donde-ver-el-historial-de-las-llamadas-realizadas/
 id: inquietudes-basicas-q-5-donde-ver-el-historial-de-las-llamadas-realizadas
 draft: false
 ---
+
 # Donde ver el historial de las llamadas realizadas?
 
 Donde ver el historial de las llamadas realizadas?

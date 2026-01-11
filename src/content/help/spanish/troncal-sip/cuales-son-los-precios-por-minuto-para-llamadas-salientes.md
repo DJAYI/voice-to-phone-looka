@@ -1,12 +1,13 @@
 ---
 title: Cuáles son los precios por minuto para llamadas salientes?
 parent: troncal-sip
-source_url: 'https://www.voicetophone.com/help/12/es'
-date_scraped: '2026-01-10T21:27:45.069Z'
+source_url: "https://www.voicetophone.com/help/12/es"
+date_scraped: "2026-01-10T21:27:45.069Z"
 route: /help/troncal-sip/cuales-son-los-precios-por-minuto-para-llamadas-salientes/
 id: troncal-sip-q-2-cuales-son-los-precios-por-minuto-para-llamadas-salientes
 draft: false
 ---
+
 # Cuáles son los precios por minuto para llamadas salientes?
 
 Cuáles son los precios por minuto para llamadas salientes?

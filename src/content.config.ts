@@ -319,7 +319,6 @@ export const rateVirtualNumberByCountryCollection = defineCollection({
   //       description: z.string().optional(),
   //       steps: z.array(z.string()).optional(),
   //     }),
-
   //     adventages: z
   //       .object({
   //         descripction: z.string().optional(),

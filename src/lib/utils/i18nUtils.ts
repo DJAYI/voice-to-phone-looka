@@ -82,10 +82,10 @@ export const useTranslations = async (lang: string): Promise<Function> => {
   // Utility type to recursively build dot-separated keys for a nested object
   type DotNotationKeys<T> = T extends NestedObject
     ? {
-      [K in keyof T & string]: T[K] extends NestedObject
-      ? `${K}` | `${K}.${DotNotationKeys<T[K]>}`
-      : `${K}`;
-    }[keyof T & string]
+        [K in keyof T & string]: T[K] extends NestedObject
+          ? `${K}` | `${K}.${DotNotationKeys<T[K]>}`
+          : `${K}`;
+      }[keyof T & string]
     : never;
 
   const t = <T extends NestedObject>(key: DotNotationKeys<T>): string | any => {
@@ -128,18 +128,18 @@ export const getSupportedLanguages = (): Array<any> => {
     config.settings.multilingual.enable
       ? config.settings.multilingual.disableLanguages
       : supportedLanguages
-        .map(
-          (lang) =>
-            lang.languageCode !== defaultLanguage && lang.languageCode,
-        )
-        .filter(Boolean)
+          .map(
+            (lang) =>
+              lang.languageCode !== defaultLanguage && lang.languageCode,
+          )
+          .filter(Boolean)
   ) as (typeof supportedLanguages)[0]["languageCode"][];
 
   // Filter out the disabled languages
   cachedLanguages = disabledLanguages
     ? supportedLanguages.filter(
-      (lang) => !disabledLanguages?.includes(lang.languageCode),
-    )
+        (lang) => !disabledLanguages?.includes(lang.languageCode),
+      )
     : supportedLanguages;
 
   return cachedLanguages;

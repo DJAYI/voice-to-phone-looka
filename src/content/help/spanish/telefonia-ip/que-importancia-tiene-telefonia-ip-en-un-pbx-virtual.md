@@ -1,12 +1,13 @@
 ---
 title: Que importancia tiene telefonía Ip en un PBX Virtual?
 parent: telefonia-ip
-source_url: 'https://www.voicetophone.com/help/10/es'
-date_scraped: '2026-01-10T21:27:39.227Z'
+source_url: "https://www.voicetophone.com/help/10/es"
+date_scraped: "2026-01-10T21:27:39.227Z"
 route: /help/telefonia-ip/que-importancia-tiene-telefonia-ip-en-un-pbx-virtual/
 id: telefonia-ip-q-4-que-importancia-tiene-telefonia-ip-en-un-pbx-virtual
 draft: false
 ---
+
 # Que importancia tiene telefonía Ip en un PBX Virtual?
 
 Que importancia tiene telefonía Ip en un PBX Virtual?

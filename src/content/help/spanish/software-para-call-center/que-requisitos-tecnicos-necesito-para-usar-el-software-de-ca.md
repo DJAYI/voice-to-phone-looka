@@ -1,14 +1,15 @@
 ---
 title: Que requisitos técnicos necesito para usar el software de call center?
 parent: software-para-call-center
-source_url: 'https://www.voicetophone.com/help/6/es'
-date_scraped: '2026-01-10T21:27:24.063Z'
+source_url: "https://www.voicetophone.com/help/6/es"
+date_scraped: "2026-01-10T21:27:24.063Z"
 route: >-
   /help/software-para-call-center/que-requisitos-tecnicos-necesito-para-usar-el-software-de-ca/
 id: >-
   software-para-call-center-q-6-que-requisitos-tecnicos-necesito-para-usar-el-software-de-ca
 draft: false
 ---
+
 # Que requisitos técnicos necesito para usar el software de call center?
 
 Que requisitos técnicos necesito para usar el software de call center?

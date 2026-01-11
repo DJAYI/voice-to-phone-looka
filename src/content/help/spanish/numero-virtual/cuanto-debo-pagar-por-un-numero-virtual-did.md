@@ -1,12 +1,13 @@
 ---
 title: Cuanto debo pagar por un Número Virtual DID?
 parent: numero-virtual
-source_url: 'https://www.voicetophone.com/help/4/es'
-date_scraped: '2026-01-10T21:27:11.719Z'
+source_url: "https://www.voicetophone.com/help/4/es"
+date_scraped: "2026-01-10T21:27:11.719Z"
 route: /help/numero-virtual/cuanto-debo-pagar-por-un-numero-virtual-did/
 id: numero-virtual-q-7-cuanto-debo-pagar-por-un-numero-virtual-did
 draft: false
 ---
+
 # Cuanto debo pagar por un Número Virtual DID?
 
 Cuanto debo pagar por un Número Virtual DID?

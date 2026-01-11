@@ -1,7 +1,7 @@
 ---
 title: Llamadas Voip
-source_url: 'https://www.voicetophone.com/help/8/es'
-date_scraped: '2026-01-10T21:27:27.410Z'
+source_url: "https://www.voicetophone.com/help/8/es"
+date_scraped: "2026-01-10T21:27:27.410Z"
 route: /help/llamadas-voip/es/
 draft: false
 description: Que es la Nube?
@@ -15,6 +15,7 @@ qids:
     llamadas-voip-q-5-que-debo-hacer-cuando-las-llamadas-no-conectan-o-se-escuchan
   - llamadas-voip-q-6-en-que-dispositivos-podre-utilizar-mi-cuenta-voip
 ---
+
 <details id="llamadas-voip-q-0-que-es-la-nube" open>
 <summary>Que es la Nube?</summary>
 
@@ -78,6 +79,7 @@ Solicita nuestra cuenta de bancos a tu asesor de ventas.
 <summary>Que debo hacer cuando las llamadas no conectan o se escuchan entrecortadas?</summary>
 
 Que debo hacer cuando las llamadas no conectan o se escuchan entrecortadas?
+
 1. La calidad de las llamadas Voip dependen de muchos factores, como por ejemplo:
 
 - La disponibilidad de ancho de banda donde esta ubicado el dispositivo.
@@ -88,10 +90,7 @@ Que debo hacer cuando las llamadas no conectan o se escuchan entrecortadas?
 
 - Las condiciones del telefono conectado al Voip.
 
-Cuando es alguna de las anteriores, se recomienda reiniciar el moden de internet y el dispositivo Voip, Revisar cableado y teléfono, reemplazandolos con otros, realizando nuevas pruebas.
-2. En otros casos la calidad de las llamadas puede verse afectada por el bloqueo de puertos por parte del operador de telefonía , y para ello se debe solicitar la apertura de los puertos 5060, 5061 UDP y TCP , asi como tambien los puertos 80, 8080, y los rangos del 2000 al 20000 UDP.
-3. Revisar los codecs de audio configurados en la cuenta y en el dispositivo Voip.
-4. Si aún no hay soluciones es recomendable contactar con soporte voicetophone enviando un email a soporte@voicetophone.com
+Cuando es alguna de las anteriores, se recomienda reiniciar el moden de internet y el dispositivo Voip, Revisar cableado y teléfono, reemplazandolos con otros, realizando nuevas pruebas. 2. En otros casos la calidad de las llamadas puede verse afectada por el bloqueo de puertos por parte del operador de telefonía , y para ello se debe solicitar la apertura de los puertos 5060, 5061 UDP y TCP , asi como tambien los puertos 80, 8080, y los rangos del 2000 al 20000 UDP. 3. Revisar los codecs de audio configurados en la cuenta y en el dispositivo Voip. 4. Si aún no hay soluciones es recomendable contactar con soporte voicetophone enviando un email a soporte@voicetophone.com
 
 </details>
 

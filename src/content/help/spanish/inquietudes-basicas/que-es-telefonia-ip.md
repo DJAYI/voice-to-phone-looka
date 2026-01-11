@@ -1,12 +1,13 @@
 ---
 title: Que es telefonía Ip?
 parent: inquietudes-basicas
-source_url: 'https://www.voicetophone.com/help/3/es'
-date_scraped: '2026-01-10T21:27:03.095Z'
+source_url: "https://www.voicetophone.com/help/3/es"
+date_scraped: "2026-01-10T21:27:03.095Z"
 route: /help/inquietudes-basicas/que-es-telefonia-ip/
 id: inquietudes-basicas-q-2-que-es-telefonia-ip
 draft: false
 ---
+
 # Que es telefonía Ip?
 
 Que es telefonía Ip?

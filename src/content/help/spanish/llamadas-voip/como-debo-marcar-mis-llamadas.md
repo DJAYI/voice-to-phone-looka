@@ -1,12 +1,13 @@
 ---
 title: Como debo marcar mis llamadas?
 parent: llamadas-voip
-source_url: 'https://www.voicetophone.com/help/8/es'
-date_scraped: '2026-01-10T21:27:28.352Z'
+source_url: "https://www.voicetophone.com/help/8/es"
+date_scraped: "2026-01-10T21:27:28.352Z"
 route: /help/llamadas-voip/como-debo-marcar-mis-llamadas/
 id: llamadas-voip-q-2-como-debo-marcar-mis-llamadas
 draft: false
 ---
+
 # Como debo marcar mis llamadas?
 
 Como debo marcar mis llamadas?

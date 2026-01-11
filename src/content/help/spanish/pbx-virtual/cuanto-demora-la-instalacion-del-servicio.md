@@ -1,12 +1,13 @@
 ---
 title: Cuanto demora la instalación del servicio?
 parent: pbx-virtual
-source_url: 'https://www.voicetophone.com/help/5/es'
-date_scraped: '2026-01-10T21:27:16.290Z'
+source_url: "https://www.voicetophone.com/help/5/es"
+date_scraped: "2026-01-10T21:27:16.290Z"
 route: /help/pbx-virtual/cuanto-demora-la-instalacion-del-servicio/
 id: pbx-virtual-q-2-cuanto-demora-la-instalacion-del-servicio
 draft: false
 ---
+
 # Cuanto demora la instalación del servicio?
 
 Cuanto demora la instalación del servicio?

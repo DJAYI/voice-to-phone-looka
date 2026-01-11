@@ -1,12 +1,13 @@
 ---
 title: Porque debería utilizar un pbx virtual en mi empresa?
 parent: pbx-virtual
-source_url: 'https://www.voicetophone.com/help/5/es'
-date_scraped: '2026-01-10T21:27:15.648Z'
+source_url: "https://www.voicetophone.com/help/5/es"
+date_scraped: "2026-01-10T21:27:15.648Z"
 route: /help/pbx-virtual/porque-deberia-utilizar-un-pbx-virtual-en-mi-empresa/
 id: pbx-virtual-q-0-porque-deberia-utilizar-un-pbx-virtual-en-mi-empresa
 draft: false
 ---
+
 # Porque debería utilizar un pbx virtual en mi empresa?
 
 Porque debería utilizar un pbx virtual en mi empresa?

@@ -1,12 +1,13 @@
 ---
 title: Cuanto cuesta el software de call center?
 parent: software-para-call-center
-source_url: 'https://www.voicetophone.com/help/6/es'
-date_scraped: '2026-01-10T21:27:23.453Z'
+source_url: "https://www.voicetophone.com/help/6/es"
+date_scraped: "2026-01-10T21:27:23.453Z"
 route: /help/software-para-call-center/cuanto-cuesta-el-software-de-call-center/
 id: software-para-call-center-q-4-cuanto-cuesta-el-software-de-call-center
 draft: false
 ---
+
 # Cuanto cuesta el software de call center?
 
 Cuanto cuesta el software de call center?

@@ -1,12 +1,13 @@
 ---
 title: Es necesario tener internet?
 parent: numero-virtual
-source_url: 'https://www.voicetophone.com/help/4/es'
-date_scraped: '2026-01-10T21:27:10.110Z'
+source_url: "https://www.voicetophone.com/help/4/es"
+date_scraped: "2026-01-10T21:27:10.110Z"
 route: /help/numero-virtual/es-necesario-tener-internet/
 id: numero-virtual-q-1-es-necesario-tener-internet
 draft: false
 ---
+
 # Es necesario tener internet?
 
 Es necesario tener internet?

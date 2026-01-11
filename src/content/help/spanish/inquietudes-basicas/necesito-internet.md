@@ -1,12 +1,13 @@
 ---
 title: Necesito internet ?
 parent: inquietudes-basicas
-source_url: 'https://www.voicetophone.com/help/3/es'
-date_scraped: '2026-01-10T21:27:04.675Z'
+source_url: "https://www.voicetophone.com/help/3/es"
+date_scraped: "2026-01-10T21:27:04.675Z"
 route: /help/inquietudes-basicas/necesito-internet/
 id: inquietudes-basicas-q-7-necesito-internet
 draft: false
 ---
+
 # Necesito internet ?
 
 Necesito internet ?

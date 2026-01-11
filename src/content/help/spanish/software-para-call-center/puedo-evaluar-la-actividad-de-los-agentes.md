@@ -1,12 +1,13 @@
 ---
 title: Puedo evaluar la actividad de los agentes?
 parent: software-para-call-center
-source_url: 'https://www.voicetophone.com/help/6/es'
-date_scraped: '2026-01-10T21:27:22.789Z'
+source_url: "https://www.voicetophone.com/help/6/es"
+date_scraped: "2026-01-10T21:27:22.789Z"
 route: /help/software-para-call-center/puedo-evaluar-la-actividad-de-los-agentes/
 id: software-para-call-center-q-2-puedo-evaluar-la-actividad-de-los-agentes
 draft: false
 ---
+
 # Puedo evaluar la actividad de los agentes?
 
 Puedo evaluar la actividad de los agentes?

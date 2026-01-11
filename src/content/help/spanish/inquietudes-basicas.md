@@ -1,7 +1,7 @@
 ---
 title: Inquietudes básicas
-source_url: 'https://www.voicetophone.com/help/3/es'
-date_scraped: '2026-01-10T21:27:02.119Z'
+source_url: "https://www.voicetophone.com/help/3/es"
+date_scraped: "2026-01-10T21:27:02.119Z"
 route: /help/inquietudes-basicas/es/
 draft: false
 description: Cómo empezar ?
@@ -18,12 +18,14 @@ qids:
   - inquietudes-basicas-q-9-debo-firmar-un-contrato-de-permanencia
   - inquietudes-basicas-q-10-lista-de-contactos
 ---
+
 <details id="inquietudes-basicas-q-0-como-empezar" open>
 <summary>Cómo empezar ?</summary>
 
 Cómo empezar ?
 
 Empezar a disfrutar de nuestros servicios es muy facil siguiendo 3 sencillos pasos:
+
 1. Registro : crea una cuenta a través del link [https://go.voicetophone.com/VUP ](https://go.voicetophone.com/VUP) .
 2. Solcitud de servicios : rellene el formulario de contacto con sus datos y solicite su servicio con detalles especificos.
 3. Respuesta : Nuestro equipo de ventas se pondra en contacto con usted lo mas pronto posible.

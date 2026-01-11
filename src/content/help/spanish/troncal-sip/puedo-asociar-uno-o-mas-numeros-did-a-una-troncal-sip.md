@@ -1,12 +1,13 @@
 ---
 title: Puedo asociar uno o más números DID a una troncal Sip?
 parent: troncal-sip
-source_url: 'https://www.voicetophone.com/help/12/es'
-date_scraped: '2026-01-10T21:27:45.071Z'
+source_url: "https://www.voicetophone.com/help/12/es"
+date_scraped: "2026-01-10T21:27:45.071Z"
 route: /help/troncal-sip/puedo-asociar-uno-o-mas-numeros-did-a-una-troncal-sip/
 id: troncal-sip-q-3-puedo-asociar-uno-o-mas-numeros-did-a-una-troncal-sip
 draft: false
 ---
+
 # Puedo asociar uno o más números DID a una troncal Sip?
 
 Puedo asociar uno o más números DID a una troncal Sip?

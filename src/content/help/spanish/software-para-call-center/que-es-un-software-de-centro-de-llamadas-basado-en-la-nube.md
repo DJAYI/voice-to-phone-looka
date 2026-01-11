@@ -1,14 +1,15 @@
 ---
 title: Que es un software de centro de llamadas basado en la nube?
 parent: software-para-call-center
-source_url: 'https://www.voicetophone.com/help/6/es'
-date_scraped: '2026-01-10T21:27:22.147Z'
+source_url: "https://www.voicetophone.com/help/6/es"
+date_scraped: "2026-01-10T21:27:22.147Z"
 route: >-
   /help/software-para-call-center/que-es-un-software-de-centro-de-llamadas-basado-en-la-nube/
 id: >-
   software-para-call-center-q-0-que-es-un-software-de-centro-de-llamadas-basado-en-la-nube
 draft: false
 ---
+
 # Que es un software de centro de llamadas basado en la nube?
 
 Que es un software de centro de llamadas basado en la nube?

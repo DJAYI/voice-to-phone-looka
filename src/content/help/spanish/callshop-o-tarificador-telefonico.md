@@ -1,7 +1,7 @@
 ---
 title: Callshop o Tarificador telefónico
-source_url: 'https://www.voicetophone.com/help/9/es'
-date_scraped: '2026-01-10T21:27:32.990Z'
+source_url: "https://www.voicetophone.com/help/9/es"
+date_scraped: "2026-01-10T21:27:32.990Z"
 route: /help/callshop-o-tarificador-telefonico/es/
 draft: false
 description: Que es un Call shop?
@@ -15,6 +15,7 @@ qids:
   - >-
     callshop-o-tarificador-telefonico-q-4-porque-el-call-shop-de-voicetophone-es-el-mejor
 ---
+
 <details id="callshop-o-tarificador-telefonico-q-0-que-es-un-call-shop" open>
 <summary>Que es un Call shop?</summary>
 

@@ -1,12 +1,13 @@
 ---
 title: Que obtengo con el servicio de troncal SIP para mi compañia?
 parent: troncal-sip
-source_url: 'https://www.voicetophone.com/help/12/es'
-date_scraped: '2026-01-10T21:27:45.066Z'
+source_url: "https://www.voicetophone.com/help/12/es"
+date_scraped: "2026-01-10T21:27:45.066Z"
 route: /help/troncal-sip/que-obtengo-con-el-servicio-de-troncal-sip-para-mi-compania/
 id: troncal-sip-q-0-que-obtengo-con-el-servicio-de-troncal-sip-para-mi-compania
 draft: false
 ---
+
 # Que obtengo con el servicio de troncal SIP para mi compañia?
 
 Que obtengo con el servicio de troncal SIP para mi compañia?

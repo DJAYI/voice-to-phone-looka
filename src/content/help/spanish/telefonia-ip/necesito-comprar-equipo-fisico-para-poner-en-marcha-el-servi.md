@@ -3,13 +3,14 @@ title: >-
   Necesito comprar equipo físico para poner en marcha el servicio de telefonía
   IP?
 parent: telefonia-ip
-source_url: 'https://www.voicetophone.com/help/10/es'
-date_scraped: '2026-01-10T21:27:39.228Z'
+source_url: "https://www.voicetophone.com/help/10/es"
+date_scraped: "2026-01-10T21:27:39.228Z"
 route: >-
   /help/telefonia-ip/necesito-comprar-equipo-fisico-para-poner-en-marcha-el-servi/
 id: telefonia-ip-q-5-necesito-comprar-equipo-fisico-para-poner-en-marcha-el-servi
 draft: false
 ---
+
 # Necesito comprar equipo físico para poner en marcha el servicio de telefonía IP?
 
 Necesito comprar equipo físico para poner en marcha el servicio de telefonía IP?

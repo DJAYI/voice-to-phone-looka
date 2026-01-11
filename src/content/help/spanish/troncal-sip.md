@@ -1,7 +1,7 @@
 ---
 title: Troncal Sip
-source_url: 'https://www.voicetophone.com/help/12/es'
-date_scraped: '2026-01-10T21:27:45.065Z'
+source_url: "https://www.voicetophone.com/help/12/es"
+date_scraped: "2026-01-10T21:27:45.065Z"
 route: /help/troncal-sip/es/
 draft: false
 description: Que obtengo con el servicio de troncal SIP para mi compañia?
@@ -16,6 +16,7 @@ qids:
   - troncal-sip-q-7-puedo-grabar-todas-las-llamadas-generadas-en-la-troncal-sip
   - troncal-sip-q-8-que-medios-de-pago-aceptan-para-el-pago-de-los-servicios
 ---
+
 <details id="troncal-sip-q-0-que-obtengo-con-el-servicio-de-troncal-sip-para-mi-compania" open>
 <summary>Que obtengo con el servicio de troncal SIP para mi compañia?</summary>
 

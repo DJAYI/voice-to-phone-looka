@@ -1,12 +1,13 @@
 ---
 title: Que funcionalidades ofrece un pbx virtual de Voice to Phone?
 parent: pbx-virtual
-source_url: 'https://www.voicetophone.com/help/5/es'
-date_scraped: '2026-01-10T21:27:16.603Z'
+source_url: "https://www.voicetophone.com/help/5/es"
+date_scraped: "2026-01-10T21:27:16.603Z"
 route: /help/pbx-virtual/que-funcionalidades-ofrece-un-pbx-virtual-de-voice-to-phone/
 id: pbx-virtual-q-3-que-funcionalidades-ofrece-un-pbx-virtual-de-voice-to-phone
 draft: false
 ---
+
 # Que funcionalidades ofrece un pbx virtual de Voice to Phone?
 
 Que funcionalidades ofrece un pbx virtual de Voice to Phone?

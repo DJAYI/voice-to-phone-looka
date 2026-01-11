@@ -112,38 +112,38 @@ interface Source {
   preload?: boolean;
   css?: Record<string, string>;
   style:
-  | "normal"
-  | "italic"
-  | "oblique"
-  | `oblique ${number}deg`
-  | GlobalValues
-  | (string & {});
+    | "normal"
+    | "italic"
+    | "oblique"
+    | `oblique ${number}deg`
+    | GlobalValues
+    | (string & {});
   weight?:
-  | "normal"
-  | "bold"
-  | "lighter"
-  | "bolder"
-  | GlobalValues
-  | 100
-  | 200
-  | 300
-  | 400
-  | 500
-  | 600
-  | 700
-  | 800
-  | 900
-  | "100"
-  | "200"
-  | "300"
-  | "400"
-  | "500"
-  | "600"
-  | "700"
-  | "800"
-  | "900"
-  | (string & {})
-  | (number & {});
+    | "normal"
+    | "bold"
+    | "lighter"
+    | "bolder"
+    | GlobalValues
+    | 100
+    | 200
+    | 300
+    | 400
+    | 500
+    | 600
+    | 700
+    | 800
+    | 900
+    | "100"
+    | "200"
+    | "300"
+    | "400"
+    | "500"
+    | "600"
+    | "700"
+    | "800"
+    | "900"
+    | (string & {})
+    | (number & {});
 }
 interface FontConfig {
   name: string;

@@ -1,12 +1,13 @@
 ---
 title: Que es la Nube?
 parent: llamadas-voip
-source_url: 'https://www.voicetophone.com/help/8/es'
-date_scraped: '2026-01-10T21:27:27.744Z'
+source_url: "https://www.voicetophone.com/help/8/es"
+date_scraped: "2026-01-10T21:27:27.744Z"
 route: /help/llamadas-voip/que-es-la-nube/
 id: llamadas-voip-q-0-que-es-la-nube
 draft: false
 ---
+
 # Que es la Nube?
 
 Que es la Nube?

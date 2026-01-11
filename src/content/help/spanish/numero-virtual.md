@@ -1,7 +1,7 @@
 ---
 title: Número Virtual
-source_url: 'https://www.voicetophone.com/help/4/es'
-date_scraped: '2026-01-10T21:27:09.431Z'
+source_url: "https://www.voicetophone.com/help/4/es"
+date_scraped: "2026-01-10T21:27:09.431Z"
 route: /help/numero-virtual/es/
 draft: false
 description: Puedo probar este servicio?
@@ -19,6 +19,7 @@ qids:
   - >-
     numero-virtual-q-9-puedo-asociar-mi-numero-virtual-a-una-pbx-o-central-telefoni
 ---
+
 <details id="numero-virtual-q-0-puedo-probar-este-servicio" open>
 <summary>Puedo probar este servicio?</summary>
 
@@ -47,6 +48,7 @@ Sin embargo, cuando se desea recibir llamadas en un softphone para PC o móviles
 Como comprar un número DID?
 
 Comprar uno o varios numeros DID es muy facil y lo puedes hacer siguiendo estos 6 simples pasos:
+
 1. Verifica la cobertura de tus DID en nuestra seccion de precios.
 2. Verifica si se existen requisitos para comprar números de ese pais en nuestra seccion de ayuda.
 3. Solicita tu cuenta en [contáctenos](https://www.voicetophone.com/contact/es) , o crea tu cuenta directamente en : https://go.voicetophone.com/VUP/login

@@ -1,7 +1,7 @@
 ---
 title: Pbx virtual
-source_url: 'https://www.voicetophone.com/help/5/es'
-date_scraped: '2026-01-10T21:27:15.330Z'
+source_url: "https://www.voicetophone.com/help/5/es"
+date_scraped: "2026-01-10T21:27:15.330Z"
 route: /help/pbx-virtual/es/
 draft: false
 description: Porque debería utilizar un pbx virtual en mi empresa?
@@ -16,6 +16,7 @@ qids:
   - pbx-virtual-q-7-debo-comprar-telefonos-ip-para-usar-la-pbx-virtual
   - pbx-virtual-q-8-que-medios-de-pago-que-aceptan
 ---
+
 <details id="pbx-virtual-q-0-porque-deberia-utilizar-un-pbx-virtual-en-mi-empresa" open>
 <summary>Porque debería utilizar un pbx virtual en mi empresa?</summary>
 

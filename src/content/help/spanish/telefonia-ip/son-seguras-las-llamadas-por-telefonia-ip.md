@@ -1,12 +1,13 @@
 ---
 title: Son seguras las llamadas por telefonía IP ?
 parent: telefonia-ip
-source_url: 'https://www.voicetophone.com/help/10/es'
-date_scraped: '2026-01-10T21:27:39.225Z'
+source_url: "https://www.voicetophone.com/help/10/es"
+date_scraped: "2026-01-10T21:27:39.225Z"
 route: /help/telefonia-ip/son-seguras-las-llamadas-por-telefonia-ip/
 id: telefonia-ip-q-3-son-seguras-las-llamadas-por-telefonia-ip
 draft: false
 ---
+
 # Son seguras las llamadas por telefonía IP ?
 
 Son seguras las llamadas por telefonía IP ?
