@@ -1,19 +1,19 @@
 ---
-
 title: Call Shop or Rate Calculator
-source_url: "https://www.voicetophone.com/help/9/es"
+source_url: "https://www.voicetophone.com/help/9/en"
 date_scraped: "2026-01-10T21:27:32.990Z"
-route: /help/callshop-o-tarificador-telefonico/es/
+route: /help/callshop-o-tarificador-telefonico/en/
 draft: false
 description: What is a call shop?
 qids:
-
-- callshop-o-tarificador-telefonico-q-0-que-es-un-call-shop
-- > - callshop-o-tarificador-telefonico-q-1-a-que-tipo-de-negocios-esta-enfocado-call-shop
-- > - callshop-o-tarificador-telefonico-q-2-por-que-debo-tener-un-call-shop-en-mi-negocio
-- callshop-o-tarificador-telefonico-q-3-que-ventajas-tiene-un-call-shop
-- > - callshop-o-tarificador-telefonico-q-4-porque-el-call-shop-de-voicetophone-es-el-mejor
-
+  - callshop-o-tarificador-telefonico-q-0-que-es-un-call-shop
+  - >-
+    callshop-o-tarificador-telefonico-q-1-a-que-tipo-de-negocios-esta-enfocado-call-shop
+  - >-
+    callshop-o-tarificador-telefonico-q-2-por-que-debo-tener-un-call-shop-en-mi-negocio
+  - callshop-o-tarificador-telefonico-q-3-que-ventajas-tiene-un-call-shop
+  - >-
+    callshop-o-tarificador-telefonico-q-4-porque-el-call-shop-de-voicetophone-es-el-mejor
 ---
 
 <details id="callshop-o-tarificador-telefonico-q-0-que-es-un-call-shop" open>

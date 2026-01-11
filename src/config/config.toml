@@ -82,7 +82,7 @@
 
   [settings.multilingual]
     enable               = true
-    defaultLanguage      = "es"
+    defaultLanguage      = "en"
     disableLanguages     = ["zh"]
     showDefaultLangInUrl = false
 
