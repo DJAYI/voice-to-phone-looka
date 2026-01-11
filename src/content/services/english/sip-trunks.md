@@ -1,6 +1,6 @@
 ---
-title: "Troncales SIP"
-description: "Conecte su central telefónica IP actual a la red pública con la máxima calidad de voz y menores costos."
+title: "SIP Trunks"
+description: "Connect your current IP telephone system to the public network with top voice quality and lower costs."
 
 image: "/assets/images/tabler-illustrations/light/icons-production.png"
 icon: "Server"
@@ -8,11 +8,11 @@ icon: "Server"
 intro:
   enable: true
   image: ""
-  title: "Potencia y ahorro para su infraestructura actual"
-  description: "Si ya cuenta con una IP-PBX (Asterisk, 3CX, Issabel, etc.), nuestras Troncales SIP le permiten realizar y recibir llamadas simultáneas con tarifas competitivas y calidad HD."
+  title: "Power and savings for your current infrastructure"
+  description: "If you already have an IP-PBX (Asterisk, 3CX, Issabel, etc.), our SIP Trunks allow you to make and receive simultaneous calls with competitive rates and HD quality."
   button:
     enable: true
-    label: "Cotizar Troncal"
+    label: "Request SIP trunk quote"
     url: "/contacto"
     rel: ""
     target: ""
@@ -22,13 +22,13 @@ intro:
 
 details:
   enable: true
-  title: "Escalabilidad inmediata sin hardware extra"
-  description: "Olvídese de las líneas análogas limitadas. Aumente canales de voz según la demanda de su negocio."
+  title: "Immediate scalability without extra hardware"
+  description: "Forget limited analog lines. Increase voice channels according to your business demand."
   list:
     - enable: true
       image: "/assets/images/tabler-illustrations/light/shield.png"
-      title: "Alta Disponibilidad"
-      description: "Rutas de voz premium para garantizar estabilidad y claridad en cada conversación."
+      title: "High Availability"
+      description: "Premium voice routes to ensure stability and clarity in every conversation."
       button:
         enable: true
         label: "Ver detalles"
@@ -39,8 +39,8 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/mobile-computer.png"
-      title: "Compatible con su PBX"
-      description: "Funciona con cualquier centralita IP, Softswitch o Gateway del mercado."
+      title: "Compatible with your PBX"
+      description: "Works with any IP-PBX, softswitch or gateway on the market."
       button:
         enable: true
         label: "Ver compatibilidad"
@@ -51,8 +51,8 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/discount.png"
-      title: "Ahorro de Costos"
-      description: "Reduzca significativamente su factura telefónica en llamadas nacionales e internacionales."
+      title: "Cost Savings"
+      description: "Significantly reduce your phone bill for national and international calls."
       button:
         enable: true
         label: "Calcular ahorro"
@@ -63,15 +63,15 @@ details:
 
 impact:
   enable: true
-  title: "Infraestructura robusta"
-  description: "Ideal para Call Centers y empresas con alto volumen de llamadas que buscan eficiencia."
+  title: "Robust infrastructure"
+  description: "Ideal for call centers and businesses with high call volume seeking efficiency."
   list:
-    - Canales ilimitados (según plan)
-    - Codecs de audio HD
-    - Soporte técnico especializado
-    - Sin contratos de permanencia
-    - Activación en minutos
-    - Facturación transparente
+    - Unlimited channels (depending on plan)
+    - HD audio codecs
+    - Specialized technical support
+    - No long-term contracts
+    - Activation in minutes
+    - Transparent billing
 
   statsBlock:
     enable: true
@@ -83,7 +83,7 @@ impact:
           prependValue: ""
           value: "HD"
           appendValue: ""
-        description: "Calidad de voz G.711/G.729"
+        description: "Voice quality G.711/G.729"
     md:
       - background:
           type: "image-overlay"
@@ -92,7 +92,7 @@ impact:
           prependValue: ""
           value: "100"
           appendValue: "%"
-        description: "Compatibilidad IP"
+        description: "IP compatibility"
     sm:
       - background:
           type: "light-color"
@@ -101,7 +101,7 @@ impact:
           prependValue: "-"
           value: "40"
           appendValue: "%"
-        description: "En costos operativos"
+        description: "Operational cost savings"
       - background:
           type: "light-color"
           image: ""
@@ -109,11 +109,11 @@ impact:
           prependValue: ""
           value: "24/7"
           appendValue: ""
-        description: "Monitoreo de red"
+        description: "Network monitoring"
 
   button:
     enable: true
-    label: "Configurar mi Troncal"
+    label: "Configure my trunk"
     url: "/contacto"
     rel: ""
     target: ""

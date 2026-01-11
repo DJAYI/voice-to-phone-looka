@@ -1,6 +1,6 @@
 ---
-title: "PBX Virtual — Centralita Virtual IP"
-description: "Gestione llamadas, extensiones y sucursales desde una única plataforma en la nube."
+title: "Virtual PBX — IP Virtual Switchboard"
+description: "Manage calls, extensions and branches from a single cloud platform."
 
 image: "/assets/images/tabler-illustrations/light/mobile-computer.png"
 icon: "PhoneCall"
@@ -8,11 +8,11 @@ icon: "PhoneCall"
 intro:
   enable: true
   image: ""
-  title: "La central telefónica moderna para su empresa"
-  description: "Nuestra Centralita Virtual IP le ofrece control total de sus comunicaciones sin necesidad de hardware físico."
+  title: "The modern telephone exchange for your company"
+  description: "Our Virtual IP PBX gives you full control of your communications without the need for physical hardware."
   button:
     enable: true
-    label: "Solicitar demo"
+    label: "Request a demo"
     url: "/contact"
     rel: ""
     target: ""
@@ -22,13 +22,13 @@ intro:
 
 details:
   enable: true
-  title: "Control y flexibilidad en una sola plataforma"
-  description: "Configure, administre y escale su central telefónica de forma simple e intuitiva."
+  title: "Control and flexibility in a single platform"
+  description: "Configure, manage and scale your telephone system in a simple, intuitive way."
   list:
     - enable: true
       image: "/assets/images/tabler-illustrations/light/building.png"
-      title: "Extensiones y sucursales"
-      description: "Cree extensiones y gestione múltiples sedes fácilmente."
+      title: "Extensions and branches"
+      description: "Create extensions and manage multiple locations easily."
       button:
         enable: true
         label: "Empezar ahora"
@@ -39,8 +39,8 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/dart.png"
-      title: "Desvíos inteligentes"
-      description: "Configure reglas por horarios, usuarios o disponibilidad."
+      title: "Smart call routing"
+      description: "Set up rules by schedules, users or availability."
       button:
         enable: true
         label: "Empezar ahora"
@@ -51,8 +51,8 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/podcast.png"
-      title: "Grabación y monitoreo"
-      description: "Mejore la calidad y control de las llamadas."
+      title: "Call recording and monitoring"
+      description: "Improve call quality and supervision."
       button:
         enable: true
         label: "Empezar ahora"
@@ -63,15 +63,15 @@ details:
 
 impact:
   enable: true
-  title: "Resultados que se notan"
-  description: "Una centralita virtual optimiza la atención al cliente y la comunicación interna."
+  title: "Results that show"
+  description: "A virtual PBX optimizes customer service and internal communication."
   list:
-    - Mejor experiencia del cliente
-    - Mayor control operativo
-    - Imagen profesional
-    - Administración sencilla
-    - Integración con CRM
-    - Crecimiento sin fricción
+    - Better customer experience
+    - Greater operational control
+    - Professional image
+    - Easy administration
+    - CRM integration
+    - Frictionless growth
 
   statsBlock:
     enable: true
@@ -83,7 +83,7 @@ impact:
           prependValue: ""
           value: "99.9"
           appendValue: "%"
-        description: "Disponibilidad del servicio"
+        description: "Service availability"
     md:
       - background:
           type: "image-overlay"
@@ -91,8 +91,8 @@ impact:
         title:
           prependValue: ""
           value: "1"
-          appendValue: " Plataforma"
-        description: "Para todas sus comunicaciones"
+          appendValue: " Platform"
+        description: "For all your communications"
     sm:
       - background:
           type: "light-color"
@@ -101,7 +101,7 @@ impact:
           prependValue: ""
           value: "0"
           appendValue: ""
-        description: "Hardware requerido"
+        description: "Hardware required"
       - background:
           type: "light-color"
           image: ""
@@ -109,11 +109,11 @@ impact:
           prependValue: ""
           value: "∞"
           appendValue: ""
-        description: "Extensiones disponibles"
+        description: "Available extensions"
 
   button:
     enable: true
-    label: "Conocer la centralita"
+    label: "Learn about the PBX"
     url: "/contact"
     rel: ""
     target: ""

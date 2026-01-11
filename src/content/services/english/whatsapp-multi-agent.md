@@ -1,6 +1,6 @@
 ---
-title: "WhatsApp Multiagente"
-description: "Centralice sus chats: Un solo número de WhatsApp para todo su equipo de atención al cliente."
+title: "WhatsApp Multi-agent"
+description: "Centralize your chats: a single WhatsApp number for your entire customer service team."
 
 image: "/assets/images/tabler-illustrations/light/chatbot.png"
 icon: "MessageCircle"
@@ -8,11 +8,11 @@ icon: "MessageCircle"
 intro:
   enable: true
   image: ""
-  title: "Responda más rápido, venda más"
-  description: "Evite tener múltiples celulares dispersos. Conecte a todo su equipo a una única bandeja de entrada compartida y gestione sus conversaciones de forma profesional."
+  title: "Respond faster, sell more"
+  description: "Avoid scattered mobile devices. Connect your entire team to a single shared inbox and manage conversations professionally."
   button:
     enable: true
-    label: "Ver Demo"
+    label: "View demo"
     url: "/contacto"
     rel: ""
     target: ""
@@ -22,16 +22,16 @@ intro:
 
 details:
   enable: true
-  title: "Organización total de sus conversaciones"
-  description: "Herramientas diseñadas para que ningún mensaje de cliente quede sin respuesta."
+  title: "Total organization of your conversations"
+  description: "Tools designed so no customer message goes unanswered."
   list:
     - enable: true
       image: "/assets/images/tabler-illustrations/light/conversation.png"
-      title: "Asignación de Chats"
-      description: "Derive conversaciones automáticamente al departamento correcto (Ventas, Soporte, Pagos)."
+      title: "Chat assignment"
+      description: "Route conversations automatically to the correct department (Sales, Support, Billing)."
       button:
         enable: true
-        label: "Saber más"
+        label: "Learn more"
         url: "/contacto"
         showIcon: "true"
         variant: "outline"
@@ -39,11 +39,11 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/chatbot.png"
-      title: "Chatbots y Respuestas Rápidas"
-      description: "Automatice la bienvenida y las preguntas frecuentes para atender 24/7."
+      title: "Chatbots and Quick Replies"
+      description: "Automate greetings and FAQs to serve customers 24/7."
       button:
         enable: true
-        label: "Ver automatización"
+        label: "View automation"
         url: "/contacto"
         showIcon: "true"
         variant: "outline"
@@ -51,11 +51,11 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/chart-circle.png"
-      title: "Supervisión y Reportes"
-      description: "Audite las conversaciones y mida los tiempos de respuesta de su equipo."
+      title: "Monitoring and Reports"
+      description: "Audit conversations and measure your team's response times."
       button:
         enable: true
-        label: "Ver métricas"
+        label: "View metrics"
         url: "/contacto"
         showIcon: "true"
         variant: "outline"
@@ -63,15 +63,15 @@ details:
 
 impact:
   enable: true
-  title: "Mejore la experiencia del cliente"
-  description: "WhatsApp es el canal preferido de sus clientes. Úselo de manera profesional."
+  title: "Improve the customer experience"
+  description: "WhatsApp is your customers' preferred channel. Use it professionally."
   list:
-    - Eliminación de tiempos muertos
-    - Historial centralizado
-    - Acceso desde PC y Móvil
-    - Etiquetas para clasificar clientes
-    - Envío de archivos multimedia
-    - Transferencia entre agentes
+    - Elimination of idle time
+    - Centralized history
+    - Access from PC and mobile
+    - Labels to classify customers
+    - Multimedia file sharing
+    - Transfer between agents
 
   statsBlock:
     enable: true
@@ -83,7 +83,7 @@ impact:
           prependValue: ""
           value: "1"
           appendValue: ""
-        description: "Número oficial para toda la empresa"
+        description: "Official number for the whole company"
     md:
       - background:
           type: "image-overlay"
@@ -91,8 +91,8 @@ impact:
         title:
           prependValue: "+"
           value: "Multi"
-          appendValue: " Agente"
-        description: "Simultaneidad total"
+          appendValue: " Agent"
+        description: "Full concurrency"
     sm:
       - background:
           type: "light-color"
@@ -101,7 +101,7 @@ impact:
           prependValue: ""
           value: "API"
           appendValue: ""
-        description: "Integración oficial"
+        description: "Official integration"
       - background:
           type: "light-color"
           image: ""
@@ -109,11 +109,11 @@ impact:
           prependValue: ""
           value: "0"
           appendValue: ""
-        description: "Mensajes perdidos"
+        description: "Missed messages"
 
   button:
     enable: true
-    label: "Activar WhatsApp Business"
+    label: "Activate WhatsApp Business"
     url: "/contacto"
     rel: ""
     target: ""

@@ -1,6 +1,6 @@
 ---
-title: "VoIP para Empresas — Telefonía en la Nube"
-description: "Centralice y administre las comunicaciones de su empresa con una solución cloud flexible, segura y escalable."
+title: "VoIP for Businesses — Cloud Telephony"
+description: "Centralize and manage your company's communications with a flexible, secure and scalable cloud solution."
 
 image: "/assets/images/tabler-illustrations/light/hybrid-work.png"
 icon: "Cloud"
@@ -8,11 +8,11 @@ icon: "Cloud"
 intro:
   enable: true
   image: "/assets/images/tabler-illustrations/light/hybrid-work.png"
-  title: "Comunicación empresarial sin límites ni infraestructura"
-  description: "La telefonía en la nube de VoiceToPhone le permite comunicarse desde cualquier lugar, reducir costos operativos y escalar su sistema telefónico al ritmo de su negocio."
+  title: "Business communication without limits or infrastructure"
+  description: "VoiceToPhone cloud telephony lets you communicate from anywhere, reduce operating costs and scale your phone system at your business's pace."
   button:
     enable: true
-    label: "Solicitar demo"
+    label: "Request a demo"
     url: "/contact"
     rel: ""
     target: ""
@@ -22,8 +22,8 @@ intro:
 
 details:
   enable: true
-  title: "Una plataforma cloud diseñada para el trabajo moderno"
-  description: "Ofrecemos una solución de telefonía empresarial que elimina las limitaciones de los sistemas tradicionales y se adapta a equipos modernos y distribuidos."
+  title: "A cloud platform designed for modern work"
+  description: "We provide a business telephony solution that removes the limitations of traditional systems and adapts to modern, distributed teams."
   list:
     - enable: true
       image: "/assets/images/tabler-illustrations/light/mobile-computer.png"
@@ -72,12 +72,12 @@ impact:
   title: "El impacto de la telefonía cloud en su empresa"
   description: "Las comunicaciones en la nube mejoran la productividad, reducen costos y facilitan la colaboración."
   list:
-    - Menores costos operativos
-    - Mayor flexibilidad
-    - Soporte al trabajo remoto
-    - Escalabilidad sin límites
-    - Comunicación centralizada
-    - Mayor eficiencia operativa
+    - Lower operating costs
+    - Greater flexibility
+    - Support for remote work
+    - Unlimited scalability
+    - Centralized communication
+    - Greater operational efficiency
 
   statsBlock:
     enable: true
@@ -89,7 +89,7 @@ impact:
           prependValue: ""
           value: "40"
           appendValue: "%"
-        description: "Reducción promedio de costos frente a sistemas tradicionales"
+        description: "Average cost reduction compared to traditional systems"
     md:
       - background:
           type: "image-overlay"
@@ -98,7 +98,7 @@ impact:
           prependValue: ""
           value: "24/7"
           appendValue: ""
-        description: "Acceso al sistema desde cualquier lugar"
+        description: "Access the system from anywhere"
     sm:
       - background:
           type: "light-color"
@@ -107,7 +107,7 @@ impact:
           prependValue: ""
           value: "0"
           appendValue: ""
-        description: "Cláusulas de permanencia"
+        description: "No long-term commitments"
       - background:
           type: "light-color"
           image: "/images/services/voip-companies.jpg"
@@ -115,11 +115,11 @@ impact:
           prependValue: ""
           value: "100"
           appendValue: "%"
-        description: "Escalable según su negocio"
+        description: "Scalable to your business"
 
   button:
     enable: true
-    label: "Hablar con un experto"
+    label: "Talk to an expert"
     url: "/contact"
     rel: ""
     target: ""

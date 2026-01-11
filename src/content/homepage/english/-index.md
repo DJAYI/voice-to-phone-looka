@@ -1,11 +1,11 @@
 ---
-title: "Telefonía en la nube para empresas modernas"
-metaDescription: "Centralice las comunicaciones de su empresa con VoiceToPhone. Telefonía cloud segura, escalable y sin permanencia, diseñada para el trabajo moderno."
+title: "Cloud telephony for modern businesses"
+metaDescription: "Centralize your company's communications with VoiceToPhone. Secure, scalable cloud telephony with no long-term commitment, designed for modern work."
 
 # Override Default Content of `/sections/services-section.md`
 servicesSection:
   enable: true
-  title: "Soluciones de comunicación que impulsan su negocio"
+  title: "Communication solutions that drive your business"
   # subtitle: "Nuestros servicios"
 
   creativeShape:
@@ -17,7 +17,7 @@ servicesSection:
 
   button:
     enable: true
-    label: "Ver todos los servicios"
+    label: "View all services"
     url: "/services"
     rel: ""
     target: ""
@@ -28,11 +28,11 @@ servicesSection:
 # Override Default Content of `/sections/call-to-action.md`
 callToActionSection:
   enable: true
-  title: "¿Listo para modernizar la telefonía de su empresa?"
-  subtitle: "Comunicación empresarial en la nube"
+  title: "Ready to modernize your company's telephony?"
+  subtitle: "Business communication in the cloud"
   description: |
-    Centralice llamadas, SMS y contactos en una sola plataforma cloud.
-    Reduzca costos, mejore la productividad y escale su sistema telefónico sin límites.
+    Centralize calls, SMS and contacts on a single cloud platform.
+    Reduce costs, improve productivity and scale your telephony system without limits.
 
   button:
     enable: true
@@ -50,16 +50,16 @@ callToActionSection:
       - prependValue: ""
         value: "99.9"
         appendValue: "%"
-        title: "Disponibilidad del servicio"
-        description: "Plataforma confiable y siempre activa"
+        title: "Service availability"
+        description: "Reliable, always-on platform"
       - prependValue: ""
         value: "0"
         appendValue: ""
-        title: "Cláusulas de permanencia"
-        description: "Libertad total para su empresa"
+        title: "Commitment clauses"
+        description: "Total freedom for your business"
       - prependValue: ""
         value: "∞"
         appendValue: ""
-        title: "Escalabilidad"
-        description: "Crezca sin límites ni complicaciones"
+        title: "Scalability"
+        description: "Grow without limits or complications"
 ---

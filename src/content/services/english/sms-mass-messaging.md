@@ -1,6 +1,6 @@
 ---
-title: "SMS y Mensajes de Voz Masivos"
-description: "Comuníquese con miles de clientes al instante. Campañas de marketing y notificaciones efectivas."
+title: "SMS and Mass Voice Messages"
+description: "Reach thousands of customers instantly. Effective marketing campaigns and notifications."
 
 image: "/assets/images/tabler-illustrations/light/message.png"
 icon: "Send"
@@ -8,11 +8,11 @@ icon: "Send"
 intro:
   enable: true
   image: ""
-  title: "El canal más directo a su cliente"
-  description: "Asegure que su mensaje sea leído. Los SMS tienen una tasa de apertura del 98%, muy superior al correo electrónico."
+  title: "The most direct channel to your customer"
+  description: "Make sure your message is read. SMS have a 98% open rate, far higher than email."
   button:
     enable: true
-    label: "Lanzar campaña"
+    label: "Launch campaign"
     url: "/contacto"
     rel: ""
     target: ""
@@ -22,16 +22,16 @@ intro:
 
 details:
   enable: true
-  title: "Automatización de notificaciones"
-  description: "Ideal para cobranzas, recordatorios de citas, códigos OTP y promociones flash."
+  title: "Notification automation"
+  description: "Ideal for collections, appointment reminders, OTP codes and flash promotions."
   list:
     - enable: true
       image: "/assets/images/tabler-illustrations/light/podcast.png"
-      title: "Mensajes de Voz (Blaster)"
-      description: "Envíe un audio pregrabado a miles de teléfonos fijos o móviles simultáneamente."
+      title: "Voice Messages (Blaster)"
+      description: "Send a prerecorded audio to thousands of landlines or mobiles simultaneously."
       button:
         enable: true
-        label: "Escuchar demo"
+        label: "Listen to demo"
         url: "/contacto"
         showIcon: "true"
         variant: "outline"
@@ -40,10 +40,10 @@ details:
     - enable: true
       image: "/assets/images/tabler-illustrations/light/message.png"
       title: "SMS Marketing"
-      description: "Mensajes de texto cortos, directos y con enlaces rastreables para medir conversión."
+      description: "Short, direct text messages with trackable links to measure conversion."
       button:
         enable: true
-        label: "Ver planes"
+        label: "View plans"
         url: "/contacto"
         showIcon: "true"
         variant: "outline"
@@ -51,11 +51,11 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/reading.png"
-      title: "Personalización"
-      description: "Use variables para personalizar cada mensaje con el nombre o saldo del cliente."
+      title: "Personalization"
+      description: "Use variables to personalize each message with the customer's name or balance."
       button:
         enable: true
-        label: "Ver opciones"
+        label: "See options"
         url: "/contacto"
         showIcon: "true"
         variant: "outline"
@@ -63,15 +63,15 @@ details:
 
 impact:
   enable: true
-  title: "Alcance masivo al instante"
-  description: "Herramientas potentes para cobranza, fidelización y logística."
+  title: "Mass reach instantly"
+  description: "Powerful tools for collections, retention and logistics."
   list:
-    - Alta tasa de entrega
-    - Reportes en tiempo real
-    - Integración API
-    - Programación de envíos
-    - Filtrado de base de datos
-    - Costo por mensaje reducido
+    - High delivery rate
+    - Real-time reports
+    - API integration
+    - Scheduled sends
+    - Database filtering
+    - Reduced cost per message
 
   statsBlock:
     enable: true
@@ -83,7 +83,7 @@ impact:
           prependValue: ""
           value: "98"
           appendValue: "%"
-        description: "Tasa de apertura"
+        description: "Open rate"
     md:
       - background:
           type: "image-overlay"
@@ -92,7 +92,7 @@ impact:
           prependValue: ""
           value: "10k+"
           appendValue: ""
-        description: "Envíos por minuto"
+        description: "Sends per minute"
     sm:
       - background:
           type: "light-color"
@@ -101,7 +101,7 @@ impact:
           prependValue: ""
           value: "API"
           appendValue: ""
-        description: "Para desarrolladores"
+        description: "For developers"
       - background:
           type: "light-color"
           image: ""
@@ -109,11 +109,11 @@ impact:
           prependValue: ""
           value: "24/7"
           appendValue: ""
-        description: "Plataforma activa"
+        description: "Active platform"
 
   button:
     enable: true
-    label: "Crear cuenta de envíos"
+    label: "Create sending account"
     url: "/contacto"
     rel: ""
     target: ""

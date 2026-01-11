@@ -1,6 +1,6 @@
 ---
-title: "Números Virtuales Internacionales"
-description: "Tenga presencia local en más de 60 países sin abrir oficinas físicas. Reciba llamadas donde quiera."
+title: "International Virtual Numbers"
+description: "Have local presence in over 60 countries without opening physical offices. Receive calls anywhere."
 
 image: "/assets/images/tabler-illustrations/light/map-destination.png"
 icon: "Globe"
@@ -8,11 +8,11 @@ icon: "Globe"
 intro:
   enable: true
   image: ""
-  title: "Su empresa, local en todo el mundo"
-  description: "Adquiera números telefónicos (DID) de ciudades como Miami, Madrid, Ciudad de México o Bogotá, y atienda las llamadas desde su oficina central o su móvil."
+  title: "Your company, local everywhere"
+  description: "Acquire telephone numbers (DIDs) from cities like Miami, Madrid, Mexico City or Bogotá, and handle calls from your central office or your mobile."
   button:
     enable: true
-    label: "Buscar números"
+    label: "Search numbers"
     url: "/contacto"
     rel: ""
     target: ""
@@ -22,13 +22,13 @@ intro:
 
 details:
   enable: true
-  title: "Expansión global simplificada"
-  description: "Genere confianza en sus clientes internacionales ofreciéndoles un número local al que llamar."
+  title: "Simplified global expansion"
+  description: "Build trust with international customers by offering a local number they can call."
   list:
     - enable: true
       image: "/assets/images/tabler-illustrations/light/map-destination.png"
-      title: "Presencia Global"
-      description: "Cobertura en Norteamérica, Europa, Latinoamérica y Asia."
+      title: "Global Presence"
+      description: "Coverage across North America, Europe, Latin America and Asia."
       button:
         enable: true
         label: "Ver cobertura"
@@ -39,8 +39,8 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/mobile-computer.png"
-      title: "Movilidad Total"
-      description: "Las llamadas se desvían por IP a su App, Teléfono IP o PC en cualquier parte del mundo."
+      title: "Total Mobility"
+      description: "Calls are routed over IP to your app, IP phone or PC anywhere in the world."
       button:
         enable: true
         label: "Ver opciones"
@@ -51,8 +51,8 @@ details:
 
     - enable: true
       image: "/assets/images/tabler-illustrations/light/version-control.png"
-      title: "Portabilidad Numérica"
-      description: "¿Ya tiene un número? Tráigalo a VoiceToPhone y disfrute de los beneficios de la nube."
+      title: "Number Portability"
+      description: "Already have a number? Port it to VoiceToPhone and enjoy the benefits of the cloud."
       button:
         enable: true
         label: "Portar número"
@@ -63,15 +63,15 @@ details:
 
 impact:
   enable: true
-  title: "Rompa las barreras geográficas"
-  description: "La solución perfecta para empresas exportadoras, soporte técnico remoto y negocios digitales."
+  title: "Break geographical barriers"
+  description: "The perfect solution for exporters, remote technical support and digital businesses."
   list:
-    - Recepción gratuita de llamadas
-    - Sin costos de roaming
-    - Activación inmediata
-    - Calidad de voz cristalina
-    - Múltiples canales simultáneos
-    - Identificador de llamadas local
+    - Free inbound calls
+    - No roaming charges
+    - Immediate activation
+    - Crystal clear voice quality
+    - Multiple simultaneous channels
+    - Local caller ID
 
   statsBlock:
     enable: true
@@ -83,7 +83,7 @@ impact:
           prependValue: "+"
           value: "60"
           appendValue: ""
-        description: "Países disponibles"
+        description: "Countries available"
     md:
       - background:
           type: "image-overlay"
@@ -92,7 +92,7 @@ impact:
           prependValue: ""
           value: "VoIP"
           appendValue: ""
-        description: "Tecnología sin fronteras"
+        description: "Borderless technology"
     sm:
       - background:
           type: "light-color"
@@ -101,7 +101,7 @@ impact:
           prependValue: ""
           value: "24"
           appendValue: "h"
-        description: "Recepción continua"
+        description: "Continuous reception"
       - background:
           type: "light-color"
           image: ""
@@ -113,7 +113,7 @@ impact:
 
   button:
     enable: true
-    label: "Comprar Número Virtual"
+    label: "Buy Virtual Number"
     url: "/contacto"
     rel: ""
     target: ""

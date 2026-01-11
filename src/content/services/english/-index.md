@@ -1,6 +1,6 @@
 ---
-title: "Servicios de VoiceToPhone"
-metaDescription: "Soluciones de telefonía en la nube y comunicaciones empresariales diseñadas para escalar, reducir costos y mejorar la productividad."
+title: "VoiceToPhone Services"
+metaDescription: "Cloud telephony and business communication solutions designed to scale, reduce costs and improve productivity."
 draft: false
 hasCustomLineAnimationBg: true
 
@@ -39,8 +39,8 @@ serviceDetailsMarquee:
 # "Services" Section located in Services Single Page
 servicesSection:
   enable: true
-  title: "Más soluciones para potenciar sus comunicaciones"
-  # subtitle: "Nuestros servicios"
+  title: "More solutions to enhance your communications"
+  # subtitle: "Our services"
 
   creativeShape:
     enable: false
@@ -48,7 +48,7 @@ servicesSection:
 
   button:
     enable: true
-    label: "Ver todos los servicios"
+    label: "View all services"
     url: "/services"
     rel: ""
     target: ""
@@ -59,8 +59,8 @@ servicesSection:
 # "FAQ" Section located in Services Single Page
 faqSection:
   enable: true
-  title: "¿Tiene dudas sobre la telefonía en la nube?"
-  subtitle: "Soluciona todas tus inquietudes accediendo al siguiente enlace."
+  title: "Have questions about cloud telephony?"
+  subtitle: "Resolve all your concerns by visiting the linked page."
   sectionLayout: "vertical"
   minimalFaqLayout: true
   faqLayoutOnly: false
@@ -68,7 +68,7 @@ faqSection:
 
   button:
     enable: true
-    label: "Ver todas las preguntas frecuentes"
+    label: "View all FAQs"
     url: "/help/"
     rel: ""
     target: ""
