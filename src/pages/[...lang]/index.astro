@@ -29,8 +29,9 @@ const homepage = await getEntryCTM("homepage", "-index", Astro.currentLocale);
   <section class="mx-auto -mt-20 w-full max-w-7xl px-4">
     <FeatureCard
       icon=""
-      title="Conoce a VoiceToPhone"
-      description="Líderes en telecomunicaciones en la nube, conectando empresas con el mundo a través de soluciones de telefonía IP robustas, escalables y de alta disponibilidad en más de 80 países."
+      title={homepage?.data.featureCard?.title ?? "Conoce a VoiceToPhone"}
+      description={homepage?.data.featureCard?.description ??
+        "Líderes en telecomunicaciones en la nube, conectando empresas con el mundo a través de soluciones de telefonía IP robustas, escalables y de alta disponibilidad en más de 80 países."}
       alternateLayout={true}
     />
     <VideoInline src="aOkzRTPIkQk" provider="youtube" />

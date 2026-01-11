@@ -2,322 +2,121 @@
   "main": [
     {
       "enable": true,
-      "name": "Mega Menu",
-      "hasMegaMenu": true,
-      "testimonial": {
-        "enable": true,
-        "image": "/images/customer-image.png",
-        "content": "MMC FP strategic planning helped us streamline operations and unlock new market opportunities. We've seen a remarkable 25% increase in revenue within the last year."
-      },
-      "services": {
-        "enable": true,
-        "name": "SERVICES"
-      },
-      "menus": [
-        {
-          "name": "REGULAR PAGES",
-          "enable": true,
-          "children": [
-            {
-              "name": "",
-              "enable": true,
-              "children": [
-                {
-                  "enable": true,
-                  "name": "Services",
-                  "url": "/services/"
-                },
-                {
-                  "enable": true,
-                  "name": "Services Single",
-                  "url": "/services/voip-for-business/"
-                },
-                {
-                  "enable": true,
-                  "name": "Case Studies Single",
-                  "url": "/case-studies/case-studies-01/"
-                },
-                {
-                  "enable": true,
-                  "name": "Career",
-                  "url": "/career/"
-                },
-                {
-                  "enable": true,
-                  "name": "Career Single",
-                  "url": "/career/job-01/"
-                }
-              ]
-            },
-            {
-              "name": "",
-              "enable": true,
-              "children": [
-                {
-                  "enable": true,
-                  "name": "About",
-                  "url": "/about/"
-                },
-                {
-                  "enable": true,
-                  "name": "Faq",
-                  "url": "/faq"
-                },
-                {
-                  "enable": true,
-                  "name": "Team",
-                  "url": "/team"
-                },
-                {
-                  "enable": true,
-                  "name": "Pricing",
-                  "url": "/rates/",
-                  "badge": {
-                    "enable": true,
-                    "label": "NEW",
-                    "color": "primary",
-                    "_color_comment": "color expected value - primary, info, success, danger",
-                    "type": "text"
-                  }
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "BLOG",
-          "enable": true,
-          "children": [
-            {
-              "name": "LIST",
-              "enable": true,
-              "children": [
-                {
-                  "enable": true,
-                  "name": "Classic",
-                  "url": "/blog/"
-                },
-                {
-                  "enable": true,
-                  "name": "Modern",
-                  "url": ""
-                }
-              ]
-            },
-            {
-              "name": "SINGLE",
-              "enable": true,
-              "children": [
-                {
-                  "enable": true,
-                  "name": "Minimal",
-                  "url": ""
-                },
-                {
-                  "enable": true,
-                  "name": "Modern",
-                  "url": "/blog/post-1/"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "name": "PORTFOLIO LAYOUTS",
-          "enable": true,
-          "children": [
-            {
-              "name": "LIST",
-              "enable": true,
-              "children": [
-                {
-                  "enable": true,
-                  "name": "Classic & Masonry",
-                  "url": ""
-                },
-                {
-                  "enable": true,
-                  "name": "Overlay & Masonry",
-                  "url": ""
-                }
-              ]
-            },
-            {
-              "name": "SINGLE",
-              "enable": true,
-              "children": [
-                {
-                  "enable": true,
-                  "name": "Modern",
-                  "url": ""
-                },
-                {
-                  "enable": true,
-                  "name": "Modern With Sidebar",
-                  "url": "/case-studies/case-studies-01/"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "name": "IP Telephony",
+      "url": "/ip-telephony/en"
     },
     {
-      "name": "Pages",
       "enable": true,
+      "name": "Services",
       "hasChildren": true,
       "children": [
         {
           "enable": true,
-          "name": "Home",
-          "url": "/"
+          "name": "Virtual PBX",
+          "url": "/services/pbx-virtual/en"
         },
         {
           "enable": true,
-          "name": "About",
-          "url": "/about/"
+          "name": "SIP Trunks",
+          "url": "/services/sip-trunks/en"
         },
         {
           "enable": true,
-          "name": "Services",
-          "hasChildren": true,
-          "children": [
-            {
-              "enable": true,
-              "name": "Services",
-              "url": "/services/"
-            },
-            {
-              "enable": true,
-              "name": "Services Single",
-              "url": "/services/voip-for-business/"
-            }
-          ]
+          "name": "Virtual Numbers",
+          "url": "/services/virtual-numbers/en"
         },
         {
           "enable": true,
-          "name": "Case Studies",
-          "hasChildren": true,
-          "children": [
-            {
-              "enable": true,
-              "name": "Classic",
-              "url": "/case-studies/classic/"
-            },
-            {
-              "enable": true,
-              "name": "Classic Masonry",
-              "url": "/case-studies/classic-masonry/"
-            },
-            {
-              "enable": true,
-              "name": "Overlay",
-              "url": "/case-studies/overlay/"
-            },
-            {
-              "enable": true,
-              "name": "Overlay Masonry",
-              "url": "/case-studies/"
-            },
-            {
-              "enable": true,
-              "name": "Single",
-              "url": "/case-studies/case-studies-01/"
-            }
-          ]
+          "name": "VoIP for Business",
+          "url": "/services/voip-for-business/en"
         },
         {
           "enable": true,
-          "name": "Career",
-          "hasChildren": true,
-          "children": [
-            {
-              "enable": true,
-              "name": "Career",
-              "url": "/career/"
-            },
-            {
-              "enable": true,
-              "name": "Career Single",
-              "url": "/career/job-01/"
-            }
-          ]
-        },
-
-        {
-          "enable": true,
-          "name": "Blog",
-          "hasChildren": true,
-          "children": [
-            {
-              "enable": true,
-              "name": "Classic",
-              "url": "/blog/"
-            },
-            {
-              "enable": true,
-              "name": "Modern",
-              "url": "/blog/modern/"
-            },
-            {
-              "enable": true,
-              "name": "Single Minimal",
-              "url": "/blog/single-minimal/"
-            },
-            {
-              "enable": true,
-              "name": "Single Modern",
-              "url": "/blog/post-1/"
-            }
-          ]
+          "name": "SMS Mass Messaging",
+          "url": "/services/sms-mass-messaging/en"
         },
         {
           "enable": true,
-          "name": "Team",
-          "url": "/team"
-        },
-        {
-          "enable": true,
-          "name": "Pricing",
-          "url": "/rates/",
-          "badge": {
-            "enable": true,
-            "label": "NEW",
-            "color": "primary",
-            "colorComment": "color expected value - primary, info, success, danger",
-            "type": "text"
-          }
-        },
-        {
-          "enable": true,
-          "name": "Faq",
-          "url": "/faq"
+          "name": "WhatsApp Multi-Agent",
+          "url": "/services/whatsapp-multi-agent/en"
         }
       ]
     },
     {
       "enable": true,
-      "name": "Components",
-      "url": "/elements/",
-      "badge": {
-        "enable": true,
-        "label": "NEW",
-        "color": "primary",
-        "_color_comment": "color expected value - primary, info, success, danger",
-        "type": "text"
-      }
+      "name": "Software",
+      "hasChildren": true,
+      "children": [
+        {
+          "enable": true,
+          "name": "Call Center Software",
+          "url": "/software/software-call-center/en"
+        },
+        {
+          "enable": true,
+          "name": "Telemarketing Software",
+          "hasChildren": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "Automatic Calls",
+              "url": "/software/telemarketing-automatic-calls/en"
+            },
+            {
+              "enable": true,
+              "name": "Predictive Dialer",
+              "url": "/software/telemarketing-predictive-marker/en"
+            },
+            {
+              "enable": true,
+              "name": "Progressive Dialer",
+              "url": "/software/telemarketing-progresive-marker/en"
+            },
+            {
+              "enable": true,
+              "name": "Preview Dialer",
+              "url": "/software/telemarketing-preview-marker/en"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Pricing",
+      "hasChildren": true,
+      "children": [
+        {
+          "enable": true,
+          "name": "Virtual Numbers",
+          "url": "/rates/virtual-numbers/en"
+        },
+        {
+          "enable": true,
+          "name": "Virtual PBX / IP PBX",
+          "url": "/rates/pbx-virtual-ip-pbx/en"
+        },
+        {
+          "enable": true,
+          "name": "VoIP Calls",
+          "url": "/rates/calls-voip/en"
+        },
+        {
+          "enable": true,
+          "name": "Call Center Software",
+          "url": "/rates/software-call-center/en"
+        }
+      ]
+    },
+    {
+      "enable": true,
+      "name": "Help",
+      "url": "/help/en"
     },
     {
       "enable": true,
       "name": "Contact",
-      "url": "/contact/",
-      "badge": {
-        "enable": true,
-        "label": "NEW",
-        "color": "danger",
-        "_color_comment": "color expected value - primary, info, success, danger",
-        "type": "dot"
-      }
+      "url": "/contact/en"
     }
   ],
   "footerMenu": [
@@ -328,7 +127,7 @@
     },
     {
       "enable": true,
-      "name": "Privacy & Policy",
+      "name": "Privacy Policy",
       "url": "/privacy-policy/"
     }
   ],
@@ -341,22 +140,22 @@
     {
       "enable": true,
       "name": "Contact Us",
-      "url": "/contact/"
+      "url": "/contact/en"
     },
     {
       "enable": true,
       "name": "Pricing",
-      "url": "/rates/"
+      "url": "/rates/en"
     },
     {
       "enable": true,
-      "name": "Testimonials",
-      "url": "/"
+      "name": "Help",
+      "url": "/help/en"
     },
     {
       "enable": true,
-      "name": "Team Members",
-      "url": "/team/"
+      "name": "FAQ",
+      "url": "/faq/en"
     },
     {
       "enable": true,
@@ -367,28 +166,39 @@
   "footerMenuResources": [
     {
       "enable": true,
-      "name": "Blog",
-      "url": "/blog/"
+      "name": "IP Telephony",
+      "url": "/ip-telephony/en"
     },
     {
       "enable": true,
-      "name": "Faq",
-      "url": "/faq/"
+      "name": "Virtual PBX",
+      "url": "/services/pbx-virtual/en"
     },
     {
       "enable": true,
-      "name": "Case Studies",
-      "url": "/case-studies/"
+      "name": "SIP Trunks",
+      "url": "/services/sip-trunks/en"
+    },
+    {
+      "enable": true,
+      "name": "Virtual Numbers",
+      "url": "/services/virtual-numbers/en"
+    },
+    {
+      "enable": true,
+      "name": "VoIP for Business",
+      "url": "/services/voip-for-business/en"
+    },
+    {
+      "enable": true,
+      "name": "SMS Mass Messaging",
+      "url": "/services/sms-mass-messaging/en"
     }
   ],
   "footerMenuLegal": [
     {
       "enable": true,
-      "name": "Terms of Conditions",
-      "url": "/terms-conditions/"
-    },
-    {
-      "enable": true,
+      "name": "Terms & Conditions",
       "name": "Privacy Policy",
       "url": "/privacy-policy/"
     }
