@@ -1,0 +1,125 @@
+﻿---
+title: "Llamadas VoIP"
+description: "Información general sobre las llamadas VoIP y cómo VoiceToPhone gestiona tarifas por destino y planes personalizados."
+date: 2026-01-09
+---
+
+import RatesSearch from "@/components/rates/RatesSearch.astro";
+import OptimizedImage from "@/components/utilities/OptimizedImage.astro";
+
+## Llamadas VoIP — Tarifas y planes
+
+VoiceToPhone ofrece tarifas por minuto y planes a medida para llamadas locales e internacionales. Las tarifas varían según el destino y el volumen de tráfico, y suelen ser más competitivas que la telefonía tradicional.
+
+<StatsWrapper>
+  <StatsItem
+    icon="Globe"
+    title="Cobertura Global"
+    description="Llamadas a más de 200 destinos internacionales"
+  />
+  <StatsItem
+    icon="Money"
+    title="Tarifas por minuto"
+    description="Precios por destino con descuentos por volumen"
+  />
+  <StatsItem
+    icon="PhoneCall"
+    title="Calidad"
+    description="Transmisión optimizada y softphone para PC y móvil"
+  />
+</StatsWrapper>
+
+<figure class="my-8">
+  <OptimizedImage
+    src="/images/pexels/call-center/call-center-2.jpg"
+    alt="Oficina con auriculares"
+    class="w-full rounded-lg"
+  />
+</figure>
+
+---
+
+## Nuestros destinos de llamadas más populares
+
+<RatesSearch dataUrl="/data/calls-voip.json" />
+
+<figure class="my-8 xl:my-12">
+  <OptimizedImage
+    src="/images/pexels/computer/computer-3.jpg"
+    alt="Mapa de destinos"
+    class="w-full rounded-lg"
+  />
+</figure>
+
+---
+
+## Cómo obtener una cotización exacta
+
+- Contacta a nuestro equipo indicando: destinos, volumen mensual (minutos) y tipo de tráfico (entrantes / salientes).
+- Podemos preparar planes por minutos, bolsas o tarifas por destino con descuentos por volumen.
+- Para empresas, ofrecemos acuerdos con condiciones personalizadas (SLA, facturación a 30/60 días, integración con CRM).
+
+<CustomButton label="Solicitar Cotización" url="/contact/es" />
+
+<figure class="my-8">
+  <OptimizedImage
+    src="/images/shapes/review-pattern.svg"
+    alt="Decoración"
+    class="w-full rounded-lg"
+    inlineSvg
+  />
+</figure>
+
+---
+
+## Preguntas frecuentes rápidas
+
+<details class="rounded-lg border bg-slate-800 p-4 text-white">
+  <summary class="flex cursor-pointer list-none items-center gap-3 font-semibold">
+    <svg
+      class="h-4 w-4 text-white"
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      aria-hidden
+    >
+      <path
+        d="M6 8l4 4 4-4"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <span class="text-white">¿Cómo se calcula la tarifa por minuto?</span>
+  </summary>
+  <div class="mt-2 text-sm text-slate-200">
+    La tarifa por minuto depende del destino y del operador; para volúmenes
+    altos aplican descuentos por contrato.
+  </div>
+</details>
+
+<details class="rounded-lg border bg-slate-800 p-4 text-white">
+  <summary class="flex cursor-pointer list-none items-center gap-3 font-semibold">
+    <svg
+      class="h-4 w-4 text-white"
+      viewBox="0 0 20 20"
+      fill="none"
+      stroke="currentColor"
+      aria-hidden
+    >
+      <path
+        d="M6 8l4 4 4-4"
+        stroke-width="2"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+    </svg>
+    <span class="text-white">¿Se ofrecen planes por volumen?</span>
+  </summary>
+  <div class="mt-2 text-sm text-slate-200">
+    Sí. Podemos crear bolsas de minutos y planes personalizados con descuentos
+    según el compromiso de volumen.
+  </div>
+</details>
+
+> Nota: la lista anterior es ejemplar y está tomada de la página original; para precios actualizados solicita una cotización con destino y volumen.
