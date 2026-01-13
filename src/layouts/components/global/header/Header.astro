@@ -74,7 +74,7 @@ const { stickyHeader, navigationButton } = config.settings;
             )}
             <CustomButton
               {...navigationButton}
-              variant="outline"
+              variant={isDarkHeader ? "outline-white" : "outline"}
               label={navigationButton.label || t("navigation.buttonLabel")}
             />
           </div>

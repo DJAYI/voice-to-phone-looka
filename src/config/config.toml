@@ -57,10 +57,10 @@
 # Theme Settings
 # -----------------------------------------------------------------------------------------------------------------------------------
 [settings]
-  blogFolder      = "blog"
-  servicesFolder  = "services"
-  portfolioFolder = "case-studies"
-  softwareFolder  = "software"
+  # blogFolder      = "blog"
+  servicesFolder = "services"
+  # portfolioFolder = "case-studies"
+  softwareFolder = "software"
 
   pagination   = 4
   stickyHeader = true
@@ -82,7 +82,7 @@
 
   [settings.multilingual]
     enable               = true
-    defaultLanguage      = "en"
+    defaultLanguage      = "es"
     disableLanguages     = ["zh"]
     showDefaultLangInUrl = false
 

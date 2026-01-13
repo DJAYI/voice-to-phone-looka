@@ -26,6 +26,8 @@ const homepage = await getEntryCTM("homepage", "-index", Astro.currentLocale);
   <HomeBanner />
 
   <Customers />
+  <AboutUs />
+
   <section class="mx-auto -mt-20 w-full max-w-7xl px-4">
     <FeatureCard
       icon=""
@@ -36,7 +38,6 @@ const homepage = await getEntryCTM("homepage", "-index", Astro.currentLocale);
     />
     <VideoInline src="aOkzRTPIkQk" provider="youtube" />
   </section>
-  <AboutUs />
   <section class="-mb-20">
     <ServicesSection content={homepage?.data.servicesSection} />
   </section>

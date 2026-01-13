@@ -1,6 +1,6 @@
 /* Header */
 .header {
-  @apply relative z-30 w-full;
+  @apply relative z-30 w-full backdrop-blur-sm;
 
   &:not(.header-dark) {
     @apply bg-none!;
@@ -33,11 +33,18 @@
 }
 
 .header-dark {
-  @apply before:border-border-light/25 bg-white before:border-b;
+  @apply before:border-border-light/25 bg-linear-to-r from-blue-950/50 from-10% to-transparent before:border-b;
+
+  &::before {
+    border-bottom-style: var(--tw-border-style);
+    content: var(--tw-content);
+    border-color: #e5e5e540;
+    border-bottom-width: 1px;
+  }
 }
 
 .header-dark.scroll-up {
-  @apply bg-white;
+  @apply bg-linear-to-r from-blue-950/90 to-blue-900/40;
 }
 
 .banner {
@@ -67,10 +74,10 @@
 }
 
 .header-dark .language-switcher {
-  @apply text-primary;
+  @apply text-white;
 
   .language-switcher-button {
-    @apply border-primary;
+    @apply border-white;
   }
 }
 
@@ -176,7 +183,7 @@
   .navbar {
     .nav-item {
       > .nav-link {
-        @apply lg:text-primary;
+        @apply lg:text-white;
 
         @apply lg:hover:bg-primary/5;
       }

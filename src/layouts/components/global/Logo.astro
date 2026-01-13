@@ -4,7 +4,7 @@ import { getImage, type ImageMetadata } from "astro:assets";
 import { toSentenceCase } from "@/lib/utils/textConverter";
 
 import config from ".astro/config.generated.json" with { type: "json" };
-import defaultLogoImage from "@/assets/images/MMCLOGO.webp";
+import defaultLogoImage from "@/assets/images/logo.png";
 
 type Props = {
   image?: ImageMetadata;
@@ -13,12 +13,17 @@ type Props = {
 
 let { image, class: className }: Props = Astro.props;
 
+const isDarkHeader =
+  Astro.url.pathname === "/" ||
+  Astro.url.pathname === "/" + Astro.currentLocale ||
+  Astro.url.pathname === "/" + Astro.currentLocale + "/";
+
 let { title } = config.site;
 
 // Original image dimensions: 3553x1488 (aspect ratio ~2.39:1)
 // Set logo height to fill navigation bar (py-4 = 16px top + 16px bottom = 32px padding)
 // Navigation bar total height ~64px, logo should fill the available space (around 60px)
-const logoHeight = 100; // Height in pixels - large enough to fill navigation bar without gaps
+const logoHeight = 40; // Height in pixels - large enough to fill navigation bar without gaps
 const logoWidth = Math.round((3553 / 1488) * logoHeight); // Calculate width to maintain aspect ratio (~143px)
 
 // Use higher resolution (2x or 3x) for retina displays to ensure sharpness
@@ -28,7 +33,7 @@ const retinaHeight = logoHeight * 2;
 
 // Get optimized image with high quality settings and higher resolution
 const optimizedLogo = await getImage({
-  src: image || "https://www.voicetophone.com/global/img/3voiper.png",
+  src: image || defaultLogoImage,
   width: retinaWidth, // Use 2x resolution for sharper rendering
   height: retinaHeight,
   format: "webp",
@@ -69,4 +74,9 @@ const optimizedLogo = await getImage({
       WebkitImageRendering: "auto",
     }}
   />
+  <span
+    class="font-secondary text-2xl"
+    class:list={isDarkHeader ? "text-white" : "text-black"}>
+    VoiceToPhone
+  </span>
 </a>

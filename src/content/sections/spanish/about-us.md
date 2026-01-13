@@ -1,7 +1,7 @@
 ---
 enable: true # Controla la visibilidad de esta sección
 
-title: 'Comunicación en la nube diseñada para<br><strong style="color: var(--color-secondary);">empresas que quieren crecer</strong>'
+title: 'Comunicación en la nube diseñada para<br><strong style="color: var(--color-primary);">empresas que quieren crecer</strong>'
 
 button:
   enable: true

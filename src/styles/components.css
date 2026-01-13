@@ -542,7 +542,7 @@ details > ul {
 
 /* Brand Text Located in Footer */
 .responsive-brand-text {
-  font-size: clamp(4.5rem, 1rem + (1.5vw - 0.2rem) * 28.6567, 25rem);
+  font-size: clamp(4.5rem, 1rem + (1.5vw - 0.2rem) * 28.6567, 13rem);
 
   /* Safari resize fix */
   min-height: 0vw;
