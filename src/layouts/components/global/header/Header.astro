@@ -49,7 +49,9 @@ const { stickyHeader, navigationButton } = config.settings;
               <CustomButton
                 {...navigationButton}
                 variant="outline"
-                label={navigationButton.label || t("navigation.buttonLabel")}
+                label={
+                  Astro.currentLocale == "es" ? "Obtener Acceso" : "Get Access"
+                }
               />
             </li>
           )

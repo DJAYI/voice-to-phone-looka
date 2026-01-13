@@ -82,15 +82,17 @@ const { Content } = await entry.render();
           <Content />
         </div>
 
-        <div class="mt-12">
-          <h2 class="mb-4 text-2xl">Países</h2>
+        <div class="mt-12 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <h2 class="col-span-full mb-4 text-2xl font-semibold">
+            {Astro.currentLocale == "es" ? "Países" : "Countries"}
+          </h2>
 
           {
             letters.map((letter) => {
               return (
                 <div class="mb-6">
                   <h3 class="mt-4 text-xl font-semibold">{letter}</h3>
-                  <ul class="mt-2 grid grid-cols-1 gap-3 sm:grid-cols-2">
+                  <ul class="mt-2 grid grid-cols-1 gap-2">
                     {grouped[letter].map((r) => {
                       const slug =
                         r.data?.customSlug ||

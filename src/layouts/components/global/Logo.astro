@@ -33,7 +33,7 @@ const retinaHeight = logoHeight * 2;
 
 // Get optimized image with high quality settings and higher resolution
 const optimizedLogo = await getImage({
-  src: image || defaultLogoImage,
+  src: defaultLogoImage,
   width: retinaWidth, // Use 2x resolution for sharper rendering
   height: retinaHeight,
   format: "webp",
@@ -75,7 +75,7 @@ const optimizedLogo = await getImage({
     }}
   />
   <span
-    class="font-secondary text-2xl"
+    class="font-secondary -ms-6 text-2xl"
     class:list={isDarkHeader ? "text-white" : "text-black"}>
     VoiceToPhone
   </span>
