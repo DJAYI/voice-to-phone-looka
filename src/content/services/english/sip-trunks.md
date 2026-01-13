@@ -13,7 +13,7 @@ intro:
   button:
     enable: true
     label: "Request SIP trunk quote"
-    url: "/contacto"
+    url: "/contact"
     rel: ""
     target: ""
     showIcon: "true"
@@ -32,7 +32,7 @@ details:
       button:
         enable: true
         label: "Ver detalles"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -44,7 +44,7 @@ details:
       button:
         enable: true
         label: "Ver compatibilidad"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -56,7 +56,7 @@ details:
       button:
         enable: true
         label: "Calcular ahorro"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -114,7 +114,7 @@ impact:
   button:
     enable: true
     label: "Configure my trunk"
-    url: "/contacto"
+    url: "/contact"
     rel: ""
     target: ""
     showIcon: "true"

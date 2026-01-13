@@ -13,7 +13,7 @@ intro:
   button:
     enable: true
     label: "Ver Demo"
-    url: "/contacto"
+    url: "/contact"
     rel: ""
     target: ""
     showIcon: "true"
@@ -32,7 +32,7 @@ details:
       button:
         enable: true
         label: "Saber más"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -44,7 +44,7 @@ details:
       button:
         enable: true
         label: "Ver automatización"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -56,7 +56,7 @@ details:
       button:
         enable: true
         label: "Ver métricas"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -114,7 +114,7 @@ impact:
   button:
     enable: true
     label: "Activar WhatsApp Business"
-    url: "/contacto"
+    url: "/contact"
     rel: ""
     target: ""
     showIcon: "true"

@@ -13,7 +13,7 @@ intro:
   button:
     enable: true
     label: "Buscar números"
-    url: "/contacto"
+    url: "/contact"
     rel: ""
     target: ""
     showIcon: "true"
@@ -32,7 +32,7 @@ details:
       button:
         enable: true
         label: "Ver cobertura"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -44,7 +44,7 @@ details:
       button:
         enable: true
         label: "Ver opciones"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -56,7 +56,7 @@ details:
       button:
         enable: true
         label: "Portar número"
-        url: "/contacto"
+        url: "/contact"
         showIcon: "true"
         variant: "outline"
         hoverEffect: "text-flip"
@@ -114,7 +114,7 @@ impact:
   button:
     enable: true
     label: "Comprar Número Virtual"
-    url: "/contacto"
+    url: "/contact"
     rel: ""
     target: ""
     showIcon: "true"

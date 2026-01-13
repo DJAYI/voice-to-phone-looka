@@ -20,7 +20,7 @@ limit: false
 button:
 enable: true
 label: "Solicitar Demo del Software"
-url: "/contacto"
+url: "/contact"
 rel: ""
 target: ""
 showIcon: "true"
@@ -81,7 +81,7 @@ showCategories: false
 button:
 enable: true
 label: "Hablar con Soporte"
-url: "/contacto"
+url: "/contact"
 rel: ""
 target: ""
 showIcon: "true"
