@@ -2,8 +2,66 @@
   "main": [
     {
       "enable": true,
-      "name": "IP Telephony",
-      "url": "/ip-telephony/en"
+      "name": "More",
+      "hasMegaMenu": true,
+      "testimonial": {
+        "enable": true,
+        "image": "/images/gallery/1.jpg",
+        "content": "Since migrating to VoiceToPhone, we centralized calls and doubled handled call volume without increasing staff."
+      },
+      "services": {
+        "name": "SERVICES",
+        "enable": true
+      },
+      "menus": [
+        {
+          "name": "FEATURED SERVICES",
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "",
+              "children": [
+                {
+                  "enable": true,
+                  "name": "IP Telephony",
+                  "url": "/ip-telephony/en"
+                },
+                {
+                  "enable": true,
+                  "name": "About Us",
+                  "url": "/about/en"
+                },
+                {
+                  "enable": true,
+                  "name": "Call Center Software",
+                  "url": "/software/software-call-center/en"
+                },
+                {
+                  "enable": true,
+                  "name": "Contact Us",
+                  "url": "/contact/en"
+                },
+                {
+                  "enable": false,
+                  "name": "Software",
+                  "url": "/software/en"
+                },
+                {
+                  "enable": true,
+                  "name": "Services",
+                  "url": "/services/en"
+                },
+                {
+                  "enable": false,
+                  "name": "Testimonials",
+                  "url": "/testimonials/en"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "enable": true,
@@ -114,7 +172,7 @@
       "url": "/help/en"
     },
     {
-      "enable": true,
+      "enable": false,
       "name": "Contact",
       "url": "/contact/en"
     }

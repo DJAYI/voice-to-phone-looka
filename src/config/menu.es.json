@@ -2,8 +2,66 @@
   "main": [
     {
       "enable": true,
-      "name": "Telefonía IP",
-      "url": "/ip-telephony/es"
+      "name": "Más",
+      "hasMegaMenu": true,
+      "testimonial": {
+        "enable": true,
+        "image": "/images/gallery/1.jpg",
+        "content": "Desde que migramos a VoiceToPhone centralizamos las llamadas y duplicamos el volumen atendido sin aumentar el equipo."
+      },
+      "services": {
+        "name": "SERVICIOS",
+        "enable": true
+      },
+      "menus": [
+        {
+          "name": "SERVICIOS DESTACADOS",
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "",
+              "children": [
+                {
+                  "enable": true,
+                  "name": "Telefonía IP",
+                  "url": "/ip-telephony/es"
+                },
+                {
+                  "enable": true,
+                  "name": "Nosotros",
+                  "url": "/about/es"
+                },
+                {
+                  "enable": true,
+                  "name": "Software Call Center",
+                  "url": "/software/software-call-center/es"
+                },
+                {
+                  "enable": true,
+                  "name": "Contáctanos",
+                  "url": "/contact/es"
+                },
+                {
+                  "enable": false,
+                  "name": "Software",
+                  "url": "/software/es"
+                },
+                {
+                  "enable": true,
+                  "name": "Servicios de telefonía en la nube",
+                  "url": "/services/es"
+                },
+                {
+                  "enable": false,
+                  "name": "Testimonios",
+                  "url": "/testimonials/es"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "enable": true,
@@ -120,7 +178,7 @@
     },
     {
       "enable": false,
-      "name": "Contáctenos",
+      "name": "Contacto",
       "url": "/contact/es"
     }
   ],
