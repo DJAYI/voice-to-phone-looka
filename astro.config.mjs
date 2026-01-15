@@ -52,7 +52,7 @@ export default defineConfig({
       "@/shortcodes/StatsItem.astro",
       "@/shortcodes/VideoInline.astro",
     ],
-  }), mdx(), compressor()],
+  }), mdx(), compressor(), sitemap()],
   markdown: {
     rehypePlugins: [
       [
