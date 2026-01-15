@@ -27,21 +27,13 @@
                   "name": "IP Telephony",
                   "url": "/ip-telephony/en"
                 },
-                {
-                  "enable": true,
-                  "name": "About Us",
-                  "url": "/about/en"
-                },
+
                 {
                   "enable": true,
                   "name": "Call Center Software",
                   "url": "/software/software-call-center/en"
                 },
-                {
-                  "enable": true,
-                  "name": "Contact Us",
-                  "url": "/contact/en"
-                },
+
                 {
                   "enable": false,
                   "name": "Software",
@@ -49,13 +41,35 @@
                 },
                 {
                   "enable": true,
-                  "name": "Services",
+                  "name": "Cloud Telephony Services",
                   "url": "/services/en"
                 },
                 {
                   "enable": false,
                   "name": "Testimonials",
                   "url": "/testimonials/en"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RESOURCES",
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "",
+              "children": [
+                {
+                  "enable": true,
+                  "name": "About Us",
+                  "url": "/about/en"
+                },
+                {
+                  "enable": true,
+                  "name": "Contact Us",
+                  "url": "/contact/en"
                 }
               ]
             }

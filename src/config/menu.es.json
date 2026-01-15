@@ -28,7 +28,7 @@
                   "url": "/ip-telephony/es"
                 },
                 {
-                  "enable": true,
+                  "enable": false,
                   "name": "Nosotros",
                   "url": "/about/es"
                 },
@@ -38,7 +38,7 @@
                   "url": "/software/software-call-center/es"
                 },
                 {
-                  "enable": true,
+                  "enable": false,
                   "name": "Contáctanos",
                   "url": "/contact/es"
                 },
@@ -56,6 +56,28 @@
                   "enable": false,
                   "name": "Testimonios",
                   "url": "/testimonials/es"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "RECURSOS",
+          "enable": true,
+          "children": [
+            {
+              "enable": true,
+              "name": "",
+              "children": [
+                {
+                  "enable": true,
+                  "name": "Sobre Nosotros",
+                  "url": "/about/es"
+                },
+                {
+                  "enable": true,
+                  "name": "Contáctanos",
+                  "url": "/contact/es"
                 }
               ]
             }
